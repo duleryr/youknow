@@ -1,0 +1,19 @@
+.ios, .md {
+
+  map-selector {
+
+    .scroll-content {
+      height: 100%
+    }
+    .scroll-bar-indicator
+    {
+      display: none;
+    }
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+
+}

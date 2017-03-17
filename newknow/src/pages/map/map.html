@@ -1,0 +1,21 @@
+<ion-menu [content]="ctt">
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let name of serviceProvider.service_names()">
+        <ion-label>{{name}}</ion-label>
+        <ion-checkbox (ionChange)="onChange(name);" [(ngModel)]="serviceProvider.services[name]['display']"></ion-checkbox>
+      </button>
+    </ion-list>
+
+  </ion-content>
+</ion-menu>
+
+<ion-content #ctt>
+
+  <div #pleaseConnect id="please-connect">
+    <p>Please connect to the Internet...</p>
+  </div>
+
+  <div #map id="map"></div>
+
+</ion-content>
