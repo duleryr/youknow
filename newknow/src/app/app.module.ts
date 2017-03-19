@@ -4,7 +4,15 @@ import { MyApp } from './app.component';
 import { MapPage } from '../pages/map/map';
 import { ConnectivityService } from '../providers/connectivity-service';
 import {MapProvider} from "../providers/map-provider";
-import {ServiceProvider} from "../providers/service-provider";
+import {ServiceWorker} from "../providers/services/service-worker";
+import {Constants} from "../providers/constants";
+import {NetworkProvider} from "../providers/network/network-provider";
+import {StorageProvider} from "../providers/storage/storage-provider";
+import {LocalStorageProvider} from "../providers/storage/local-storage-provider";
+import {ServiceLoader} from "../providers/services/service-loader";
+import {TestServiceLoader} from "../providers/services/test-service-loader";
+import {LiveServiceLoader} from "../providers/services/live-service-loader";
+import {CustomLogger} from "../providers/logger";
 
 @NgModule({
   declarations: [
@@ -20,7 +28,9 @@ import {ServiceProvider} from "../providers/service-provider";
     MapPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
-    ConnectivityService, MapProvider, ServiceProvider]
+    ConnectivityService, MapProvider, ServiceWorker, Constants,
+    NetworkProvider, StorageProvider, LocalStorageProvider, ServiceLoader,
+    TestServiceLoader, LiveServiceLoader, CustomLogger]
 })
 export class AppModule {}
 

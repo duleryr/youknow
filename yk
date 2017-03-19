@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DIR="$(dirname "${BASH_SOURCE[0]}")"
+
+YK_ENV=$1
+echo $YK_ENV
+export YK_ENV
+ionic "${@:2}"
+

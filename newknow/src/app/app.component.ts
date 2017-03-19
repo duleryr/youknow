@@ -3,6 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { MapPage } from '../pages/map/map';
 
+declare var process;
 
 @Component({
   templateUrl: 'app.html'

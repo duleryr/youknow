@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MapProvider } from '../../providers/map-provider';
 import { NavController, Platform } from 'ionic-angular';
-import {ServiceProvider} from "../../providers/service-provider";
+import {ServiceWorker} from "../../providers/services/service-worker";
 
 @Component({
   selector: 'map-selector',
@@ -13,23 +13,23 @@ export class MapPage {
   @ViewChild('pleaseConnect') pleaseConnect: ElementRef;
 
   constructor(public navCtrl: NavController, public maps: MapProvider,
-              public platform: Platform, public serviceProvider: ServiceProvider) {
+              public platform: Platform, public serviceWorker: ServiceWorker) {
 
   }
 
   ionViewDidLoad() {
 
     this.platform.ready().then(() => {
-      let mapLoaded = this.maps.init(this.mapElement.nativeElement, this.pleaseConnect.nativeElement);
+      this.maps.init(this.mapElement.nativeElement, this.pleaseConnect.nativeElement);
     });
 
   }
 
   onChange(name) {
-    if (this.serviceProvider.services[name]["display"]) {
-      this.serviceProvider.turnOnDisplay(name);
+    if (this.serviceWorker.services[name]["display"]) {
+      this.serviceWorker.turnOnDisplay(name);
     } else {
-      this.serviceProvider.turnOffDisplay(name);
+      this.serviceWorker.turnOffDisplay(name);
     }
   }
 }
