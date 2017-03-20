@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {CustomLogger} from "../logger";
+import {CustomLogger} from "../../logger";
 
 @Injectable()
 export class LiveServiceLoader {

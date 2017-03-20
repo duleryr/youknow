@@ -180,6 +180,10 @@ export class MapProvider {
 
   }
 
+  getMap(): any {
+    return this.map;
+  }
+
 }
 
 

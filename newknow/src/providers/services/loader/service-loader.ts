@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Constants} from "../constants";
+import {Constants} from "../../constants";
 import {TestServiceLoader} from "./test-service-loader";
 import {LiveServiceLoader} from "./live-service-loader";
-import {CustomLogger} from "../logger";
+import {CustomLogger} from "../../logger";
+import {LocalServiceLoader} from "./local-service-loader";
 
 @Injectable()
 export class ServiceLoader {
@@ -13,6 +14,7 @@ export class ServiceLoader {
   constructor(public http: Http, public constants: Constants,
   public testServiceLoader: TestServiceLoader,
   public liveServiceLoader: LiveServiceLoader,
+  public localServiceLoader: LocalServiceLoader,
   public logger: CustomLogger) {
   }
 
@@ -23,6 +25,9 @@ export class ServiceLoader {
       }
       case "live": {
         return this.liveServiceLoader.loadServices();
+      }
+      case "local": {
+        return this.localServiceLoader.loadServices();
       }
       default: {
         this.logger.log("Unknown policy " + this.constants.get('serviceLoaderPolicy') +

@@ -9,10 +9,13 @@ import {Constants} from "../providers/constants";
 import {NetworkProvider} from "../providers/network/network-provider";
 import {StorageProvider} from "../providers/storage/storage-provider";
 import {LocalStorageProvider} from "../providers/storage/local-storage-provider";
-import {ServiceLoader} from "../providers/services/service-loader";
-import {TestServiceLoader} from "../providers/services/test-service-loader";
-import {LiveServiceLoader} from "../providers/services/live-service-loader";
+import {ServiceLoader} from "../providers/services/loader/service-loader";
+import {TestServiceLoader} from "../providers/services/loader/test-service-loader";
+import {LiveServiceLoader} from "../providers/services/loader/live-service-loader";
 import {CustomLogger} from "../providers/logger";
+import {ExecutionWrapper} from "../providers/services/execution/execution-wrapper";
+import {FunctionWrapper} from "../providers/services/execution/function-wrapper";
+import {LocalServiceLoader} from "../providers/services/loader/local-service-loader";
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import {CustomLogger} from "../providers/logger";
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
     ConnectivityService, MapProvider, ServiceWorker, Constants,
     NetworkProvider, StorageProvider, LocalStorageProvider, ServiceLoader,
-    TestServiceLoader, LiveServiceLoader, CustomLogger]
+    TestServiceLoader, LiveServiceLoader, CustomLogger, ExecutionWrapper,
+    FunctionWrapper, LocalServiceLoader]
 })
 export class AppModule {}
 

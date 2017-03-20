@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {CustomLogger} from "../logger";
+import {CustomLogger} from "../../logger";
 
 @Injectable()
 export class TestServiceLoader {
@@ -16,7 +16,7 @@ export class TestServiceLoader {
     return new Promise((resolve) => {
       var services = {};
       services["distributeurs"] = {
-        onTurnOnDisplay: "console.log('ok distrib'); return 1",
+        onTurnOnDisplay: "console.log(google.maps);return 3;",
       };
       resolve(services);
     });
