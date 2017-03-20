@@ -10,17 +10,18 @@ import {ExecutionWrapper} from "./execution/execution-wrapper";
 export class ServiceWorker {
 
   services: any;
+  names: any;
 
   constructor(public http: Http, public serviceLoader: ServiceLoader, public logger: CustomLogger,
               public mapProvider: MapProvider, public executionWrapper: ExecutionWrapper) {
+    this.logger.log("[Service-worker] Constructor");
     this.services = {};
+    this.names = [];
     this.serviceLoader.loadServices().then(services => {
       this.services = services;
+      this.names = Object.keys(this.services);
+      this.logger.log("[Service-worker] Services loaded");
     })
-  }
-
-  service_names() : Array<string> {
-    return Object.keys(this.services);
   }
 
   turnOnDisplay(serviceName) {

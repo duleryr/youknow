@@ -16,7 +16,10 @@ export class TestServiceLoader {
     return new Promise((resolve) => {
       var services = {};
       services["distributeurs"] = {
-        onTurnOnDisplay: "console.log(google.maps);return 3;",
+        onTurnOnDisplay: "var marker = new google.maps.Marker({\
+        map: ctx.map,\
+        position: new google.maps.LatLng(45,2)\
+      })",
       };
       resolve(services);
     });

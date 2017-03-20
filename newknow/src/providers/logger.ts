@@ -10,9 +10,9 @@ export class CustomLogger {
   }
 
   log(...args: any[]) {
-    for (var arg in args) {
-      console.log(arg);
-    }
+    args.forEach(function(element) {
+      console.log(element);
+    });
   }
 
 }

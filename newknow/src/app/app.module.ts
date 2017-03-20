@@ -16,6 +16,7 @@ import {CustomLogger} from "../providers/logger";
 import {ExecutionWrapper} from "../providers/services/execution/execution-wrapper";
 import {FunctionWrapper} from "../providers/services/execution/function-wrapper";
 import {LocalServiceLoader} from "../providers/services/loader/local-service-loader";
+import {Util} from "../providers/util";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import {LocalServiceLoader} from "../providers/services/loader/local-service-loa
     ConnectivityService, MapProvider, ServiceWorker, Constants,
     NetworkProvider, StorageProvider, LocalStorageProvider, ServiceLoader,
     TestServiceLoader, LiveServiceLoader, CustomLogger, ExecutionWrapper,
-    FunctionWrapper, LocalServiceLoader]
+    FunctionWrapper, LocalServiceLoader, Util]
 })
 export class AppModule {}
 

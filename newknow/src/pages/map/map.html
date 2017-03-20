@@ -1,7 +1,7 @@
 <ion-menu [content]="ctt">
   <ion-content>
     <ion-list>
-      <button ion-item *ngFor="let name of serviceWorker.service_names()">
+      <button ion-item *ngFor="let name of serviceWorker.names">
         <ion-label>{{name}}</ion-label>
         <ion-checkbox (ionChange)="onChange(name);" [(ngModel)]="serviceWorker.services[name]['display']"></ion-checkbox>
       </button>
