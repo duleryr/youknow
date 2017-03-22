@@ -7,12 +7,10 @@ import 'rxjs/add/operator/map';
 export class Util {
 
   constructor(public http: Http) {
-    console.log('Hello Constants Provider');
   }
 
   readTextFile(file) : Promise<any> {
     return new Promise((resolve, reject) => {
-        console.log(file);
         var rawFile = new XMLHttpRequest();
         rawFile.overrideMimeType("application/json");
         rawFile.open("GET", file, true);

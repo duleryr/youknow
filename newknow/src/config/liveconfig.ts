@@ -1,5 +1,6 @@
 
 export let constants = {
   serviceLoaderPolicy: "live",
-  wrapperPolicy: "function"
+  wrapperPolicy: "function",
+  mapLoaderPolicy: "javascript",
 };

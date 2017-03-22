@@ -60,7 +60,6 @@ export class LocalServiceLoader {
         }
 
       }).catch( e => {
-        console.log("in err first", e);
         reject(new Error("can't load service config for " + service_name));
       });
     });

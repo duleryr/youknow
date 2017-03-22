@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {ServiceLoader} from "./loader/service-loader";
 import {CustomLogger} from "../logger";
-import {MapProvider} from "../map-provider";
+import {MapProvider} from "../map/map-provider";
 import {ExecutionWrapper} from "./execution/execution-wrapper";
 import {ContextBuilder} from "../context/context-builder";
 

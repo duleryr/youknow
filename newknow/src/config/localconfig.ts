@@ -2,5 +2,6 @@
 export let constants = {
   serviceLoaderPolicy: "local",
   localServicesPath: "services/",
-  wrapperPolicy: "function"
+  wrapperPolicy: "function",
+  mapLoaderPolicy: "javascript",
 };

@@ -1,6 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { MapProvider } from '../../providers/map-provider';
-import { NavController, Platform } from 'ionic-angular';
+import {Component, ElementRef, ViewChild} from '@angular/core';
+import {MapProvider} from '../../providers/map/map-provider';
+import {NavController, Platform} from 'ionic-angular';
 import {ServiceWorker} from "../../providers/services/service-worker";
 
 @Component({
@@ -10,7 +10,6 @@ import {ServiceWorker} from "../../providers/services/service-worker";
 export class MapPage {
 
   @ViewChild('map') mapElement: ElementRef;
-  @ViewChild('pleaseConnect') pleaseConnect: ElementRef;
 
   constructor(public navCtrl: NavController, public maps: MapProvider,
               public platform: Platform, public serviceWorker: ServiceWorker) {
@@ -20,7 +19,7 @@ export class MapPage {
   ionViewDidLoad() {
 
     this.platform.ready().then(() => {
-      this.maps.init(this.mapElement.nativeElement, this.pleaseConnect.nativeElement);
+      this.maps.init(this.mapElement.nativeElement);
     });
 
   }

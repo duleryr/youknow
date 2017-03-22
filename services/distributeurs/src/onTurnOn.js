@@ -7,14 +7,14 @@ var directionsDisplay = new google.maps.DirectionsRenderer({
 });
 var infowindow = new google.maps.InfoWindow();
 
-directionsDisplay.setMap(yk.map);
+directionsDisplay.setMap(yk.map.repr);
 
 var request = {
-  bounds: yk.map.getBounds(),
+  bounds: yk.map.repr.getBounds(),
   types: ['atm']
 };
 
-var service = new google.maps.places.PlacesService(yk.map);
+var service = new google.maps.places.PlacesService(yk.map.repr);
 service.nearbySearch(request, function(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
@@ -29,7 +29,7 @@ service.nearbySearch(request, function(results, status) {
 
 function place_marker(result, service) {
     var marker = new google.maps.Marker({
-      map: yk.map,
+      map: yk.map.repr,
       position: result.geometry.location,
       place_id: result.place_id
     });
@@ -39,7 +39,7 @@ function place_marker(result, service) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
           infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
             place.formatted_address + '</div>');
-          infowindow.open(yk.map, marker);
+          infowindow.open(yk.map.repr, marker);
         }
       });
       directionsService.route({

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {MapProvider} from "../map-provider";
+import {MapProvider} from "../map/map-provider";
 
 /*
   Generated class for the ContextBuilder provider.
