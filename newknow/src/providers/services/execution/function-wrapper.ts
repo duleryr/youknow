@@ -13,7 +13,7 @@ export class FunctionWrapper {
 
   wrap(context, code) : Promise<any> {
     return new Promise((resolve) => {
-      var wrappedFunction = new Function("ctx", code);
+      var wrappedFunction = new Function("yk", code);
       wrappedFunction(context);
       resolve(true);
     });

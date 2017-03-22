@@ -10,6 +10,7 @@ import {LocalServiceLoader} from "./local-service-loader";
 @Injectable()
 export class ServiceLoader {
 
+  eventsToLookFor: any;
 
   constructor(public http: Http, public constants: Constants,
   public testServiceLoader: TestServiceLoader,
@@ -18,16 +19,26 @@ export class ServiceLoader {
   public logger: CustomLogger) {
   }
 
+  fillEventsToLoad() {
+    this.eventsToLookFor = [
+      'onTurnOn',
+      'onTurnOff',
+      'onZoom',
+      'onScroll'
+    ];
+  }
+
   loadServices() : Promise<any> {
+    this.fillEventsToLoad();
     switch (this.constants.get('serviceLoaderPolicy')) {
       case "test": {
-        return this.testServiceLoader.loadServices();
+        return this.testServiceLoader.loadServices(this.eventsToLookFor);
       }
       case "live": {
-        return this.liveServiceLoader.loadServices();
+        return this.liveServiceLoader.loadServices(this.eventsToLookFor);
       }
       case "local": {
-        return this.localServiceLoader.loadServices();
+        return this.localServiceLoader.loadServices(this.eventsToLookFor);
       }
       default: {
         this.logger.log("Unknown policy " + this.constants.get('serviceLoaderPolicy') +

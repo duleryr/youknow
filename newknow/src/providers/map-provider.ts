@@ -68,9 +68,9 @@ export class MapProvider {
           script.id = "googleMaps";
 
           if(this.apiKey){
-            script.src = 'http://maps.google.com/maps/api/js?key=' + this.apiKey + '&callback=mapInit';
+            script.src = 'http://maps.google.com/maps/api/js?key=' + this.apiKey + '&libraries=drawing,places&callback=mapInit';
           } else {
-            script.src = 'http://maps.google.com/maps/api/js?callback=mapInit';
+            script.src = 'http://maps.google.com/maps/api/js?libraries=drawing,places&callback=mapInit';
           }
 
           document.body.appendChild(script);

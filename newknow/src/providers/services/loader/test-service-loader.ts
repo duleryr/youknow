@@ -11,7 +11,7 @@ export class TestServiceLoader {
   }
 
 
-  loadServices() : Promise<any> {
+  loadServices(events) : Promise<any> {
     this.logger.log("loadServices (testServiceLoader)");
     return new Promise((resolve) => {
       var services = {};

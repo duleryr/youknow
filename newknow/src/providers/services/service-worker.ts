@@ -5,6 +5,7 @@ import {ServiceLoader} from "./loader/service-loader";
 import {CustomLogger} from "../logger";
 import {MapProvider} from "../map-provider";
 import {ExecutionWrapper} from "./execution/execution-wrapper";
+import {ContextBuilder} from "../context/context-builder";
 
 @Injectable()
 export class ServiceWorker {
@@ -13,7 +14,8 @@ export class ServiceWorker {
   names: any;
 
   constructor(public http: Http, public serviceLoader: ServiceLoader, public logger: CustomLogger,
-              public mapProvider: MapProvider, public executionWrapper: ExecutionWrapper) {
+              public mapProvider: MapProvider, public executionWrapper: ExecutionWrapper,
+              public contextBuilder: ContextBuilder) {
     this.logger.log("[Service-worker] Constructor");
     this.services = {};
     this.names = [];
@@ -25,15 +27,14 @@ export class ServiceWorker {
   }
 
   turnOnDisplay(serviceName) {
-    this.logger.log("Turning on display for " + serviceName);
     this.services[serviceName]["display"] = true;
-    var context = {
-      map: this.mapProvider.getMap()
-    };
-    this.executionWrapper.wrap(context, this.services[serviceName]["onTurnOnDisplay"]);
+    var context = this.contextBuilder.build();
+    this.executionWrapper.wrap(context, this.services[serviceName]['event']["onTurnOn"]);
   }
 
   turnOffDisplay(serviceName) {
-    console.log("Turning off display for " + serviceName);
+    this.services[serviceName]["display"] = false;
+    var context = this.contextBuilder.build();
+    this.executionWrapper.wrap(context, this.services[serviceName]['event']["onTurnOff"]);
   }
 }

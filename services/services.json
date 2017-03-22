@@ -1,7 +1,8 @@
 {
   "registered_services": [
-    "distributeur",
+    "distributeurs",
     "pensebete",
-    "wifimanager"
+    "wifimanager",
+    "unknown"
   ]
 }
