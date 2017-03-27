@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {HomePage} from '../home/home';
+import {ServiceMenu} from "../../providers/services/ui/service-menu";
 /*
   Generated class for the Menu page.
 
@@ -12,36 +13,15 @@ import {HomePage} from '../home/home';
   templateUrl: 'menu.html'
 })
 export class MenuPage {
-  services: Array<{name: string, activated: boolean, buttons: any, dragMarks: any}>;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.services = [
-      {
-        name: 'Distributeurs',
-        activated: true,
-        buttons: [
-          {icon :'settings'},
-          {icon:'funnel'}],
-        dragMarks: []
-      },
-      {name: 'Pense-bête', activated: true, buttons: [{icon :'settings'}], dragMarks: [{}]},
-      {name: 'WifiManager', activated: true, buttons: [{icon :'settings'}, {icon:'funnel'}], dragMarks: [{}]},
-      {name: 'WalkOrRun', activated: true, buttons: [{icon :'settings'}], dragMarks: []},
-      {name: 'Bars', activated: true, buttons: [{icon :'settings'}, {icon:'funnel'}], dragMarks: []}]
 
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public serviceMenu: ServiceMenu) {
   }
 
   public homePage: any = HomePage;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MenuPage');
-  }
-
-  onChange(name) {
-    /*if (this.serviceWorker.services[name]["display"]) {
-     this.serviceWorker.turnOnDisplay(name);
-     } else {
-     this.serviceWorker.turnOffDisplay(name);
-     }*/
+  onToggle(service) {
+    this.serviceMenu.onToggle(service);
   }
 
 }

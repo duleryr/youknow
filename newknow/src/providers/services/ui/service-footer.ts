@@ -9,20 +9,25 @@ export class ServiceFooter {
   names: any;
 
   constructor(public http: Http, public logger: CustomLogger) {
-    this.services = [
-      {
-        name: 'Distributeurs',
-        icon: 'usd',
-        buttons: [
-          {icon :'settings'},
-          {icon:'funnel'}],
-        dragMarks: []
-      },
-      {name: 'Pense-bête', icon: 'bulb', buttons: [{icon :'settings'}], dragMarks: [{}]},
-      {name: 'WifiManager', icon: 'wifi', buttons: [{icon :'settings'}, {icon:'funnel'}], dragMarks: [{}]},
-      {name: 'WalkOrRun', icon: 'walk', buttons: [{icon :'settings'}], dragMarks: []},
-      {name: 'Bars', icon: 'beer', buttons: [{icon :'settings'}, {icon:'funnel'}], dragMarks: []}]
-
+    this.services = [];
   }
+
+  addService(service) {
+    console.log("in add footer", service);
+    var service_footer_data = service['ui'];
+    console.log(service_footer_data);
+    service_footer_data['name'] = service['name'];
+    this.services.push(service_footer_data);
+  }
+
+  removeService(service) {
+    for (var i = 0; i < this.services.length; i++) {
+      if (service['name'] == this.services[i]['name']) {
+        this.services.splice(i, 1);
+        break;
+      }
+    }
+  }
+
 
 }

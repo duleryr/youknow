@@ -2,5 +2,13 @@
 	"name": "WifiManager",
 	"author": "YouKnow",
 	"version": "0.0.1",
-	"description": "Active/Désactive le wifi automatiquement. Indiquez des zones, le wifi s'active lorsque vous entrez dedans et se coupe lorsque vous en partez."
+	"description": "Active/Désactive le wifi automatiquement. Indiquez des zones, le wifi s'active lorsque vous entrez dedans et se coupe lorsque vous en partez.",
+	"ui": {
+		"icon": "wifi",
+		"buttons": [
+			{"icon" : "settings"}, 
+			{"icon": "funnel"}
+		], 
+		"dragMarks": [{}]
+	}
 }

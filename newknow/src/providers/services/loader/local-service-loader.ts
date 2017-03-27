@@ -28,12 +28,13 @@ export class LocalServiceLoader {
       service["display"] = false;
 
       this.util.readTextFile(this.pathToLocalServices+service_name+'/'+this.individialServiceConfig)
-        .then( text => {
+      .then( text => {
         var data = JSON.parse(text);
         service['name'] = data['name'];
         service['description'] = data['description'];
         service['author'] = data['author'];
         service['version'] = data['version'];
+        service['ui'] = data['ui'];
         service['memory'] = {};
         service['event'] = {};
 

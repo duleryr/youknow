@@ -16,11 +16,12 @@ export class ContextBuilder {
     console.log('Hello ContextBuilder Provider');
   }
 
-  build(serviceName) {
+  build(service) {
     return {
       map: this.mapProvider.map,
       latitude: 45,
-      longitude: 2
+      longitude: 2,
+      data: service['memory']
     };
   }
 
