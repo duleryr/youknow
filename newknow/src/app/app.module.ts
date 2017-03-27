@@ -27,6 +27,8 @@ import {Drag} from "../components/drag";
 import {FooterPage} from "../pages/footer/footer";
 import {HomePage} from "../pages/home/home";
 import {MenuPage} from "../pages/menu/menu";
+import {ServiceFooter} from "../providers/services/ui/service-footer";
+import {ServiceMenu} from "../providers/services/ui/service-menu";
 
 @NgModule({
   declarations: [
@@ -49,7 +51,7 @@ import {MenuPage} from "../pages/menu/menu";
     NetworkProvider, StorageProvider, LocalStorageProvider, ServiceLoader,
     TestServiceLoader, LiveServiceLoader, CustomLogger, ExecutionWrapper,
     FunctionWrapper, LocalServiceLoader, Util, ContextBuilder, MapLoader,
-    LoadNativeMap, LoadJsMap, DynamicLoad, LocationManager]
+    LoadNativeMap, LoadJsMap, DynamicLoad, LocationManager, ServiceFooter, ServiceMenu]
 })
 export class AppModule {}
 

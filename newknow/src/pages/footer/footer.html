@@ -1,21 +1,21 @@
-<p>b</p>
-  <ion-footer>
-    <ion-grid>
-      <ion-row>
-        <ion-col col-sm *ngFor="let service of services">
-          <ion-fab *ngIf="service.activated">
-            <button ion-fab mini><ion-icon name="add"></ion-icon></button>
-            <ion-fab-list side="top">
-              <button ion-fab *ngFor="let button of service.buttons">
-                <ion-icon name="{{button.icon}}"></ion-icon>
-              </button>
-              <button ion-fab drag *ngFor="let button of service.dragMarks">
-                <ion-icon name="pin" color="danger"></ion-icon>
-              </button>
-            </ion-fab-list>
-          </ion-fab>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-footer>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-sm *ngFor="let service of footer.services">
+        <ion-fab>
+          <button ion-fab mini><ion-icon name="{{service.icon}}"></ion-icon></button>
+          <ion-fab-list side="top">
+            <button ion-fab *ngFor="let button of service.buttons">
+              <ion-icon name="{{button.icon}}"></ion-icon>
+            </button>
+            <button ion-fab drag *ngFor="let button of service.dragMarks">
+              <ion-icon name="pin" color="danger"></ion-icon>
+            </button>
+          </ion-fab-list>
+        </ion-fab>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
 
