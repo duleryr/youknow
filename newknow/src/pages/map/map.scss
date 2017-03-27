@@ -2,46 +2,13 @@
 
   map-selector {
 
-    .user {
-      background: grey;
-      height: 20%;
-    }
-    .scroll-content {
-      height: 100%
-    }
-    .scroll-bar-indicator
-    {
-      display: none;
-    }
     #map {
-      /* Height & width depends on how you want to reveal the overlay (see JS below) */
       position:absolute;
       height: 100%;
       width: 100%;
       z-index:0;
     }
-    .menu {
-      color: black;
-      background: transparent;
-      top:10px;
-      left:10px;
-      width:60px;
-      height:40px;
-    }
-    ion-footer {
-      height: 10%;
-      background-color: map-get($colors, dark);
 
-      ion-grid, ion-row, ion-col {
-        height: 100%;
-      }
-
-      ion-col {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
   }
 
 }

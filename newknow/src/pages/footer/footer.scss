@@ -1,0 +1,16 @@
+page-footer {
+  ion-footer {
+    height: 10%;
+    background-color: map-get($colors, dark);
+
+    ion-grid, ion-row, ion-col {
+      height: 100%;
+    }
+
+    ion-col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

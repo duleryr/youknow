@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import { MapPage } from '../pages/map/map';
+import {MenuPage} from "../pages/menu/menu";
 
 declare var process;
 
@@ -9,7 +9,7 @@ declare var process;
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = MapPage;
+  rootPage = MenuPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

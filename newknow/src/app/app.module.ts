@@ -24,12 +24,15 @@ import {LoadJsMap} from "../providers/map/loader/load-js-map";
 import {DynamicLoad} from "../providers/map/loader/dynamic-load";
 import {LocationManager} from "../providers/location/location-manager";
 import {Drag} from "../components/drag";
+import {FooterPage} from "../pages/footer/footer";
+import {HomePage} from "../pages/home/home";
+import {MenuPage} from "../pages/menu/menu";
 
 @NgModule({
   declarations: [
     MyApp,
-    MapPage,
-    Drag
+    Drag,
+    FooterPage, HomePage, MapPage, MenuPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -37,7 +40,9 @@ import {Drag} from "../components/drag";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    MapPage
+    MapPage,
+    HomePage,
+    MenuPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
     ConnectivityService, MapProvider, ServiceWorker, Constants,

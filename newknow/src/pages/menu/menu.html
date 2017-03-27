@@ -1,0 +1,25 @@
+<ion-menu [content]="ctt">
+  <ion-content>
+    <div class="user">
+    </div>
+    <ion-item-group>
+      <ion-item-divider>Alertes</ion-item-divider>
+      <button ion-item no-lines *ngFor="let service of services">
+        <ion-label>{{service.name}}</ion-label>
+        <ion-checkbox (ionChange)="onChange(name);" [(ngModel)]="service.activated"></ion-checkbox>
+      </button>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>Et aussi</ion-item-divider>
+      <button menuClose ion-item block icon-left (click)="goToSettings()">
+        <ion-icon name="settings"></ion-icon>
+        Paramètres
+      </button>
+    </ion-item-group>
+  </ion-content>
+</ion-menu>
+
+
+
+<ion-nav [root]="homePage" #ctt swipeBackEnabled="false"></ion-nav>
+
