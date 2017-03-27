@@ -23,11 +23,13 @@ import {LoadNativeMap} from "../providers/map/loader/load-native-map";
 import {LoadJsMap} from "../providers/map/loader/load-js-map";
 import {DynamicLoad} from "../providers/map/loader/dynamic-load";
 import {LocationManager} from "../providers/location/location-manager";
+import {Drag} from "../components/drag";
 
 @NgModule({
   declarations: [
     MyApp,
-    MapPage
+    MapPage,
+    Drag
   ],
   imports: [
     IonicModule.forRoot(MyApp)

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {MapProvider} from "../map/map-provider";
-import {ServiceWorker} from "../services/service-worker";
 
 /*
   Generated class for the ContextBuilder provider.
@@ -13,7 +12,7 @@ import {ServiceWorker} from "../services/service-worker";
 @Injectable()
 export class ContextBuilder {
 
-  constructor(public http: Http, public mapProvider: MapProvider, public serviceWorker: ServiceWorker) {
+  constructor(public http: Http, public mapProvider: MapProvider) {
     console.log('Hello ContextBuilder Provider');
   }
 

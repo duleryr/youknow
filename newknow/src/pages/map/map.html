@@ -1,18 +1,48 @@
 <ion-menu [content]="ctt">
   <ion-content>
-    <ion-list>
-      <button ion-item *ngFor="let name of serviceWorker.names">
-        <ion-label>{{name}}</ion-label>
-        <ion-checkbox (ionChange)="onChange(name);" [(ngModel)]="serviceWorker.services[name]['display']"></ion-checkbox>
+    <div class="user">
+    </div>
+    <ion-item-group>
+      <ion-item-divider>Alertes</ion-item-divider>
+      <button ion-item no-lines *ngFor="let service of services">
+        <ion-label>{{service.name}}</ion-label>
+        <ion-checkbox (ionChange)="onChange(name);" [(ngModel)]="service.activated"></ion-checkbox>
       </button>
-    </ion-list>
-
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>Et aussi</ion-item-divider>
+      <button menuClose ion-item block icon-left (click)="goToSettings()">
+        <ion-icon name="settings"></ion-icon>
+        Paramètres
+      </button>
+    </ion-item-group>
   </ion-content>
 </ion-menu>
 
 <ion-content #ctt>
 
   <div #map id="map"></div>
-  <div id="other"><p>coucoucou</p></div>
 
+  <button class="menu" ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-footer>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-sm *ngFor="let service of services">
+          <ion-fab *ngIf="service.activated">
+            <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+            <ion-fab-list side="top">
+              <button ion-fab *ngFor="let button of service.buttons">
+                <ion-icon name="{{button.icon}}"></ion-icon>
+              </button>
+              <button ion-fab drag *ngFor="let button of service.dragMarks">
+                <ion-icon name="pin" color="danger"></ion-icon>
+              </button>
+            </ion-fab-list>
+          </ion-fab>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-footer>
 </ion-content>
