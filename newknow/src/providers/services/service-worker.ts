@@ -28,13 +28,13 @@ export class ServiceWorker {
 
   turnOnDisplay(serviceName) {
     this.services[serviceName]["display"] = true;
-    var context = this.contextBuilder.build();
+    var context = this.contextBuilder.build(serviceName);
     this.executionWrapper.wrap(context, this.services[serviceName]['event']["onTurnOn"]);
   }
 
   turnOffDisplay(serviceName) {
     this.services[serviceName]["display"] = false;
-    var context = this.contextBuilder.build();
+    var context = this.contextBuilder.build(serviceName);
     this.executionWrapper.wrap(context, this.services[serviceName]['event']["onTurnOff"]);
   }
 }

@@ -28,4 +28,6 @@ export abstract class YkMap {
 
   abstract load(mapRepresentation): Promise<any>;
   abstract setOptions(dict);
+  abstract getBounds();
+  abstract addMarker(marker);
 }

@@ -14,4 +14,11 @@ export class YkNativeMap extends YkMap {
   setOptions(dict) {
     this.process_undefined();
   }
+
+  getBounds() {
+    this.process_undefined();
+  }
+  addMarker(marker) {
+    this.process_undefined();
+  }
 }
