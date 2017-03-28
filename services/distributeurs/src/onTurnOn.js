@@ -1,5 +1,6 @@
 console.log('Hello from onTurnOn.js DISTRIB =) =) =) !!!');
 
+
 var directionsService = new google.maps.DirectionsService;
 var directionsDisplay = new google.maps.DirectionsRenderer({
     markerOptions:{opacity:0.0},
