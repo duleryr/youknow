@@ -7,10 +7,17 @@ import {ServiceFooter} from "../../providers/services/ui/service-footer";
   templateUrl: 'footer.html'
 })
 export class FooterPage {
+  openFab: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public footer: ServiceFooter) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public footerService: ServiceFooter) {
+    this.openFab = null;
   }
 
+  fabClicked(fab) {
+    if (this.openFab != null) {
+      this.openFab.close();
+    }
+    this.openFab = fab;
+  }
 
 }

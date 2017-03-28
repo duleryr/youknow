@@ -2,8 +2,8 @@
 <ion-footer>
   <ion-grid>
     <ion-row>
-      <ion-col col-sm *ngFor="let service of footer.services">
-        <ion-fab>
+      <ion-col col-sm *ngFor="let service of footerService.services">
+        <ion-fab #fab (click)="fabClicked(fab)">
           <button ion-fab mini><ion-icon name="{{service.icon}}"></ion-icon></button>
           <ion-fab-list side="top">
             <button ion-fab *ngFor="let button of service.buttons">
