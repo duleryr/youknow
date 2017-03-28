@@ -1,12 +1,11 @@
-
 <ion-footer>
   <ion-grid>
     <ion-row>
       <ion-col col-sm *ngFor="let service of footer.services">
-        <ion-fab>
-          <button ion-fab mini><ion-icon name="{{service.icon}}"></ion-icon></button>
+          <ion-fab #fab>
+          <button ion-fab mini [style.box-shadow]="getStyle(service.name)" (click)="activeServiceName = service.name"><ion-icon name="{{service.icon}}"></ion-icon></button>
           <ion-fab-list side="top">
-            <button ion-fab *ngFor="let button of service.buttons">
+              <button ion-fab *ngFor="let button of service.buttons" (click)="fab.close()">
               <ion-icon name="{{button.icon}}"></ion-icon>
             </button>
             <button ion-fab drag *ngFor="let button of service.dragMarks">
@@ -18,4 +17,3 @@
     </ion-row>
   </ion-grid>
 </ion-footer>
-
