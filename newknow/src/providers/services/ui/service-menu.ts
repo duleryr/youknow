@@ -36,12 +36,12 @@ export class ServiceMenu {
 
   turnOnDisplay(service) {
     console.log(service);
-    var context = this.contextBuilder.build(service);
+    var context = this.contextBuilder.build(service, {});
     this.executionWrapper.wrap(context, service['event']['onTurnOn']);
   }
 
   turnOffDisplay(service) {
-    var context = this.contextBuilder.build(service);
+    var context = this.contextBuilder.build(service, {});
     this.executionWrapper.wrap(context, service['event']['onTurnOff']);
   }
 
