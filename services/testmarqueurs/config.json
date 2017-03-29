@@ -1,0 +1,11 @@
+{
+	"name": "Marqueurs",
+	"author": "YouKnow",
+	"version": "0.0.1",
+	"description": "Pose des marqueurs sur la carte",
+	"ui": {
+		"icon": "wifi",
+		"buttons": [], 
+		"dragMarks": [{}]
+	}
+}
