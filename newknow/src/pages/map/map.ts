@@ -16,7 +16,7 @@ export class MapPage {
     this.platform.ready().then(() => {
       this.maps.init(this.mapElement.nativeElement).then(() => {
         this.serviceWorker.init();
-      })
+      });
     });
 
   }

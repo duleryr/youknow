@@ -16,11 +16,12 @@ export class FooterPage {
     this.activeServiceName = "";
   }
 
-  fabClicked(fab) {
+  fabClicked(fab, service) {
     if (this.openFab != null) {
       this.openFab.close();
     }
     this.openFab = fab;
+    this.footerService.setActiveService(service);
   }
   getStyle(name) {
     if (name == this.activeServiceName) {
