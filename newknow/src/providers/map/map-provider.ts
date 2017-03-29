@@ -14,17 +14,21 @@ export class MapProvider {
 
   }
 
-  init(mapElement: any) {
-    this.mapElement = mapElement;
-    this.mapLoader.load(this.apiKey, this.mapElement).then((map) => {
-      this.map = map;
-      this.disableScrollWhenMenuOpen();
-      console.log("Map loaded");
-    }).catch((err) => {
-      console.log("Error loading map...",err);
+  init(mapElement: any) : Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.mapElement = mapElement;
+      this.mapLoader.load(this.apiKey, this.mapElement).then((map) => {
+        this.map = map;
+        this.disableScrollWhenMenuOpen();
+        console.log("Map loaded");
+        resolve();
+      }).catch((err) => {
+        console.log("Error loading map...",err);
+        reject();
+      });
     });
-
   }
+
   disableScrollWhenMenuOpen() {
     let menu = this.menuController.get('left');
     if (menu) {

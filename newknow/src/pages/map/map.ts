@@ -14,7 +14,9 @@ export class MapPage {
   constructor(public navCtrl: NavController, public maps: MapProvider,
               public platform: Platform, public serviceWorker: ServiceWorker) {
     this.platform.ready().then(() => {
-      this.maps.init(this.mapElement.nativeElement);
+      this.maps.init(this.mapElement.nativeElement).then(() => {
+        this.serviceWorker.init();
+      })
     });
 
   }

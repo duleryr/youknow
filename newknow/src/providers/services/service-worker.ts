@@ -12,13 +12,17 @@ export class ServiceWorker {
 
   constructor(public http: Http, public serviceLoader: ServiceLoader, public logger: CustomLogger,
               public serviceMenu: ServiceMenu) {
+
+  }
+
+  init() {
     this.logger.log("[Service-worker] Constructor");
     this.services = {};
     this.serviceLoader.loadServices().then(services => {
       this.services = services;
       console.log(this.services);
       for (var name in services) {
-        this.serviceMenu.addService(this.services[name], false);
+        this.serviceMenu.addService(this.services[name], true);
       }
       this.logger.log("[Service-worker] Services loaded");
     })
