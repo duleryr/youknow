@@ -4,7 +4,6 @@
 	"version": "0.0.1",
 	"description": "Trouvez le distributeur de billets le plus proche de vous.",
 	"ui": {
-		"icon": "usd",
 		"buttons": [
 			{"icon" : "settings"}, 
 			{"icon": "funnel"}

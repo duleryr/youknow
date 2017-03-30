@@ -16,9 +16,13 @@ export class FooterPage {
     this.activeServiceName = "";
   }
 
-  fabClicked(fab, service) {
+  fabClicked(fab, service, ev) {
+    console.log(ev);
     if (this.openFab != null) {
       this.openFab.close();
+      // TODO : Debug
+      // if (on ferme celui qui était actif)
+      //    mettre this.openFab à null
     }
     this.openFab = fab;
     this.footerService.setActiveService(service);

@@ -5,21 +5,19 @@
     <ion-item-group>
       <ion-item-divider>Alertes</ion-item-divider>
       <button ion-item no-lines *ngFor="let service of serviceMenu.services">
-        <ion-label>{{service.name}}</ion-label>
-        <ion-checkbox (ionChange)="onToggle(service);" [(ngModel)]="service.activated"></ion-checkbox>
+        <img src="assets/img/{{service.name}}.png" style="width:42px;height:42px" item-left>
+        <ion-label class="lbl">{{service.name}}</ion-label>
+        <ion-checkbox item-right (ionChange)="onToggle(service);" [(ngModel)]="service.activated"></ion-checkbox>
       </button>
     </ion-item-group>
     <ion-item-group>
       <ion-item-divider>Et aussi</ion-item-divider>
       <button menuClose ion-item block icon-left (click)="goToSettings()">
-        <ion-icon name="settings"></ion-icon>
-        Paramètres
+        <ion-icon name="settings" item-left></ion-icon>
+        <ion-label>Paramètres</ion-label>
       </button>
     </ion-item-group>
   </ion-content>
 </ion-menu>
 
-
-
 <ion-nav [root]="homePage" #ctt swipeBackEnabled="false"></ion-nav>
-

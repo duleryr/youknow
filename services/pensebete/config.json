@@ -4,7 +4,6 @@
 	"version": "0.0.1",
 	"description": "Pense-bête géolocalisé. Attribuez un pense-bête à un endroit. Il vous sera affiché la prochaine fois que vous irez.",
 	"ui": {
-		"icon": "bulb",
 		"buttons": [
 			{"icon" : "settings"}
 		], 
