@@ -5,6 +5,4 @@ let marker = new google.maps.Marker({
   title: 'Hello World!'
 });
 
-console.log("in poseMarks");
-console.log(yk.params.lat);
-console.log(yk.params.lng);
+console.log("Pense-bête posé");

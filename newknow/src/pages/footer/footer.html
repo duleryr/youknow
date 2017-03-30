@@ -3,7 +3,7 @@
     <ion-row>
       <ion-col col-sm *ngFor="let service of footerService.services">
         <ion-fab #fab (click)="fabClicked(fab, service, $event)">
-          <button class="fabbutton" ion-fab mini [style.box-shadow]="getStyle(service.name)" (click)="activeServiceName = service.name"><img class="img" src="assets/img/{{service.name}}.png"></button> 
+          <button class="fabbutton" ion-fab [style.box-shadow]="getStyle(service.name)" (click)="activeServiceName = service.name"><img class="img" src="assets/img/{{service.name}}.png"></button> 
           <ion-fab-list side="top">
               <button ion-fab *ngFor="let button of service.buttons" (click)="fab.close()">
               <ion-icon name="{{button.icon}}"></ion-icon>
