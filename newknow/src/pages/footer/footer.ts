@@ -8,23 +8,22 @@ import {ServiceFooter} from "../../providers/services/ui/service-footer";
 })
 
 export class FooterPage {
-  openFab: any;
+  lastOpenedFab: any;
   activeServiceName: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public footerService: ServiceFooter) {
-    this.openFab = null;
+    this.lastOpenedFab = null;
     this.activeServiceName = "";
   }
 
   fabClicked(fab, service, ev) {
     console.log(ev);
-    if (this.openFab != null) {
-      this.openFab.close();
-      // TODO : Debug
-      // if (on ferme celui qui était actif)
-      //    mettre this.openFab à null
+    if (this.lastOpenedFab != null) {
+      if (fab != this.lastOpenedFab) {
+        this.lastOpenedFab.close();
+      }
     }
-    this.openFab = fab;
+    this.lastOpenedFab = fab;
     this.footerService.setActiveService(service);
   }
   getStyle(name) {
