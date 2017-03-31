@@ -8,7 +8,7 @@ export class LoadNativeMap {
   constructor(public http: Http) {
   }
 
-  load(apiKey, mapElement): Promise<any> {
+  load(apiKey, mapElement, mapProvider): Promise<any> {
     return Promise.reject("Native map load : Not yet implemented");
   }
 

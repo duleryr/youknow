@@ -1,17 +1,21 @@
 import {YkMap} from "../yk/yk-map";
 import {YkLatLngBounds} from "../yk/yk-lat-lng-bounds";
 import {YkLatLng} from "../yk/yk-lat-lng";
+import {Events} from "ionic-angular";
 
 export class YkJsMap extends YkMap {
+
 
   constructor() {
     super("Js");
   }
 
-  load(mapRepr): Promise<any> {
+  load(mapRepr, mapProvider): Promise<any> {
+    var events = new Events;
+    var mapProvider = mapProvider;
     this.repr = mapRepr;
     this.repr.addListener('bounds_changed', function() {
-      console.log("Bounds changed");
+      events.publish('er:map_event', 'bounds_changed', {});
     });
     return Promise.resolve("ok");
   }

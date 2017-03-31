@@ -16,12 +16,12 @@ export class LoadJsMap {
               public locationManager: LocationManager) {
   }
 
-  load(apiKey, mapElement): Promise<any> {
+  load(apiKey, mapElement, mapProvider): Promise<any> {
     return new Promise((resolve, reject) => {
       if(typeof google == "undefined" || typeof google.maps == "undefined") {
         if(this.connectivityService.isOnline()){
           window['mapInit'] = () => {
-            this.initMap(mapElement).then((map) => {
+            this.initMap(mapElement, mapProvider).then((map) => {
               console.log("Resolve map");
               resolve(map);
             });
@@ -41,7 +41,7 @@ export class LoadJsMap {
       }
       else {
         if(this.connectivityService.isOnline()){
-          this.initMap(mapElement).then((map) => {
+          this.initMap(mapElement, mapProvider).then((map) => {
             console.log("Resolve map");
             resolve(map);
           });
@@ -52,7 +52,7 @@ export class LoadJsMap {
     });
   }
 
-  initMap(mapElement): Promise<any> {
+  initMap(mapElement, mapProvider): Promise<any> {
     this.mapInitialised = true;
     return new Promise((resolve) => {
       this.locationManager.getLastLocation().then((position) => {
@@ -66,7 +66,7 @@ export class LoadJsMap {
         };
 
         var ykJsMap = new YkJsMap();
-        ykJsMap.load(new google.maps.Map(mapElement, mapOptions)).then(() => {
+        ykJsMap.load(new google.maps.Map(mapElement, mapOptions), mapProvider).then(() => {
           resolve(ykJsMap);
         });
 

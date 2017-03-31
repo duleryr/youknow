@@ -4,6 +4,7 @@ export abstract class YkMap {
 
   mode: any;
   repr: any;
+  protected mapProvider: any;
 
   constructor(mode) {
     this.mode = mode;
@@ -26,7 +27,7 @@ export abstract class YkMap {
     this.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true});
   }
 
-  abstract load(mapRepresentation): Promise<any>;
+  abstract load(mapRepresentation, mapProvider): Promise<any>;
   abstract setOptions(dict);
   abstract getBounds();
   abstract addMarker(marker);

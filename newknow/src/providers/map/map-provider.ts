@@ -17,7 +17,7 @@ export class MapProvider {
   init(mapElement: any) : Promise<any> {
     return new Promise((resolve, reject) => {
       this.mapElement = mapElement;
-      this.mapLoader.load(this.apiKey, this.mapElement).then((map) => {
+      this.mapLoader.load(this.apiKey, this.mapElement, this).then((map) => {
         this.map = map;
         this.disableScrollWhenMenuOpen();
         console.log("Map loaded");
@@ -39,5 +39,9 @@ export class MapProvider {
         this.map.allow_navigation();
       });
     }
+  }
+
+  sendEvent(event_name) {
+
   }
 }

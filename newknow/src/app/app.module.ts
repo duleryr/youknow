@@ -29,6 +29,7 @@ import {HomePage} from "../pages/home/home";
 import {MenuPage} from "../pages/menu/menu";
 import {ServiceFooter} from "../providers/services/ui/service-footer";
 import {ServiceMenu} from "../providers/services/ui/service-menu";
+import {EventReceiver} from "../providers/services/event-receiver";
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {ServiceMenu} from "../providers/services/ui/service-menu";
     NetworkProvider, StorageProvider, LocalStorageProvider, ServiceLoader,
     TestServiceLoader, LiveServiceLoader, CustomLogger, ExecutionWrapper,
     FunctionWrapper, LocalServiceLoader, Util, ContextBuilder, MapLoader,
-    LoadNativeMap, LoadJsMap, DynamicLoad, LocationManager, ServiceFooter, ServiceMenu]
+    LoadNativeMap, LoadJsMap, DynamicLoad, LocationManager, ServiceFooter, ServiceMenu,
+    EventReceiver]
 })
 export class AppModule {}
 

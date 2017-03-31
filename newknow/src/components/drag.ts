@@ -1,9 +1,7 @@
 import {Directive, ElementRef, Renderer} from '@angular/core';
 import {DomController, Platform} from 'ionic-angular';
-import {ServiceFooter} from '../providers/services/ui/service-footer';
-import {ExecutionWrapper} from "../providers/services/execution/execution-wrapper";
-import {ContextBuilder} from "../providers/context/context-builder";
 import {MapProvider} from "../providers/map/map-provider";
+import {Events} from "ionic-angular";
 
 @Directive({
   selector: '[drag]' // Attribute selector
@@ -14,8 +12,7 @@ export class Drag {
   fabRadius: any;
 
   constructor(public element: ElementRef, public renderer: Renderer, public domCtrl: DomController,
-              public serviceFooter: ServiceFooter, public contextBuilder: ContextBuilder,
-              public executionWrapper: ExecutionWrapper, public mapProvider: MapProvider,
+              public events: Events, public mapProvider: MapProvider,
               public plt: Platform) {
     this.fabRadius = 20;
   }
@@ -38,12 +35,10 @@ export class Drag {
     });
     hammer.on('panend', (ev) => {
       console.log("end drag");
-      var service = this.serviceFooter.getActiveService();
       var offset = this.element.nativeElement.getBoundingClientRect();
-      var lat = this.getLatitude(offset.top)
-      var lng = this.getLongitude(offset.left)
-      var context = this.contextBuilder.build(service, {"lat": lat, "lng": lng});
-      this.executionWrapper.wrap(context, service['event']['onDragMarkDropped']);
+      var lat = this.getLatitude(offset.top);
+      var lng = this.getLongitude(offset.left);
+      this.events.publish('er:map_event', 'onDragMarkDropped', {"lat": lat, "lng": lng});
       this.domCtrl.write(() => {
         this.renderer.setElementStyle(this.element.nativeElement, 'left', this.initX + 'px');
         this.renderer.setElementStyle(this.element.nativeElement, 'top', this.initY + 'px');
