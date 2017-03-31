@@ -1,8 +1,8 @@
 {
-	"name": "Distributeurs",
+	"name": "Bars",
 	"author": "YouKnow",
 	"version": "0.0.1",
-	"description": "Trouvez le distributeur de billets le plus proche de vous.",
+	"description": "Affiche les bars à proximité",
 	"ui": {
 		"buttons": [
 			{"icon" : "settings"}, 
