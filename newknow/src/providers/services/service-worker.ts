@@ -22,7 +22,7 @@ export class ServiceWorker {
       this.services = services;
       console.log(this.services);
       for (var name in services) {
-        this.serviceMenu.addService(this.services[name], true);
+        this.serviceMenu.addService(this.services[name], false);
       }
       this.logger.log("[Service-worker] Services loaded");
     })

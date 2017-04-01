@@ -15,12 +15,7 @@ export class ServiceFooter {
   }
 
   addService(service) {
-    console.log("in add footer", service);
-    var service_footer_data = service['ui'];
-    console.log(service_footer_data);
-    service_footer_data['name'] = service['name'];
-    service_footer_data['event'] = service['event'];
-    this.services.push(service_footer_data);
+    this.services.push(service);
   }
 
   removeService(service) {

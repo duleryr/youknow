@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {MenuController} from 'ionic-angular';
 import {MapLoader} from "./loader/map-loader";
+import {Events} from "ionic-angular";
 
 @Injectable()
 export class MapProvider {
@@ -10,7 +11,7 @@ export class MapProvider {
   apiKey: string = "AIzaSyBo1HeIZ8Fbin5J6c4qId4D5c8JzOpX1HI";
 
   constructor(public menuController: MenuController,
-              public mapLoader: MapLoader) {
+              public mapLoader: MapLoader, public events: Events) {
 
   }
 
@@ -41,7 +42,4 @@ export class MapProvider {
     }
   }
 
-  sendEvent(event_name) {
-
-  }
 }

@@ -1,7 +1,6 @@
 import {YkMap} from "../yk/yk-map";
 import {YkLatLngBounds} from "../yk/yk-lat-lng-bounds";
 import {YkLatLng} from "../yk/yk-lat-lng";
-import {Events} from "ionic-angular";
 
 export class YkJsMap extends YkMap {
 
@@ -11,11 +10,9 @@ export class YkJsMap extends YkMap {
   }
 
   load(mapRepr, mapProvider): Promise<any> {
-    var events = new Events;
-    var mapProvider = mapProvider;
     this.repr = mapRepr;
     this.repr.addListener('bounds_changed', function() {
-      events.publish('er:map_event', 'bounds_changed', {});
+      mapProvider.events.publish('er:map_event', 'onScroll', {});
     });
     return Promise.resolve("ok");
   }

@@ -20,17 +20,29 @@ export class EventReceiver {
   init() {
     console.log("Hello event receiver");
     this.events.subscribe('er:map_event', (event, params) => {
-      console.log("received event", event, params);
       this.execActiveService(event, params);
+    });
+    this.events.subscribe('er:ui_event', (service, event, params) => {
+      this.exec(service, event, params);
     });
   }
 
   exec(service, event, params) {
     var context = this.contextBuilder.build(service, params);
-    this.executionWrapper.wrap(context, service['event'][event]);
+    if (!('is_init' in service)) {
+      service['is_init'] = true;
+      this.executionWrapper.wrap(context, service['event']['onInit']).then((res) => {
+        this.executionWrapper.wrap(context, service['event'][event]);
+      });
+    } else {
+      console.log("exec directly"); // ICI
+      this.executionWrapper.wrap(context, service['event'][event]);
+    }
   }
   execActiveService(event, params) {
     var service = this.serviceFooter.getActiveService();
-    this.exec(service, event, params);
+    if (service != null) {
+      this.exec(service, event, params);
+    }
   }
 }
