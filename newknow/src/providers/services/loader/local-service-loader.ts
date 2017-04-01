@@ -37,6 +37,8 @@ export class LocalServiceLoader {
         service['ui'] = data['ui'];
         service['memory'] = {};
         service['event'] = {};
+        service['runtime'] = {};
+        service['runtime']['is_active'] = false;
 
         var forPromise = new ForPromise(service, events.length, resolve);
         var srcPath = this.pathToLocalServices+service_name+'/src/';

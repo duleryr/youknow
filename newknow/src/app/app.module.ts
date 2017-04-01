@@ -4,7 +4,6 @@ import { MyApp } from './app.component';
 import { MapPage } from '../pages/map/map';
 import { ConnectivityService } from '../providers/connectivity-service';
 import {MapProvider} from "../providers/map/map-provider";
-import {ServiceWorker} from "../providers/services/service-worker";
 import {Constants} from "../providers/constants";
 import {NetworkProvider} from "../providers/network/network-provider";
 import {StorageProvider} from "../providers/storage/storage-provider";
@@ -30,6 +29,7 @@ import {MenuPage} from "../pages/menu/menu";
 import {ServiceFooter} from "../providers/services/ui/service-footer";
 import {ServiceMenu} from "../providers/services/ui/service-menu";
 import {EventReceiver} from "../providers/services/event-receiver";
+import {ServiceProvider} from "../providers/services/service-provider";
 
 @NgModule({
   declarations: [
@@ -48,7 +48,7 @@ import {EventReceiver} from "../providers/services/event-receiver";
     MenuPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
-    ConnectivityService, MapProvider, ServiceWorker, Constants,
+    ConnectivityService, MapProvider, ServiceProvider, Constants,
     NetworkProvider, StorageProvider, LocalStorageProvider, ServiceLoader,
     TestServiceLoader, LiveServiceLoader, CustomLogger, ExecutionWrapper,
     FunctionWrapper, LocalServiceLoader, Util, ContextBuilder, MapLoader,

@@ -3,8 +3,15 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {CustomLogger} from '../../logger';
 @Injectable()
-export class ServiceFooter {
 
+
+/**
+ * Comment service footer
+ */ /** */
+export class ServiceFooter {
+  /**
+   * Comment service footer
+   */
   services: any;
   names: any;
   activeService: any;
@@ -28,9 +35,11 @@ export class ServiceFooter {
   }
 
   setActiveService(service) {
+    if (this.activeService != null) {
+      this.activeService['runtime']['is_active'] = false;
+    }
     this.activeService = service;
-    console.log("New active service !");
-    console.log(this.activeService);
+    this.activeService['runtime']['is_active'] = true;
   }
 
   getActiveService() {

@@ -29,13 +29,12 @@ export class EventReceiver {
 
   exec(service, event, params) {
     var context = this.contextBuilder.build(service, params);
-    if (!('is_init' in service)) {
-      service['is_init'] = true;
+    if (!('is_init' in service['runtime'])) {
+      service['runtime']['is_init'] = true;
       this.executionWrapper.wrap(context, service['event']['onInit']).then((res) => {
         this.executionWrapper.wrap(context, service['event'][event]);
       });
     } else {
-      console.log("exec directly"); // ICI
       this.executionWrapper.wrap(context, service['event'][event]);
     }
   }

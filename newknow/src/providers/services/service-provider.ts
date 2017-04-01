@@ -6,7 +6,7 @@ import {CustomLogger} from "../logger";
 import {ServiceMenu} from "./ui/service-menu";
 
 @Injectable()
-export class ServiceWorker {
+export class ServiceProvider {
 
   services: any;
 
@@ -16,15 +16,12 @@ export class ServiceWorker {
   }
 
   init() {
-    this.logger.log("[Service-worker] Constructor");
     this.services = {};
     this.serviceLoader.loadServices().then(services => {
       this.services = services;
-      console.log(this.services);
       for (var name in services) {
         this.serviceMenu.addService(this.services[name], false);
       }
-      this.logger.log("[Service-worker] Services loaded");
     })
   }
 

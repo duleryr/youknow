@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+/**
+ * @module Pages
+ */ /** */
 
+import { Component } from '@angular/core';
+
+/**
+ * Aggregator component for subpages [[MapPage]] and [[FooterPage]].
+ * Inserts those components inside a ion-content tag.
+ */
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
-  }
+  constructor() {}
 
 }
