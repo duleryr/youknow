@@ -8,7 +8,7 @@ export class DynamicLoad {
   constructor(public http: Http) {
   }
 
-  load(apiKey, mapElement): Promise<any> {
+  load(apiKey, mapElement, mapProvider): Promise<any> {
     return Promise.reject("Dynamic load : Not yet implemented");
   }
 

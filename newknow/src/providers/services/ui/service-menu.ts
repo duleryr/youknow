@@ -4,13 +4,14 @@ import 'rxjs/add/operator/map';
 import {ServiceFooter} from "./service-footer";
 import {ExecutionWrapper} from "../execution/execution-wrapper";
 import {ContextBuilder} from "../../context/context-builder";
+import {Events} from "ionic-angular";
 
 @Injectable()
 export class ServiceMenu {
 
   services: any;
 
-  constructor(public http: Http, public serviceFooter: ServiceFooter,
+  constructor(public http: Http, public serviceFooter: ServiceFooter, public events: Events,
               public executionWrapper: ExecutionWrapper, public contextBuilder: ContextBuilder) {
     this.services = [];
 
@@ -36,13 +37,11 @@ export class ServiceMenu {
 
   turnOnDisplay(service) {
     console.log(service);
-    var context = this.contextBuilder.build(service, {});
-    this.executionWrapper.wrap(context, service['event']['onTurnOn']);
+    this.events.publish('er:ui_event', service, 'onTurnOn', {});
   }
 
   turnOffDisplay(service) {
-    var context = this.contextBuilder.build(service, {});
-    this.executionWrapper.wrap(context, service['event']['onTurnOff']);
+    this.events.publish('er:ui_event', service, 'onTurnOff', {});
   }
 
 }

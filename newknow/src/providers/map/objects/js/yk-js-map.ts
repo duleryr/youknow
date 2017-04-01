@@ -4,14 +4,15 @@ import {YkLatLng} from "../yk/yk-lat-lng";
 
 export class YkJsMap extends YkMap {
 
+
   constructor() {
     super("Js");
   }
 
-  load(mapRepr): Promise<any> {
+  load(mapRepr, mapProvider): Promise<any> {
     this.repr = mapRepr;
     this.repr.addListener('bounds_changed', function() {
-      console.log("Bounds changed");
+      mapProvider.events.publish('er:map_event', 'onScroll', {});
     });
     return Promise.resolve("ok");
   }

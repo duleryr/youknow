@@ -24,6 +24,7 @@ export class ServiceLoader {
       'onTurnOn',
       'onTurnOff',
       'onZoom',
+      'onInit',
       'onScroll',
       'onDragMarkDropped'
     ];
