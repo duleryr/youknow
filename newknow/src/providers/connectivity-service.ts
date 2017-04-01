@@ -4,9 +4,9 @@ ConnectivityService
 
  Public interface :
     - isOnline() :
-        true if the device is connected to a network, false otherwhise
+        true if the device is connected to a network, false otherwise
     - isOffline() :
-        true if the device is not connected to a network, false otherwhise
+        true if the device is not connected to a network, false otherwise
  ______________________________________________________________________*/
 
 
@@ -34,10 +34,6 @@ export class ConnectivityService {
   }
 
   isOffline(): boolean {
-    if(this.onDevice && Network.type){
-      return Network.type === Connection.NONE;
-    } else {
-      return !navigator.onLine;
-    }
+    return !this.isOnline();
   }
 }

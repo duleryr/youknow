@@ -3,6 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { MapPage } from '../pages/map/map';
 import { ConnectivityService } from '../providers/connectivity-service';
+import {Autocompletion} from "../providers/map/autocompletion";
 import {MapProvider} from "../providers/map/map-provider";
 import {ServiceWorker} from "../providers/services/service-worker";
 import {Constants} from "../providers/constants";
@@ -24,6 +25,7 @@ import {LoadJsMap} from "../providers/map/loader/load-js-map";
 import {DynamicLoad} from "../providers/map/loader/dynamic-load";
 import {LocationManager} from "../providers/location/location-manager";
 import {Drag} from "../components/drag";
+import {AutocompleteItemsPage} from "../pages/autocomplete-items/autocomplete-items";
 import {FooterPage} from "../pages/footer/footer";
 import {HomePage} from "../pages/home/home";
 import {MenuPage} from "../pages/menu/menu";
@@ -34,7 +36,7 @@ import {ServiceMenu} from "../providers/services/ui/service-menu";
   declarations: [
     MyApp,
     Drag,
-    FooterPage, HomePage, MapPage, MenuPage
+    FooterPage, HomePage, MapPage, MenuPage, AutocompleteItemsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -44,10 +46,11 @@ import {ServiceMenu} from "../providers/services/ui/service-menu";
     MyApp,
     MapPage,
     HomePage,
-    MenuPage
+    MenuPage,
+    AutocompleteItemsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
-    ConnectivityService, MapProvider, ServiceWorker, Constants,
+    ConnectivityService, MapProvider, Autocompletion, ServiceWorker, Constants,
     NetworkProvider, StorageProvider, LocalStorageProvider, ServiceLoader,
     TestServiceLoader, LiveServiceLoader, CustomLogger, ExecutionWrapper,
     FunctionWrapper, LocalServiceLoader, Util, ContextBuilder, MapLoader,

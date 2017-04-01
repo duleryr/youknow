@@ -1,4 +1,10 @@
 <div #map id="map"></div>
+<ion-searchbar #searchbar
+          [(ngModel)]="autocompletion.autoCplt.query" 
+          (ionCancel)="dismiss()" 
+          (ionInput)="updateSearch($event)" 
+          placeholder="Exemple : Toulouse Capitole">
+</ion-searchbar>
 <button class="menu" ion-button menuToggle>
   <ion-icon name="menu"></ion-icon>
 </button>
