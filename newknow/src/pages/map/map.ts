@@ -17,6 +17,7 @@ export class MapPage {
   @ViewChild('map') mapElement: ElementRef;
   @ViewChild('searchbar') searchElement;
   
+  searchbarFocused: boolean;
   popoverTriggered: boolean;
   popover: any;
 
@@ -36,19 +37,29 @@ export class MapPage {
       this.popoverTriggered = false;
     });
     this.popoverTriggered = false;
+    this.searchbarFocused = false;
   }
 
   ngOnInit() {
     this.autocompletion.init();
   }
 
+  getOpacity() {
+    if (!this.searchbarFocused && !this.popoverTriggered) {
+      return '0.5';
+    }
+    return '1';
+  }
+
   /* Appelée lorsque la barre de recherche perd le focus */
   focusLost() {
+    this.searchbarFocused = false;
     this.popoverTriggered = false;
   }
 
   /* Appelée lorsque la barre de recherche gagne le focus */
   focusGot(evt) {
+    this.searchbarFocused = true;
     this.autocompletion.updateSearch().then(() => {
       if (this.autocompletion.autoCpltItems.length != 0 && !this.popoverTriggered) {
         this.presentPopover(evt);

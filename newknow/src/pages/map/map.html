@@ -1,6 +1,7 @@
 <div #map id="map"></div>
 
-<ion-searchbar #searchbar
+<ion-searchbar #searchbar 
+          [style.opacity]="getOpacity()"
           [(ngModel)]="autocompletion.autoCplt.query" 
           (ionBlur)="focusLost()"
           (ionFocus)="focusGot($event)"
