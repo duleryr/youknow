@@ -4,7 +4,9 @@ import { Autocompletion } from '../../providers/map/autocompletion';
 import { AutocompleteItemsPage } from '../autocomplete-items/autocomplete-items';
 import { NavController, Platform, PopoverController } from 'ionic-angular';
 import { ServiceWorker } from "../../providers/services/service-worker";
-import {EventReceiver} from "../../providers/services/event-receiver";
+import { EventReceiver } from "../../providers/services/event-receiver";
+
+/* Map contient la carte, ainsi que tout ce qui est affiché par dessus, boutons, barre de recherche etc. */
 
 @Component({
   selector: 'map-selector',
@@ -36,6 +38,7 @@ export class MapPage {
     this.autocompletion.init();
   }
 
+  /* Appelée lorsque l'on écrit dans la barre de recherche */
   updateSearch(evt, searchbar) {
     this.autocompletion.updateSearch().then(() => {
       console.log("length : " + this.autocompletion.autoCpltItems.length);
@@ -57,6 +60,7 @@ export class MapPage {
     });
   }
 
+  /* Affiche la page d'autocompletion sous forme de popover, en dessous de la barre de recherche */
   presentPopover(evt) {
     this.popover = this.popoverCtrl.create(AutocompleteItemsPage, {}, {
       cssClass: 'locations-popover'
