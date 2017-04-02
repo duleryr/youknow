@@ -41,14 +41,12 @@ export class MapPage {
   /* Appelée lorsque l'on écrit dans la barre de recherche */
   updateSearch(evt, searchbar) {
     this.autocompletion.updateSearch().then(() => {
-      console.log("length : " + this.autocompletion.autoCpltItems.length);
       if (this.autocompletion.autoCpltItems.length != 0) {
         if (!this.popoverTriggered) {
           this.presentPopover(evt);
           this.popoverTriggered = true;
           // Ligne d'en dessous à améliorer, ngZone ou promise ?
           setTimeout(() => {
-            console.log(this.searchElement);
             this.searchElement.setFocus();
           }, 100);
         }

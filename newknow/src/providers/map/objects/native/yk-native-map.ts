@@ -18,7 +18,12 @@ export class YkNativeMap extends YkMap {
   getBounds() {
     this.process_undefined();
   }
+
   addMarker(marker) {
+    this.process_undefined();
+  }
+
+  setCenter(location) {
     this.process_undefined();
   }
 }

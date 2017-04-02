@@ -31,4 +31,5 @@ export abstract class YkMap {
   abstract setOptions(dict);
   abstract getBounds();
   abstract addMarker(marker);
+  abstract setCenter(location);
 }
