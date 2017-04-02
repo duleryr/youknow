@@ -45,10 +45,8 @@ export class Autocompletion {
         self.autoCpltItems = [];            
         if (predictions != null) {
           predictions.forEach(function (prediction) {              
-            console.log(prediction.description);
             self.autoCpltItems.push(prediction);
           });
-          console.log(predictions.length);
         }
         resolve();
       });
