@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Events } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
 declare var google: any; 
@@ -11,7 +12,10 @@ export class Autocompletion {
   acService:any;
   placesService: any;
 
-  constructor() {
+  constructor(public events: Events) {
+    this.events.subscribe('location_choosed', obj => {
+      this.autoCplt.query = '';
+    });
   }
 
   init() {

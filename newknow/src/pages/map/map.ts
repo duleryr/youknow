@@ -2,7 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MapProvider } from '../../providers/map/map-provider';
 import { Autocompletion } from '../../providers/map/autocompletion';
 import { AutocompleteItemsPage } from '../autocomplete-items/autocomplete-items';
-import { NavController, Platform, PopoverController } from 'ionic-angular';
+import { Events, NavController, Platform, PopoverController } from 'ionic-angular';
 import { ServiceWorker } from "../../providers/services/service-worker";
 import { EventReceiver } from "../../providers/services/event-receiver";
 
@@ -23,13 +23,16 @@ export class MapPage {
   constructor(public navCtrl: NavController, public maps: MapProvider,
               public platform: Platform, public serviceWorker: ServiceWorker,
               public autocompletion: Autocompletion, public popoverCtrl: PopoverController,
-              public eventReceiver: EventReceiver) {
+              public eventReceiver: EventReceiver, public events: Events) {
     this.platform.ready().then(() => {
       this.maps.init(this.mapElement.nativeElement).then(() => {
         eventReceiver.init();
         this.serviceWorker.init();
         this.autocompletion.initGoogleAutocompleteService();
       });
+    });
+    this.events.subscribe('location_choosed', obj => {
+      this.popoverTriggered = false;
     });
     this.popoverTriggered = false;
   }

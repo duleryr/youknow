@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { Events, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Autocompletion } from '../../providers/map/autocompletion';
 import { MapProvider } from '../../providers/map/map-provider';
 
@@ -19,7 +19,7 @@ export class AutocompleteItemsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public autocompletion: Autocompletion, public viewCtrl: ViewController,
-              public mapProv: MapProvider) {
+              public mapProv: MapProvider, public events: Events) {
   }
 
   chooseItem(item) {
@@ -35,6 +35,7 @@ export class AutocompleteItemsPage {
       }
     }
     this.viewCtrl.dismiss();
+    this.events.publish('location_choosed', {});
   }
 
 }
