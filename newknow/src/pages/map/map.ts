@@ -31,6 +31,7 @@ export class MapPage {
         this.autocompletion.initGoogleAutocompleteService();
       });
     });
+    // Lorsque l'on choisit une localisation, la popover se ferme, elle n'est plus triggered
     this.events.subscribe('location_choosed', obj => {
       this.popoverTriggered = false;
     });
@@ -39,6 +40,20 @@ export class MapPage {
 
   ngOnInit() {
     this.autocompletion.init();
+  }
+
+  /* Appelée lorsque la barre de recherche perd le focus */
+  focusLost() {
+    this.popoverTriggered = false;
+  }
+
+  /* Appelée lorsque la barre de recherche gagne le focus */
+  focusGot(evt) {
+    this.autocompletion.updateSearch().then(() => {
+      if (this.autocompletion.autoCpltItems.length != 0 && !this.popoverTriggered) {
+        this.presentPopover(evt);
+      }
+    });
   }
 
   /* Appelée lorsque l'on écrit dans la barre de recherche */

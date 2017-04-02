@@ -2,7 +2,8 @@
 
 <ion-searchbar #searchbar
           [(ngModel)]="autocompletion.autoCplt.query" 
-          (ionCancel)="dismiss()" 
+          (ionBlur)="focusLost()"
+          (ionFocus)="focusGot($event)"
           (ionInput)="updateSearch($event)" 
           placeholder="Exemple : Toulouse Capitole">
 </ion-searchbar>
