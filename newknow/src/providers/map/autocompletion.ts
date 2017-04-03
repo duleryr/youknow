@@ -43,6 +43,7 @@ export class Autocompletion {
       let config = { 
         types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
         input: this.autoCplt.query, 
+        componentRestrictions: { country: 'FR' }
       }
       this.acService.getPlacePredictions(config, function (predictions, status) {
         console.log('modal > getPlacePredictions > status > ', status);

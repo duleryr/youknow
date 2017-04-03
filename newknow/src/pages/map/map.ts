@@ -63,6 +63,11 @@ export class MapPage {
     this.autocompletion.updateSearch().then(() => {
       if (this.autocompletion.autoCpltItems.length != 0 && !this.popoverTriggered) {
         this.presentPopover(evt);
+        this.popoverTriggered = true;
+        // Ligne d'en dessous à améliorer, ngZone ou promise ?
+        setTimeout(() => {
+          this.searchElement.setFocus();
+        }, 100);
       }
     });
   }
