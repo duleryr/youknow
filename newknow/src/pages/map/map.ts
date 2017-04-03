@@ -36,7 +36,6 @@ export class MapPage {
     this.events.subscribe('location_choosed', obj => {
       this.popoverTriggered = false;
     });
-    this.popoverTriggered = false;
     this.searchbarFocused = false;
   }
 
@@ -44,8 +43,9 @@ export class MapPage {
     this.autocompletion.init();
   }
 
+  /* Barre à moitié transparente lorsqu'elle n'a pas le focus */
   getOpacity() {
-    if (!this.searchbarFocused && !this.popoverTriggered) {
+    if (!this.searchbarFocused) {
       return '0.5';
     }
     return '1';
@@ -59,37 +59,20 @@ export class MapPage {
 
   /* Appelée lorsque la barre de recherche gagne le focus */
   focusGot(evt) {
+    if (!this.popoverTriggered) {
+      this.presentPopover(evt);
+      this.popoverTriggered = true;
+      setTimeout(() => {
+        this.searchElement.setFocus();
+      }, 150);
+    }
     this.searchbarFocused = true;
-    this.autocompletion.updateSearch().then(() => {
-      if (this.autocompletion.autoCpltItems.length != 0 && !this.popoverTriggered) {
-        this.presentPopover(evt);
-        this.popoverTriggered = true;
-        // Ligne d'en dessous à améliorer, ngZone ou promise ?
-        setTimeout(() => {
-          this.searchElement.setFocus();
-        }, 100);
-      }
-    });
+    this.autocompletion.updateSearch().then(() => { });
   }
 
   /* Appelée lorsque l'on écrit dans la barre de recherche */
   updateSearch(evt, searchbar) {
-    this.autocompletion.updateSearch().then(() => {
-      if (this.autocompletion.autoCpltItems.length != 0) {
-        if (!this.popoverTriggered) {
-          this.presentPopover(evt);
-          this.popoverTriggered = true;
-          // Ligne d'en dessous à améliorer, ngZone ou promise ?
-          setTimeout(() => {
-            this.searchElement.setFocus();
-          }, 100);
-        }
-      } else {
-        console.log("dismiss popover");
-        this.popoverTriggered = false;
-        this.popover.dismiss();
-      }
-    });
+    this.autocompletion.updateSearch().then(() => { });
   }
 
   /* Affiche la page d'autocompletion sous forme de popover, en dessous de la barre de recherche */
