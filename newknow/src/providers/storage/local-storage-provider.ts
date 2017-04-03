@@ -3,9 +3,5 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class LocalStorageProvider {
-
-
   constructor() {}
-
-
 }
