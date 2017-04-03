@@ -1,4 +1,14 @@
 <div #map id="map"></div>
+
+<ion-searchbar #searchbar 
+          [style.opacity]="getOpacity()"
+          [(ngModel)]="autocompletion.autoCplt.query" 
+          (ionBlur)="focusLost()"
+          (ionFocus)="focusGot($event)"
+          (ionInput)="updateSearch($event)" 
+          placeholder="Exemple : Toulouse Capitole">
+</ion-searchbar>
+
 <button class="menu" ion-button menuToggle>
   <ion-icon name="menu"></ion-icon>
 </button>

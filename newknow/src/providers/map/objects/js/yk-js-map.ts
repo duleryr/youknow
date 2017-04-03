@@ -32,7 +32,12 @@ export class YkJsMap extends YkMap {
       return new YkLatLngBounds(new YkLatLng(ew.lat(), ew.lng()), new YkLatLng(ne.lat(), ne.lng()));
     }
   }
+
   addMarker(marker) {
 
+  }
+
+  setCenter(location) {
+    this.repr.setCenter(location);
   }
 }

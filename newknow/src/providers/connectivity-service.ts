@@ -38,10 +38,6 @@ export class ConnectivityService {
    * @returns {boolean} True if the device is not connected to a network, false otherwhise
    */
   isOffline(): boolean {
-    if(this.onDevice && Network.type){
-      return Network.type === Connection.NONE;
-    } else {
-      return !navigator.onLine;
-    }
+    return !this.isOnline();
   }
 }
