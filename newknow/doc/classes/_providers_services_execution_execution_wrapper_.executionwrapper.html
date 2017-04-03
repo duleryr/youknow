@@ -69,6 +69,14 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Provider used to execute any javascript code for a service with the <a href="_providers_services_execution_execution_wrapper_.executionwrapper.html#wrap">wrap</a> method.
+						Called from <a href="_providers_services_event_receiver_.eventreceiver.html">EventReceiver</a>.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -92,7 +100,6 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_execution_execution_wrapper_.executionwrapper.html#constants" class="tsd-kind-icon">constants</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_execution_execution_wrapper_.executionwrapper.html#functionwrapper" class="tsd-kind-icon">function<wbr>Wrapper</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_execution_execution_wrapper_.executionwrapper.html#http" class="tsd-kind-icon">http</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_execution_execution_wrapper_.executionwrapper.html#logger" class="tsd-kind-icon">logger</a></li>
 							</ul>
 						</section>
@@ -111,28 +118,42 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Execution<wbr>Wrapper<span class="tsd-signature-symbol">(</span>http<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Http</span>, logger<span class="tsd-signature-symbol">: </span><a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a>, constants<span class="tsd-signature-symbol">: </span><a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a>, functionWrapper<span class="tsd-signature-symbol">: </span><a href="_providers_services_execution_function_wrapper_.functionwrapper.html" class="tsd-signature-type">FunctionWrapper</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_execution_execution_wrapper_.executionwrapper.html" class="tsd-signature-type">ExecutionWrapper</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Execution<wbr>Wrapper<span class="tsd-signature-symbol">(</span>logger<span class="tsd-signature-symbol">: </span><a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a>, constants<span class="tsd-signature-symbol">: </span><a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a>, functionWrapper<span class="tsd-signature-symbol">: </span><a href="_providers_services_execution_function_wrapper_.functionwrapper.html" class="tsd-signature-type">FunctionWrapper</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_execution_execution_wrapper_.executionwrapper.html" class="tsd-signature-type">ExecutionWrapper</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/execution/execution-wrapper.ts:9</li>
+									<li>Defined in providers/services/execution/execution-wrapper.ts:16</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>http: <span class="tsd-signature-type">Http</span></h5>
-								</li>
-								<li>
 									<h5>logger: <a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_logger_.customlogger.html">CustomLogger</a> provider</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>constants: <a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_constants_.constants.html">Constants</a> provider used to know which policy use for the wrapper.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>functionWrapper: <a href="_providers_services_execution_function_wrapper_.functionwrapper.html" class="tsd-signature-type">FunctionWrapper</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_services_execution_function_wrapper_.functionwrapper.html">FunctionWrapper</a> provider used for the &#39;function&#39; wrapper policy</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_providers_services_execution_execution_wrapper_.executionwrapper.html" class="tsd-signature-type">ExecutionWrapper</a></h4>
@@ -148,9 +169,14 @@
 					<div class="tsd-signature tsd-kind-icon">constants<span class="tsd-signature-symbol">:</span> <a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/execution/execution-wrapper.ts:13</li>
+							<li>Defined in providers/services/execution/execution-wrapper.ts:24</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_constants_.constants.html">Constants</a> provider used to know which policy use for the wrapper.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="functionwrapper" class="tsd-anchor"></a>
@@ -158,19 +184,14 @@
 					<div class="tsd-signature tsd-kind-icon">function<wbr>Wrapper<span class="tsd-signature-symbol">:</span> <a href="_providers_services_execution_function_wrapper_.functionwrapper.html" class="tsd-signature-type">FunctionWrapper</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/execution/execution-wrapper.ts:13</li>
+							<li>Defined in providers/services/execution/execution-wrapper.ts:25</li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="http" class="tsd-anchor"></a>
-					<h3>http</h3>
-					<div class="tsd-signature tsd-kind-icon">http<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Http</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in providers/services/execution/execution-wrapper.ts:12</li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_services_execution_function_wrapper_.functionwrapper.html">FunctionWrapper</a> provider used for the &#39;function&#39; wrapper policy</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="logger" class="tsd-anchor"></a>
@@ -178,9 +199,14 @@
 					<div class="tsd-signature tsd-kind-icon">logger<span class="tsd-signature-symbol">:</span> <a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/execution/execution-wrapper.ts:12</li>
+							<li>Defined in providers/services/execution/execution-wrapper.ts:24</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_logger_.customlogger.html">CustomLogger</a> provider</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -189,25 +215,39 @@
 					<a name="wrap" class="tsd-anchor"></a>
 					<h3>wrap</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">wrap<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">wrap<span class="tsd-signature-symbol">(</span>context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/execution/execution-wrapper.ts:17</li>
+									<li>Defined in providers/services/execution/execution-wrapper.ts:35</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Executes &#39;code&#39; with given &#39;context&#39;.
+										The policy to be used is in the field &#39;wrapperPolicy&#39; of <a href="_providers_constants_.constants.html">Constants</a>.
+									Accepted value is : &#39;function&#39; (<a href="_providers_services_execution_function_wrapper_.functionwrapper.html">FunctionWrapper</a>).</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>context: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Context which is to be accessible from the code</p>
+									</div>
 								</li>
 								<li>
-									<h5>code: <span class="tsd-signature-type">any</span></h5>
+									<h5>code: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Code to be executed</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>resolves true if the wrapper was successful, rejects otherwise</p>
 						</li>
 					</ul>
 				</section>
@@ -239,9 +279,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_execution_execution_wrapper_.executionwrapper.html#functionwrapper" class="tsd-kind-icon">function<wbr>Wrapper</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_services_execution_execution_wrapper_.executionwrapper.html#http" class="tsd-kind-icon">http</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_execution_execution_wrapper_.executionwrapper.html#logger" class="tsd-kind-icon">logger</a>

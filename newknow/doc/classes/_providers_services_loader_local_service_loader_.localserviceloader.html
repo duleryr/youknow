@@ -69,6 +69,14 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Class to load the services on the local file system with the <a href="_providers_services_loader_local_service_loader_.localserviceloader.html#loadservices">loadServices</a> method.
+						This should only be accessible from <a href="_providers_services_loader_service_loader_.serviceloader.html">ServiceLoader</a>.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -91,19 +99,18 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#constants" class="tsd-kind-icon">constants</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#globalserviceconfig" class="tsd-kind-icon">global<wbr>Service<wbr>Config</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#http" class="tsd-kind-icon">http</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#individialserviceconfig" class="tsd-kind-icon">individial<wbr>Service<wbr>Config</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#globalserviceconfig" class="tsd-kind-icon">global<wbr>Service<wbr>Config</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#individualserviceconfig" class="tsd-kind-icon">individual<wbr>Service<wbr>Config</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#logger" class="tsd-kind-icon">logger</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#pathtolocalservices" class="tsd-kind-icon">path<wbr>ToLocal<wbr>Services</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#relativepathtoroot" class="tsd-kind-icon">relative<wbr>Path<wbr>ToRoot</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#pathtolocalservices" class="tsd-kind-icon">path<wbr>ToLocal<wbr>Services</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#relativepathtoroot" class="tsd-kind-icon">relative<wbr>Path<wbr>ToRoot</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#util" class="tsd-kind-icon">util</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#loadservice" class="tsd-kind-icon">load<wbr>Service</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#loadservice" class="tsd-kind-icon">load<wbr>Service</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_services_loader_local_service_loader_.localserviceloader.html#loadservices" class="tsd-kind-icon">load<wbr>Services</a></li>
 							</ul>
 						</section>
@@ -116,28 +123,47 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Local<wbr>Service<wbr>Loader<span class="tsd-signature-symbol">(</span>http<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Http</span>, logger<span class="tsd-signature-symbol">: </span><a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a>, constants<span class="tsd-signature-symbol">: </span><a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a>, util<span class="tsd-signature-symbol">: </span><a href="_providers_util_util_.util.html" class="tsd-signature-type">Util</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_loader_local_service_loader_.localserviceloader.html" class="tsd-signature-type">LocalServiceLoader</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Local<wbr>Service<wbr>Loader<span class="tsd-signature-symbol">(</span>logger<span class="tsd-signature-symbol">: </span><a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a>, constants<span class="tsd-signature-symbol">: </span><a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a>, util<span class="tsd-signature-symbol">: </span><a href="_providers_util_util_.util.html" class="tsd-signature-type">Util</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_loader_local_service_loader_.localserviceloader.html" class="tsd-signature-type">LocalServiceLoader</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/loader/local-service-loader.ts:15</li>
+									<li>Defined in providers/services/loader/local-service-loader.ts:37</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Initializes variables <a href="_providers_services_loader_local_service_loader_.localserviceloader.html#relativepathtoroot">relativePathToRoot</a>, <a href="_providers_services_loader_local_service_loader_.localserviceloader.html#pathtolocalservices">pathToLocalServices</a>, <a href="_providers_services_loader_local_service_loader_.localserviceloader.html#globalserviceconfig">globalServiceConfig</a>,
+									<a href="_providers_services_loader_local_service_loader_.localserviceloader.html#individualserviceconfig">individualServiceConfig</a>.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>http: <span class="tsd-signature-type">Http</span></h5>
-								</li>
-								<li>
 									<h5>logger: <a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_logger_.customlogger.html">CustomLogger</a></p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>constants: <a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_constants_.constants.html">Constants</a> provider used to know where the services are stored with the
+											&#39;localServicesPath&#39; entry.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>util: <a href="_providers_util_util_.util.html" class="tsd-signature-type">Util</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_util_util_.util.html">Util</a> provider used to read the files in the local file system.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_providers_services_loader_local_service_loader_.localserviceloader.html" class="tsd-signature-type">LocalServiceLoader</a></h4>
@@ -153,39 +179,45 @@
 					<div class="tsd-signature tsd-kind-icon">constants<span class="tsd-signature-symbol">:</span> <a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/loader/local-service-loader.ts:17</li>
+							<li>Defined in providers/services/loader/local-service-loader.ts:47</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_constants_.constants.html">Constants</a> provider used to know where the services are stored with the
+							&#39;localServicesPath&#39; entry.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="globalserviceconfig" class="tsd-anchor"></a>
-					<h3>global<wbr>Service<wbr>Config</h3>
-					<div class="tsd-signature tsd-kind-icon">global<wbr>Service<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> global<wbr>Service<wbr>Config</h3>
+					<div class="tsd-signature tsd-kind-icon">global<wbr>Service<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/loader/local-service-loader.ts:14</li>
+							<li>Defined in providers/services/loader/local-service-loader.ts:32</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Filename of the json file indexing the services.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="http" class="tsd-anchor"></a>
-					<h3>http</h3>
-					<div class="tsd-signature tsd-kind-icon">http<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Http</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="individualserviceconfig" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> individual<wbr>Service<wbr>Config</h3>
+					<div class="tsd-signature tsd-kind-icon">individual<wbr>Service<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/loader/local-service-loader.ts:17</li>
+							<li>Defined in providers/services/loader/local-service-loader.ts:37</li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="individialserviceconfig" class="tsd-anchor"></a>
-					<h3>individial<wbr>Service<wbr>Config</h3>
-					<div class="tsd-signature tsd-kind-icon">individial<wbr>Service<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in providers/services/loader/local-service-loader.ts:15</li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Filename of the json file used by the services to configure themselves.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="logger" class="tsd-anchor"></a>
@@ -193,29 +225,44 @@
 					<div class="tsd-signature tsd-kind-icon">logger<span class="tsd-signature-symbol">:</span> <a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/loader/local-service-loader.ts:17</li>
+							<li>Defined in providers/services/loader/local-service-loader.ts:47</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_logger_.customlogger.html">CustomLogger</a></p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="pathtolocalservices" class="tsd-anchor"></a>
-					<h3>path<wbr>ToLocal<wbr>Services</h3>
-					<div class="tsd-signature tsd-kind-icon">path<wbr>ToLocal<wbr>Services<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> path<wbr>ToLocal<wbr>Services</h3>
+					<div class="tsd-signature tsd-kind-icon">path<wbr>ToLocal<wbr>Services<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/loader/local-service-loader.ts:13</li>
+							<li>Defined in providers/services/loader/local-service-loader.ts:27</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Path from the root of the project to the directory where services are stored.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="relativepathtoroot" class="tsd-anchor"></a>
-					<h3>relative<wbr>Path<wbr>ToRoot</h3>
-					<div class="tsd-signature tsd-kind-icon">relative<wbr>Path<wbr>ToRoot<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> relative<wbr>Path<wbr>ToRoot</h3>
+					<div class="tsd-signature tsd-kind-icon">relative<wbr>Path<wbr>ToRoot<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/loader/local-service-loader.ts:12</li>
+							<li>Defined in providers/services/loader/local-service-loader.ts:22</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Path from this file to the root of the project.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="util" class="tsd-anchor"></a>
@@ -223,36 +270,54 @@
 					<div class="tsd-signature tsd-kind-icon">util<span class="tsd-signature-symbol">:</span> <a href="_providers_util_util_.util.html" class="tsd-signature-type">Util</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/loader/local-service-loader.ts:18</li>
+							<li>Defined in providers/services/loader/local-service-loader.ts:48</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_util_util_.util.html">Util</a> provider used to read the files in the local file system.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
 					<a name="loadservice" class="tsd-anchor"></a>
-					<h3>load<wbr>Service</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> load<wbr>Service</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
 						<li class="tsd-signature tsd-kind-icon">load<wbr>Service<span class="tsd-signature-symbol">(</span>service_name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, events<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/loader/local-service-loader.ts:25</li>
+									<li>Defined in providers/services/loader/local-service-loader.ts:62</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Private method to load a specific service. Called from <a href="_providers_services_loader_local_service_loader_.localserviceloader.html#loadservices">loadServices</a></p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>service_name: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Name of the service to be loaded</p>
+									</div>
 								</li>
 								<li>
 									<h5>events: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Events to load for the service</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Resolves a dictionary with data for the service.
+							Rejects if the individual service configuration file can&#39;t be read properly.</p>
 						</li>
 					</ul>
 				</section>
@@ -266,16 +331,25 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/loader/local-service-loader.ts:71</li>
+									<li>Defined in providers/services/loader/local-service-loader.ts:114</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Load the services on a distant server.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>events: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Specific events to load for the services if they exist</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>resolves dictionary containing data for the services.</p>
 						</li>
 					</ul>
 				</section>
@@ -305,28 +379,25 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_loader_local_service_loader_.localserviceloader.html#constants" class="tsd-kind-icon">constants</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_providers_services_loader_local_service_loader_.localserviceloader.html#globalserviceconfig" class="tsd-kind-icon">global<wbr>Service<wbr>Config</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_services_loader_local_service_loader_.localserviceloader.html#http" class="tsd-kind-icon">http</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_services_loader_local_service_loader_.localserviceloader.html#individialserviceconfig" class="tsd-kind-icon">individial<wbr>Service<wbr>Config</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_providers_services_loader_local_service_loader_.localserviceloader.html#individualserviceconfig" class="tsd-kind-icon">individual<wbr>Service<wbr>Config</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_loader_local_service_loader_.localserviceloader.html#logger" class="tsd-kind-icon">logger</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_providers_services_loader_local_service_loader_.localserviceloader.html#pathtolocalservices" class="tsd-kind-icon">path<wbr>ToLocal<wbr>Services</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_providers_services_loader_local_service_loader_.localserviceloader.html#relativepathtoroot" class="tsd-kind-icon">relative<wbr>Path<wbr>ToRoot</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_loader_local_service_loader_.localserviceloader.html#util" class="tsd-kind-icon">util</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="_providers_services_loader_local_service_loader_.localserviceloader.html#loadservice" class="tsd-kind-icon">load<wbr>Service</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">

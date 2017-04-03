@@ -32,7 +32,7 @@ export class MenuPage {
    * Called when the user checks or un-checks a service in the left menu.
    * The checkbox is related to the field 'activated' of the service.
    * Transmits the event to [[ServiceMenu]] by calling [[ServiceMenu.onToggle]]
-   * @param service
+   * @param service Service toggled by the user
    */
   onToggle(service) {
     this.serviceMenu.onToggle(service);

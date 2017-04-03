@@ -15,8 +15,8 @@ import {ServiceFooter} from "../../providers/services/ui/service-footer";
 })
 export class FooterPage {
   /**
- * Last fab button that was clicked by the user.
- */
+  * Last fab button that was clicked by the user.
+  */
   lastOpenedFab: any;
 
   /**
@@ -28,7 +28,7 @@ export class FooterPage {
 
   /**
    * Called by the view 'footer.html' when a FabButton is clicked by the user.
-   * Close the [[lastOpenedFab]], set it's value and notify the serviceFooter provider
+   * Close the [[lastOpenedFab]], set it's value and notify the [[serviceFooter]] provider
    * @param fab FabButton object that was clicked
    * @param service service associated with the FabButton
    */

@@ -69,6 +69,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Provider receiving all events that should get a treatment from one or several services.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -90,12 +97,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_providers_services_event_receiver_.eventreceiver.html#receiver_code" class="tsd-kind-icon">RECEIVER_<wbr>CODE</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_event_receiver_.eventreceiver.html#contextbuilder" class="tsd-kind-icon">context<wbr>Builder</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_event_receiver_.eventreceiver.html#events" class="tsd-kind-icon">events</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_event_receiver_.eventreceiver.html#executionwrapper" class="tsd-kind-icon">execution<wbr>Wrapper</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_event_receiver_.eventreceiver.html#http" class="tsd-kind-icon">http</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_event_receiver_.eventreceiver.html#mapprovider" class="tsd-kind-icon">map<wbr>Provider</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_event_receiver_.eventreceiver.html#servicefooter" class="tsd-kind-icon">service<wbr>Footer</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_event_receiver_.eventreceiver.html#services" class="tsd-kind-icon">services</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -115,31 +122,59 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Event<wbr>Receiver<span class="tsd-signature-symbol">(</span>http<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Http</span>, executionWrapper<span class="tsd-signature-symbol">: </span><a href="_providers_services_execution_execution_wrapper_.executionwrapper.html" class="tsd-signature-type">ExecutionWrapper</a>, contextBuilder<span class="tsd-signature-symbol">: </span><a href="_providers_context_context_builder_.contextbuilder.html" class="tsd-signature-type">ContextBuilder</a>, events<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Events</span>, serviceFooter<span class="tsd-signature-symbol">: </span><a href="_providers_services_ui_service_footer_.servicefooter.html" class="tsd-signature-type">ServiceFooter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_event_receiver_.eventreceiver.html" class="tsd-signature-type">EventReceiver</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Event<wbr>Receiver<span class="tsd-signature-symbol">(</span>executionWrapper<span class="tsd-signature-symbol">: </span><a href="_providers_services_execution_execution_wrapper_.executionwrapper.html" class="tsd-signature-type">ExecutionWrapper</a>, contextBuilder<span class="tsd-signature-symbol">: </span><a href="_providers_context_context_builder_.contextbuilder.html" class="tsd-signature-type">ContextBuilder</a>, events<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Events</span>, serviceFooter<span class="tsd-signature-symbol">: </span><a href="_providers_services_ui_service_footer_.servicefooter.html" class="tsd-signature-type">ServiceFooter</a>, mapProvider<span class="tsd-signature-symbol">: </span><a href="_providers_map_map_provider_.mapprovider.html" class="tsd-signature-type">MapProvider</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_event_receiver_.eventreceiver.html" class="tsd-signature-type">EventReceiver</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/event-receiver.ts:12</li>
+									<li>Defined in providers/services/event-receiver.ts:20</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>http: <span class="tsd-signature-type">Http</span></h5>
-								</li>
-								<li>
 									<h5>executionWrapper: <a href="_providers_services_execution_execution_wrapper_.executionwrapper.html" class="tsd-signature-type">ExecutionWrapper</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_services_execution_execution_wrapper_.executionwrapper.html">ExecutionWrapper</a> provider.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>contextBuilder: <a href="_providers_context_context_builder_.contextbuilder.html" class="tsd-signature-type">ContextBuilder</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_context_context_builder_.contextbuilder.html">ContextBuilder</a> provider used to build the context that will be given to
+											the service.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>events: <span class="tsd-signature-type">Events</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Ionic2 events.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>serviceFooter: <a href="_providers_services_ui_service_footer_.servicefooter.html" class="tsd-signature-type">ServiceFooter</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_services_ui_service_footer_.servicefooter.html">ServiceFooter</a> used to retrieve the active service.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>mapProvider: <a href="_providers_map_map_provider_.mapprovider.html" class="tsd-signature-type">MapProvider</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_map_map_provider_.mapprovider.html">MapProvider</a> used to retrieve the map.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_providers_services_event_receiver_.eventreceiver.html" class="tsd-signature-type">EventReceiver</a></h4>
@@ -149,15 +184,42 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="receiver_code" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> RECEIVER_<wbr>CODE</h3>
+					<div class="tsd-signature tsd-kind-icon">RECEIVER_<wbr>CODE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;er&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in providers/services/event-receiver.ts:20</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Receiver code used to identify this event receiver. All events sent to this receiver must be prefixed
+							with this identifier. See <a href="_providers_services_event_receiver_.eventreceiver.html#init">init</a> method for more details.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{string}</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="contextbuilder" class="tsd-anchor"></a>
 					<h3>context<wbr>Builder</h3>
 					<div class="tsd-signature tsd-kind-icon">context<wbr>Builder<span class="tsd-signature-symbol">:</span> <a href="_providers_context_context_builder_.contextbuilder.html" class="tsd-signature-type">ContextBuilder</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/event-receiver.ts:15</li>
+							<li>Defined in providers/services/event-receiver.ts:32</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_context_context_builder_.contextbuilder.html">ContextBuilder</a> provider used to build the context that will be given to
+							the service.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="events" class="tsd-anchor"></a>
@@ -165,9 +227,14 @@
 					<div class="tsd-signature tsd-kind-icon">events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Events</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/event-receiver.ts:15</li>
+							<li>Defined in providers/services/event-receiver.ts:32</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Ionic2 events.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="executionwrapper" class="tsd-anchor"></a>
@@ -175,19 +242,29 @@
 					<div class="tsd-signature tsd-kind-icon">execution<wbr>Wrapper<span class="tsd-signature-symbol">:</span> <a href="_providers_services_execution_execution_wrapper_.executionwrapper.html" class="tsd-signature-type">ExecutionWrapper</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/event-receiver.ts:14</li>
+							<li>Defined in providers/services/event-receiver.ts:31</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_services_execution_execution_wrapper_.executionwrapper.html">ExecutionWrapper</a> provider.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="http" class="tsd-anchor"></a>
-					<h3>http</h3>
-					<div class="tsd-signature tsd-kind-icon">http<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Http</span></div>
+					<a name="mapprovider" class="tsd-anchor"></a>
+					<h3>map<wbr>Provider</h3>
+					<div class="tsd-signature tsd-kind-icon">map<wbr>Provider<span class="tsd-signature-symbol">:</span> <a href="_providers_map_map_provider_.mapprovider.html" class="tsd-signature-type">MapProvider</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/event-receiver.ts:14</li>
+							<li>Defined in providers/services/event-receiver.ts:33</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_map_map_provider_.mapprovider.html">MapProvider</a> used to retrieve the map.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="servicefooter" class="tsd-anchor"></a>
@@ -195,19 +272,14 @@
 					<div class="tsd-signature tsd-kind-icon">service<wbr>Footer<span class="tsd-signature-symbol">:</span> <a href="_providers_services_ui_service_footer_.servicefooter.html" class="tsd-signature-type">ServiceFooter</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/event-receiver.ts:16</li>
+							<li>Defined in providers/services/event-receiver.ts:33</li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="services" class="tsd-anchor"></a>
-					<h3>services</h3>
-					<div class="tsd-signature tsd-kind-icon">services<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in providers/services/event-receiver.ts:12</li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_services_ui_service_footer_.servicefooter.html">ServiceFooter</a> used to retrieve the active service.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -222,19 +294,34 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/event-receiver.ts:30</li>
+									<li>Defined in providers/services/event-receiver.ts:66</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Execute the code of a service when an event happens. Execute before the &#39;onInit&#39; event
+									it this is the first time the service is called.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>service: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Service that is to be executed.</p>
+									</div>
 								</li>
 								<li>
 									<h5>event: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Event that the service should react to.</p>
+									</div>
 								</li>
 								<li>
 									<h5>params: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Additional parameters that will be given to the service.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -251,16 +338,27 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/event-receiver.ts:41</li>
+									<li>Defined in providers/services/event-receiver.ts:83</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Call <a href="_providers_services_event_receiver_.eventreceiver.html#exec">exec</a> on the active service of the footer</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>event: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Event that the service should react to.</p>
+									</div>
 								</li>
 								<li>
 									<h5>params: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Additional parameters that will be given to the service.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -277,9 +375,23 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/event-receiver.ts:20</li>
+									<li>Defined in providers/services/event-receiver.ts:46</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Subscribe to all events this provider is supposed to react. Event names respect the pattern
+										&#39;<RECEIVER_CODE>:<EVENT_NAME>&#39;, and can have any number of additional parameters.
+									The <RECEIVER_CODE> for <a href="_providers_services_event_receiver_.eventreceiver.html">EventReceiver</a> is &#39;er&#39;. Subscribed events are :</p>
+								</div>
+								<ul>
+									<li><p>&#39;map_event&#39; : This event is emitted by the background map when the user interacts with it.</p>
+									</li>
+									<li><p>&#39;ui_event&#39; : This event is emitted by the YouKnow user interface (left menu, footer, other buttons, ...)</p>
+									</li>
+								</ul>
+								<p>Called from <a href="_pages_map_map_.mappage.html">MapPage</a></p>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -307,6 +419,9 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="_providers_services_event_receiver_.eventreceiver.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_providers_services_event_receiver_.eventreceiver.html#receiver_code" class="tsd-kind-icon">RECEIVER_<wbr>CODE</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_event_receiver_.eventreceiver.html#contextbuilder" class="tsd-kind-icon">context<wbr>Builder</a>
 							</li>
@@ -317,13 +432,10 @@
 								<a href="_providers_services_event_receiver_.eventreceiver.html#executionwrapper" class="tsd-kind-icon">execution<wbr>Wrapper</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_services_event_receiver_.eventreceiver.html#http" class="tsd-kind-icon">http</a>
+								<a href="_providers_services_event_receiver_.eventreceiver.html#mapprovider" class="tsd-kind-icon">map<wbr>Provider</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_event_receiver_.eventreceiver.html#servicefooter" class="tsd-kind-icon">service<wbr>Footer</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_services_event_receiver_.eventreceiver.html#services" class="tsd-kind-icon">services</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_providers_services_event_receiver_.eventreceiver.html#exec" class="tsd-kind-icon">exec</a>

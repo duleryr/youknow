@@ -69,6 +69,15 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Public interface of the <a href="_providers_services_loader_service_loader_.serviceloader.html">ServiceLoader</a> module. Called from <a href="_providers_services_service_provider_.serviceprovider.html">ServiceProvider</a>.
+							Load the services in memory with the <a href="_providers_map_objects_yk_yk_map_.ykmap.html#load">load</a> method. This method is meant to be called once
+						at the start of the application.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -91,8 +100,7 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_service_loader_.serviceloader.html#constants" class="tsd-kind-icon">constants</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_service_loader_.serviceloader.html#eventstolookfor" class="tsd-kind-icon">events<wbr>ToLook<wbr>For</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_service_loader_.serviceloader.html#http" class="tsd-kind-icon">http</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_providers_services_loader_service_loader_.serviceloader.html#eventstolookfor" class="tsd-kind-icon">events<wbr>ToLook<wbr>For</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_service_loader_.serviceloader.html#liveserviceloader" class="tsd-kind-icon">live<wbr>Service<wbr>Loader</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_service_loader_.serviceloader.html#localserviceloader" class="tsd-kind-icon">local<wbr>Service<wbr>Loader</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_loader_service_loader_.serviceloader.html#logger" class="tsd-kind-icon">logger</a></li>
@@ -102,7 +110,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_services_loader_service_loader_.serviceloader.html#filleventstoload" class="tsd-kind-icon">fill<wbr>Events<wbr>ToLoad</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_providers_services_loader_service_loader_.serviceloader.html#filleventstoload" class="tsd-kind-icon">fill<wbr>Events<wbr>ToLoad</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_services_loader_service_loader_.serviceloader.html#loadservices" class="tsd-kind-icon">load<wbr>Services</a></li>
 							</ul>
 						</section>
@@ -115,34 +123,61 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Service<wbr>Loader<span class="tsd-signature-symbol">(</span>http<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Http</span>, constants<span class="tsd-signature-symbol">: </span><a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a>, testServiceLoader<span class="tsd-signature-symbol">: </span><a href="_providers_services_loader_test_service_loader_.testserviceloader.html" class="tsd-signature-type">TestServiceLoader</a>, liveServiceLoader<span class="tsd-signature-symbol">: </span><a href="_providers_services_loader_live_service_loader_.liveserviceloader.html" class="tsd-signature-type">LiveServiceLoader</a>, localServiceLoader<span class="tsd-signature-symbol">: </span><a href="_providers_services_loader_local_service_loader_.localserviceloader.html" class="tsd-signature-type">LocalServiceLoader</a>, logger<span class="tsd-signature-symbol">: </span><a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_loader_service_loader_.serviceloader.html" class="tsd-signature-type">ServiceLoader</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Service<wbr>Loader<span class="tsd-signature-symbol">(</span>constants<span class="tsd-signature-symbol">: </span><a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a>, testServiceLoader<span class="tsd-signature-symbol">: </span><a href="_providers_services_loader_test_service_loader_.testserviceloader.html" class="tsd-signature-type">TestServiceLoader</a>, liveServiceLoader<span class="tsd-signature-symbol">: </span><a href="_providers_services_loader_live_service_loader_.liveserviceloader.html" class="tsd-signature-type">LiveServiceLoader</a>, localServiceLoader<span class="tsd-signature-symbol">: </span><a href="_providers_services_loader_local_service_loader_.localserviceloader.html" class="tsd-signature-type">LocalServiceLoader</a>, logger<span class="tsd-signature-symbol">: </span><a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_loader_service_loader_.serviceloader.html" class="tsd-signature-type">ServiceLoader</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/loader/service-loader.ts:13</li>
+									<li>Defined in providers/services/loader/service-loader.ts:26</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>http: <span class="tsd-signature-type">Http</span></h5>
-								</li>
-								<li>
 									<h5>constants: <a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_constants_.constants.html">Constants</a> provider used to know which policy use to load the services.
+												Accepted values are &#39;test&#39;, &#39;live&#39;, and &#39;local&#39;. The policy is in the &#39;serviceLoaderPolicy&#39; of
+											<a href="_providers_constants_.constants.html">Constants</a>.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>testServiceLoader: <a href="_providers_services_loader_test_service_loader_.testserviceloader.html" class="tsd-signature-type">TestServiceLoader</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_services_loader_test_service_loader_.testserviceloader.html">TestServiceLoader</a> provider, used by the &#39;test&#39; policy.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>liveServiceLoader: <a href="_providers_services_loader_live_service_loader_.liveserviceloader.html" class="tsd-signature-type">LiveServiceLoader</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_services_loader_live_service_loader_.liveserviceloader.html">LiveServiceLoader</a> provider, used by the &#39;live&#39; policy. This is the
+											policy meant to be used in production.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>localServiceLoader: <a href="_providers_services_loader_local_service_loader_.localserviceloader.html" class="tsd-signature-type">LocalServiceLoader</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_services_loader_local_service_loader_.localserviceloader.html">LocalServiceLoader</a> provider, used by the &#39;local&#39; policy.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>logger: <a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_logger_.customlogger.html">CustomLogger</a></p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_providers_services_loader_service_loader_.serviceloader.html" class="tsd-signature-type">ServiceLoader</a></h4>
@@ -158,29 +193,32 @@
 					<div class="tsd-signature tsd-kind-icon">constants<span class="tsd-signature-symbol">:</span> <a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/loader/service-loader.ts:15</li>
+							<li>Defined in providers/services/loader/service-loader.ts:38</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_constants_.constants.html">Constants</a> provider used to know which policy use to load the services.
+								Accepted values are &#39;test&#39;, &#39;live&#39;, and &#39;local&#39;. The policy is in the &#39;serviceLoaderPolicy&#39; of
+							<a href="_providers_constants_.constants.html">Constants</a>.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="eventstolookfor" class="tsd-anchor"></a>
-					<h3>events<wbr>ToLook<wbr>For</h3>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> events<wbr>ToLook<wbr>For</h3>
 					<div class="tsd-signature tsd-kind-icon">events<wbr>ToLook<wbr>For<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/loader/service-loader.ts:13</li>
+							<li>Defined in providers/services/loader/service-loader.ts:26</li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="http" class="tsd-anchor"></a>
-					<h3>http</h3>
-					<div class="tsd-signature tsd-kind-icon">http<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Http</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in providers/services/loader/service-loader.ts:15</li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Events that the loader should try to read for the services.
+							They are located in the &#39;/src&#39; directory of the service.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="liveserviceloader" class="tsd-anchor"></a>
@@ -188,9 +226,15 @@
 					<div class="tsd-signature tsd-kind-icon">live<wbr>Service<wbr>Loader<span class="tsd-signature-symbol">:</span> <a href="_providers_services_loader_live_service_loader_.liveserviceloader.html" class="tsd-signature-type">LiveServiceLoader</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/loader/service-loader.ts:17</li>
+							<li>Defined in providers/services/loader/service-loader.ts:40</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_services_loader_live_service_loader_.liveserviceloader.html">LiveServiceLoader</a> provider, used by the &#39;live&#39; policy. This is the
+							policy meant to be used in production.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="localserviceloader" class="tsd-anchor"></a>
@@ -198,9 +242,14 @@
 					<div class="tsd-signature tsd-kind-icon">local<wbr>Service<wbr>Loader<span class="tsd-signature-symbol">:</span> <a href="_providers_services_loader_local_service_loader_.localserviceloader.html" class="tsd-signature-type">LocalServiceLoader</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/loader/service-loader.ts:18</li>
+							<li>Defined in providers/services/loader/service-loader.ts:41</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_services_loader_local_service_loader_.localserviceloader.html">LocalServiceLoader</a> provider, used by the &#39;local&#39; policy.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="logger" class="tsd-anchor"></a>
@@ -208,9 +257,14 @@
 					<div class="tsd-signature tsd-kind-icon">logger<span class="tsd-signature-symbol">:</span> <a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/loader/service-loader.ts:19</li>
+							<li>Defined in providers/services/loader/service-loader.ts:42</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_logger_.customlogger.html">CustomLogger</a></p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="testserviceloader" class="tsd-anchor"></a>
@@ -218,26 +272,36 @@
 					<div class="tsd-signature tsd-kind-icon">test<wbr>Service<wbr>Loader<span class="tsd-signature-symbol">:</span> <a href="_providers_services_loader_test_service_loader_.testserviceloader.html" class="tsd-signature-type">TestServiceLoader</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/loader/service-loader.ts:16</li>
+							<li>Defined in providers/services/loader/service-loader.ts:39</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_services_loader_test_service_loader_.testserviceloader.html">TestServiceLoader</a> provider, used by the &#39;test&#39; policy.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
 					<a name="filleventstoload" class="tsd-anchor"></a>
-					<h3>fill<wbr>Events<wbr>ToLoad</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> fill<wbr>Events<wbr>ToLoad</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
 						<li class="tsd-signature tsd-kind-icon">fill<wbr>Events<wbr>ToLoad<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/loader/service-loader.ts:22</li>
+									<li>Defined in providers/services/loader/service-loader.ts:47</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fill the <a href="_providers_services_loader_service_loader_.serviceloader.html#eventstolookfor">eventsToLookFor</a> private member</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -252,10 +316,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/loader/service-loader.ts:33</li>
+									<li>Defined in providers/services/loader/service-loader.ts:64</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Load the services for the policy defined in the &#39;serviceLoaderPolicy&#39; entry of <a href="_providers_constants_.constants.html">Constants</a>.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Resolves a dictionary containing the services. This is temporary as
+								services will have their own prototype later. Rejects if the policy is
+							unknown or the policy used rejects for any reason.</p>
 						</li>
 					</ul>
 				</section>
@@ -285,11 +357,8 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_loader_service_loader_.serviceloader.html#constants" class="tsd-kind-icon">constants</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_providers_services_loader_service_loader_.serviceloader.html#eventstolookfor" class="tsd-kind-icon">events<wbr>ToLook<wbr>For</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_services_loader_service_loader_.serviceloader.html#http" class="tsd-kind-icon">http</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_loader_service_loader_.serviceloader.html#liveserviceloader" class="tsd-kind-icon">live<wbr>Service<wbr>Loader</a>
@@ -303,7 +372,7 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_loader_service_loader_.serviceloader.html#testserviceloader" class="tsd-kind-icon">test<wbr>Service<wbr>Loader</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="_providers_services_loader_service_loader_.serviceloader.html#filleventstoload" class="tsd-kind-icon">fill<wbr>Events<wbr>ToLoad</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">

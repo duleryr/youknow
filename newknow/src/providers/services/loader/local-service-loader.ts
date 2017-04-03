@@ -1,33 +1,70 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+/**
+ * @module ServiceLoader
+ */ /** */
+
+import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
 import {CustomLogger} from "../../logger";
 import {Constants} from "../../constants";
 import {Util} from "../../util/util";
 import {ForPromise} from "../../util/forpromise";
 
+/**
+ * Class to load the services on the local file system with the [[loadServices]] method.
+ * This should only be accessible from [[ServiceLoader]].
+ */
 @Injectable()
 export class LocalServiceLoader {
 
-  relativePathToRoot: any;
-  pathToLocalServices: any;
-  globalServiceConfig: any;
-  individialServiceConfig: any;
+  /**
+   * Path from this file to the root of the project.
+   */
+  private relativePathToRoot: string;
 
-  constructor(public http: Http, public logger: CustomLogger, public constants: Constants,
+  /**
+   * Path from the root of the project to the directory where services are stored.
+   */
+  private pathToLocalServices: string;
+
+  /**
+   * Filename of the json file indexing the services.
+   */
+  private globalServiceConfig: string;
+
+  /**
+   * Filename of the json file used by the services to configure themselves.
+   */
+  private individualServiceConfig: string;
+
+  /**
+   * Initializes variables [[relativePathToRoot]], [[pathToLocalServices]], [[globalServiceConfig]],
+   * [[individualServiceConfig]].
+   * @param logger [[CustomLogger]]
+   * @param constants [[Constants]] provider used to know where the services are stored with the
+   * 'localServicesPath' entry.
+   * @param util [[Util]] provider used to read the files in the local file system.
+   */
+  constructor(public logger: CustomLogger, public constants: Constants,
               public util: Util) {
     this.relativePathToRoot = "../../../../";
     this.pathToLocalServices = this.relativePathToRoot + this.constants.get('localServicesPath');
     this.globalServiceConfig = 'services.json';
-    this.individialServiceConfig = 'config.json';
+    this.individualServiceConfig = 'config.json';
   }
 
-  loadService(service_name, events) : Promise<any> {
+  /**
+   * Private method to load a specific service. Called from [[loadServices]]
+   * @param service_name Name of the service to be loaded
+   * @param events Events to load for the service
+   * @returns {Promise<any>} Resolves a dictionary with data for the service.
+   * Rejects if the individual service configuration file can't be read properly.
+   */
+  private loadService(service_name, events) : Promise<any> {
     return new Promise((resolve, reject) => {
       var service = {};
       service["display"] = false;
 
-      this.util.readTextFile(this.pathToLocalServices+service_name+'/'+this.individialServiceConfig)
+      this.util.readTextFile(this.pathToLocalServices+service_name+'/'+this.individualServiceConfig)
       .then( text => {
         var data = JSON.parse(text);
         service['name'] = data['name'];
@@ -68,6 +105,12 @@ export class LocalServiceLoader {
     });
   };
 
+
+  /**
+   * Load the services on a distant server.
+   * @param events Specific events to load for the services if they exist
+   * @returns {Promise<any>} resolves dictionary containing data for the services.
+   */
   loadServices(events) : Promise<any> {
 
     this.logger.log("loadServices (localServiceLoader)");

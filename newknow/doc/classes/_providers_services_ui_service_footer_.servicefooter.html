@@ -91,9 +91,6 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_ui_service_footer_.servicefooter.html#activeservice" class="tsd-kind-icon">active<wbr>Service</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_ui_service_footer_.servicefooter.html#http" class="tsd-kind-icon">http</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_ui_service_footer_.servicefooter.html#logger" class="tsd-kind-icon">logger</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_ui_service_footer_.servicefooter.html#names" class="tsd-kind-icon">names</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_ui_service_footer_.servicefooter.html#services" class="tsd-kind-icon">services</a></li>
 							</ul>
 						</section>
@@ -115,24 +112,20 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Service<wbr>Footer<span class="tsd-signature-symbol">(</span>http<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Http</span>, logger<span class="tsd-signature-symbol">: </span><a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_ui_service_footer_.servicefooter.html" class="tsd-signature-type">ServiceFooter</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Service<wbr>Footer<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_ui_service_footer_.servicefooter.html" class="tsd-signature-type">ServiceFooter</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/ui/service-footer.ts:17</li>
+									<li>Defined in providers/services/ui/service-footer.ts:20</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>http: <span class="tsd-signature-type">Http</span></h5>
-								</li>
-								<li>
-									<h5>logger: <a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a></h5>
-								</li>
-							</ul>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the active service to null and the array of services to empty.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="_providers_services_ui_service_footer_.servicefooter.html" class="tsd-signature-type">ServiceFooter</a></h4>
 						</li>
 					</ul>
@@ -146,39 +139,15 @@
 					<div class="tsd-signature tsd-kind-icon">active<wbr>Service<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/ui/service-footer.ts:17</li>
+							<li>Defined in providers/services/ui/service-footer.ts:20</li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="http" class="tsd-anchor"></a>
-					<h3>http</h3>
-					<div class="tsd-signature tsd-kind-icon">http<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Http</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in providers/services/ui/service-footer.ts:19</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="logger" class="tsd-anchor"></a>
-					<h3>logger</h3>
-					<div class="tsd-signature tsd-kind-icon">logger<span class="tsd-signature-symbol">:</span> <a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in providers/services/ui/service-footer.ts:19</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="names" class="tsd-anchor"></a>
-					<h3>names</h3>
-					<div class="tsd-signature tsd-kind-icon">names<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in providers/services/ui/service-footer.ts:16</li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reference to the active service. The active service is the last service that was clicked
+							by the user in the footer.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="services" class="tsd-anchor"></a>
@@ -186,12 +155,12 @@
 					<div class="tsd-signature tsd-kind-icon">services<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/ui/service-footer.ts:15</li>
+							<li>Defined in providers/services/ui/service-footer.ts:14</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Comment service footer</p>
+							<p>Array of services displayed in the footer</p>
 						</div>
 					</div>
 				</section>
@@ -208,13 +177,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/ui/service-footer.ts:24</li>
+									<li>Defined in providers/services/ui/service-footer.ts:34</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a service to the footer menu. Called from <a href="_providers_services_ui_service_menu_.servicemenu.html">ServiceMenu</a>.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>service: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Reference to the service to be added to the footer</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -231,10 +208,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/ui/service-footer.ts:45</li>
+									<li>Defined in providers/services/ui/service-footer.ts:69</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Accessor to retrieve the currently active service.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>A reference to the active service.</p>
 						</li>
 					</ul>
 				</section>
@@ -248,13 +231,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/ui/service-footer.ts:28</li>
+									<li>Defined in providers/services/ui/service-footer.ts:43</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove a service from the footer menu. Called from <a href="_providers_services_ui_service_menu_.servicemenu.html">ServiceMenu</a>.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>todo</dt>
+									<dd><p>: rewrite not like this</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>service: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Reference to the service to be removed from the footer.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -271,13 +267,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/ui/service-footer.ts:37</li>
+									<li>Defined in providers/services/ui/service-footer.ts:57</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the active service. Called from <a href="_pages_footer_footer_.footerpage.html">FooterPage</a> when the user clicks the fab button
+									associated with the service.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>service: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Service that will become active.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -309,15 +314,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_ui_service_footer_.servicefooter.html#activeservice" class="tsd-kind-icon">active<wbr>Service</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_services_ui_service_footer_.servicefooter.html#http" class="tsd-kind-icon">http</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_services_ui_service_footer_.servicefooter.html#logger" class="tsd-kind-icon">logger</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_services_ui_service_footer_.servicefooter.html#names" class="tsd-kind-icon">names</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_ui_service_footer_.servicefooter.html#services" class="tsd-kind-icon">services</a>

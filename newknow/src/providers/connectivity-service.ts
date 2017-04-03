@@ -1,30 +1,31 @@
-/**____________________________________________________________________
-ConnectivityService
- Provides information about the connectivity status
-
- Public interface :
-    - isOnline() :
-        true if the device is connected to a network, false otherwhise
-    - isOffline() :
-        true if the device is not connected to a network, false otherwhise
- ______________________________________________________________________*/
-
-
 import { Injectable } from '@angular/core';
 import { Network } from 'ionic-native';
 import { Platform } from 'ionic-angular';
 
 declare var Connection;
 
+/**
+ * Provides information about the connectivity status
+ */
 @Injectable()
 export class ConnectivityService {
 
-  onDevice: boolean;
+  /**
+   * Whether the app is running on a mobile or not. True if yes, false otherwise.
+   */
+  private onDevice: boolean;
 
+  /**
+   * Set the private member [[onDevice]]
+   * @param platform Ionic2 Platform provider.
+   */
   constructor(public platform: Platform){
     this.onDevice = this.platform.is('cordova');
   }
 
+  /**
+   * @returns {boolean} True if the device is connected to a network, false otherwhise
+   */
   isOnline(): boolean {
     if(this.onDevice && Network.type){
       return Network.type !== Connection.NONE;
@@ -33,6 +34,9 @@ export class ConnectivityService {
     }
   }
 
+  /**
+   * @returns {boolean} True if the device is not connected to a network, false otherwhise
+   */
   isOffline(): boolean {
     if(this.onDevice && Network.type){
       return Network.type === Connection.NONE;

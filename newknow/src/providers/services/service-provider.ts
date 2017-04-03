@@ -1,20 +1,26 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
 import {ServiceLoader} from "./loader/service-loader";
-import {CustomLogger} from "../logger";
 import {ServiceMenu} from "./ui/service-menu";
 
 @Injectable()
 export class ServiceProvider {
 
+  /**
+   * Dictionary (?) of all the services. Owner of this data
+   */
   services: any;
 
-  constructor(public http: Http, public serviceLoader: ServiceLoader, public logger: CustomLogger,
-              public serviceMenu: ServiceMenu) {
+  /**
+   *
+   * @param serviceLoader [[ServiceLoader]] provider used to load the services.
+   * @param serviceMenu [[ServiceMenu]] provider used to add the services to the left menu.
+   */
+  constructor(public serviceLoader: ServiceLoader, public serviceMenu: ServiceMenu) {}
 
-  }
-
+  /**
+   * Load the services and add them to the left menu. Called from [[MapPage]].
+   */
   init() {
     this.services = {};
     this.serviceLoader.loadServices().then(services => {

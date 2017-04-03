@@ -91,7 +91,6 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_ui_service_menu_.servicemenu.html#events" class="tsd-kind-icon">events</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_ui_service_menu_.servicemenu.html#http" class="tsd-kind-icon">http</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_ui_service_menu_.servicemenu.html#servicefooter" class="tsd-kind-icon">service<wbr>Footer</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_ui_service_menu_.servicemenu.html#services" class="tsd-kind-icon">services</a></li>
 							</ul>
@@ -114,25 +113,37 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Service<wbr>Menu<span class="tsd-signature-symbol">(</span>http<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Http</span>, serviceFooter<span class="tsd-signature-symbol">: </span><a href="_providers_services_ui_service_footer_.servicefooter.html" class="tsd-signature-type">ServiceFooter</a>, events<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Events</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_ui_service_menu_.servicemenu.html" class="tsd-signature-type">ServiceMenu</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Service<wbr>Menu<span class="tsd-signature-symbol">(</span>serviceFooter<span class="tsd-signature-symbol">: </span><a href="_providers_services_ui_service_footer_.servicefooter.html" class="tsd-signature-type">ServiceFooter</a>, events<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Events</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_ui_service_menu_.servicemenu.html" class="tsd-signature-type">ServiceMenu</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/ui/service-menu.ts:10</li>
+									<li>Defined in providers/services/ui/service-menu.ts:15</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the array of displayed services to empty.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>http: <span class="tsd-signature-type">Http</span></h5>
-								</li>
-								<li>
 									<h5>serviceFooter: <a href="_providers_services_ui_service_footer_.servicefooter.html" class="tsd-signature-type">ServiceFooter</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_services_ui_service_footer_.servicefooter.html">ServiceFooter</a> provider called to push/remove services in the footer.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>events: <span class="tsd-signature-type">Events</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Ionic2 events used to push events to <a href="_providers_services_event_receiver_.eventreceiver.html">EventReceiver</a>.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_providers_services_ui_service_menu_.servicemenu.html" class="tsd-signature-type">ServiceMenu</a></h4>
@@ -148,19 +159,14 @@
 					<div class="tsd-signature tsd-kind-icon">events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Events</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/ui/service-menu.ts:12</li>
+							<li>Defined in providers/services/ui/service-menu.ts:22</li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="http" class="tsd-anchor"></a>
-					<h3>http</h3>
-					<div class="tsd-signature tsd-kind-icon">http<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Http</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in providers/services/ui/service-menu.ts:12</li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Ionic2 events used to push events to <a href="_providers_services_event_receiver_.eventreceiver.html">EventReceiver</a>.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="servicefooter" class="tsd-anchor"></a>
@@ -168,9 +174,14 @@
 					<div class="tsd-signature tsd-kind-icon">service<wbr>Footer<span class="tsd-signature-symbol">:</span> <a href="_providers_services_ui_service_footer_.servicefooter.html" class="tsd-signature-type">ServiceFooter</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/ui/service-menu.ts:12</li>
+							<li>Defined in providers/services/ui/service-menu.ts:22</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_services_ui_service_footer_.servicefooter.html">ServiceFooter</a> provider called to push/remove services in the footer.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="services" class="tsd-anchor"></a>
@@ -178,9 +189,14 @@
 					<div class="tsd-signature tsd-kind-icon">services<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/ui/service-menu.ts:10</li>
+							<li>Defined in providers/services/ui/service-menu.ts:15</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Array of services displayed in the left menu.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -189,22 +205,33 @@
 					<a name="addservice" class="tsd-anchor"></a>
 					<h3>add<wbr>Service</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Service<span class="tsd-signature-symbol">(</span>service<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, isActivated<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Service<span class="tsd-signature-symbol">(</span>service<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, isActivated<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/ui/service-menu.ts:17</li>
+									<li>Defined in providers/services/ui/service-menu.ts:31</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a service to the left menu.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>service: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Reference to the service to be added.</p>
+									</div>
 								</li>
 								<li>
-									<h5>isActivated: <span class="tsd-signature-type">any</span></h5>
+									<h5>isActivated: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Boolean : true is the service should be checked by default, false otherwise</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -221,13 +248,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/ui/service-menu.ts:23</li>
+									<li>Defined in providers/services/ui/service-menu.ts:43</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>React to the click on a service by the user on the left menu.
+										Calls <a href="_providers_services_ui_service_menu_.servicemenu.html#turnondisplay">turnOnDisplay</a> or <a href="_providers_services_ui_service_menu_.servicemenu.html#turnoffdisplay">turnOffDisplay</a> depending on the state of the checkbox.
+									Called from the view of <a href="_pages_menu_menu_.menupage.html">MenuPage</a>.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>service: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -244,13 +280,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/ui/service-menu.ts:38</li>
+									<li>Defined in providers/services/ui/service-menu.ts:66</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove a service from the footer menu. Publish an event &#39;er:ui_event&#39; with a parameter
+									&#39;onTurnOff&#39; to <a href="_providers_services_event_receiver_.eventreceiver.html">EventReceiver</a>.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>service: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Service to be turned off</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -267,13 +312,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/ui/service-menu.ts:34</li>
+									<li>Defined in providers/services/ui/service-menu.ts:56</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a service to the footer menu. Publish an event &#39;er:ui_event&#39; with a parameter
+									&#39;onTurnOn&#39; to <a href="_providers_services_event_receiver_.eventreceiver.html">EventReceiver</a>.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>service: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Service to be turned on</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -305,9 +359,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_ui_service_menu_.servicemenu.html#events" class="tsd-kind-icon">events</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_services_ui_service_menu_.servicemenu.html#http" class="tsd-kind-icon">http</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_ui_service_menu_.servicemenu.html#servicefooter" class="tsd-kind-icon">service<wbr>Footer</a>

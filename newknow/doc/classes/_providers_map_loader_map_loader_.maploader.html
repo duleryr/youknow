@@ -69,6 +69,15 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Public interface of the <a href="_providers_map_loader_map_loader_.maploader.html">MapLoader</a> module. Called from <a href="_providers_map_map_provider_.mapprovider.html">MapProvider</a>.
+							Load the map to be displayed with the <a href="_providers_map_loader_map_loader_.maploader.html#load">load</a> method. This method is meant to be called once
+						at the start of the application.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -92,7 +101,6 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_map_loader_map_loader_.maploader.html#constants" class="tsd-kind-icon">constants</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_map_loader_map_loader_.maploader.html#dynamicload" class="tsd-kind-icon">dynamic<wbr>Load</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_map_loader_map_loader_.maploader.html#http" class="tsd-kind-icon">http</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_map_loader_map_loader_.maploader.html#loadjsmap" class="tsd-kind-icon">load<wbr>JsMap</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_map_loader_map_loader_.maploader.html#loadnativemap" class="tsd-kind-icon">load<wbr>Native<wbr>Map</a></li>
 							</ul>
@@ -112,31 +120,52 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Map<wbr>Loader<span class="tsd-signature-symbol">(</span>http<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Http</span>, constants<span class="tsd-signature-symbol">: </span><a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a>, dynamicLoad<span class="tsd-signature-symbol">: </span><a href="_providers_map_loader_dynamic_load_.dynamicload.html" class="tsd-signature-type">DynamicLoad</a>, loadJsMap<span class="tsd-signature-symbol">: </span><a href="_providers_map_loader_load_js_map_.loadjsmap.html" class="tsd-signature-type">LoadJsMap</a>, loadNativeMap<span class="tsd-signature-symbol">: </span><a href="_providers_map_loader_load_native_map_.loadnativemap.html" class="tsd-signature-type">LoadNativeMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_map_loader_map_loader_.maploader.html" class="tsd-signature-type">MapLoader</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Map<wbr>Loader<span class="tsd-signature-symbol">(</span>constants<span class="tsd-signature-symbol">: </span><a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a>, dynamicLoad<span class="tsd-signature-symbol">: </span><a href="_providers_map_loader_dynamic_load_.dynamicload.html" class="tsd-signature-type">DynamicLoad</a>, loadJsMap<span class="tsd-signature-symbol">: </span><a href="_providers_map_loader_load_js_map_.loadjsmap.html" class="tsd-signature-type">LoadJsMap</a>, loadNativeMap<span class="tsd-signature-symbol">: </span><a href="_providers_map_loader_load_native_map_.loadnativemap.html" class="tsd-signature-type">LoadNativeMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_map_loader_map_loader_.maploader.html" class="tsd-signature-type">MapLoader</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/map/loader/map-loader.ts:10</li>
+									<li>Defined in providers/map/loader/map-loader.ts:20</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>http: <span class="tsd-signature-type">Http</span></h5>
-								</li>
-								<li>
 									<h5>constants: <a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_constants_.constants.html">Constants</a> provider, used to know which policy apply to load the map
+												in it&#39;s &#39;mapLoaderPolicy&#39; entry. 3 values are possible for this entry : &#39;javascript&#39;,
+											&#39;native&#39; or &#39;dynamic&#39;.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>dynamicLoad: <a href="_providers_map_loader_dynamic_load_.dynamicload.html" class="tsd-signature-type">DynamicLoad</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_map_loader_dynamic_load_.dynamicload.html">DynamicLoad</a> provider, used for the &#39;dynamic&#39; load policy.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>loadJsMap: <a href="_providers_map_loader_load_js_map_.loadjsmap.html" class="tsd-signature-type">LoadJsMap</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_map_loader_load_js_map_.loadjsmap.html">LoadJsMap</a> provider, used for the &#39;javascript&#39; load policy.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>loadNativeMap: <a href="_providers_map_loader_load_native_map_.loadnativemap.html" class="tsd-signature-type">LoadNativeMap</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_map_loader_load_native_map_.loadnativemap.html">LoadNativeMap</a> provider, used for the &#39;native&#39; load policy.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_providers_map_loader_map_loader_.maploader.html" class="tsd-signature-type">MapLoader</a></h4>
@@ -152,9 +181,16 @@
 					<div class="tsd-signature tsd-kind-icon">constants<span class="tsd-signature-symbol">:</span> <a href="_providers_constants_.constants.html" class="tsd-signature-type">Constants</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/map/loader/map-loader.ts:12</li>
+							<li>Defined in providers/map/loader/map-loader.ts:30</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_constants_.constants.html">Constants</a> provider, used to know which policy apply to load the map
+								in it&#39;s &#39;mapLoaderPolicy&#39; entry. 3 values are possible for this entry : &#39;javascript&#39;,
+							&#39;native&#39; or &#39;dynamic&#39;.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="dynamicload" class="tsd-anchor"></a>
@@ -162,19 +198,14 @@
 					<div class="tsd-signature tsd-kind-icon">dynamic<wbr>Load<span class="tsd-signature-symbol">:</span> <a href="_providers_map_loader_dynamic_load_.dynamicload.html" class="tsd-signature-type">DynamicLoad</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/map/loader/map-loader.ts:12</li>
+							<li>Defined in providers/map/loader/map-loader.ts:30</li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="http" class="tsd-anchor"></a>
-					<h3>http</h3>
-					<div class="tsd-signature tsd-kind-icon">http<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Http</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in providers/map/loader/map-loader.ts:12</li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_map_loader_dynamic_load_.dynamicload.html">DynamicLoad</a> provider, used for the &#39;dynamic&#39; load policy.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="loadjsmap" class="tsd-anchor"></a>
@@ -182,9 +213,14 @@
 					<div class="tsd-signature tsd-kind-icon">load<wbr>JsMap<span class="tsd-signature-symbol">:</span> <a href="_providers_map_loader_load_js_map_.loadjsmap.html" class="tsd-signature-type">LoadJsMap</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/map/loader/map-loader.ts:13</li>
+							<li>Defined in providers/map/loader/map-loader.ts:31</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_map_loader_load_js_map_.loadjsmap.html">LoadJsMap</a> provider, used for the &#39;javascript&#39; load policy.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="loadnativemap" class="tsd-anchor"></a>
@@ -192,9 +228,14 @@
 					<div class="tsd-signature tsd-kind-icon">load<wbr>Native<wbr>Map<span class="tsd-signature-symbol">:</span> <a href="_providers_map_loader_load_native_map_.loadnativemap.html" class="tsd-signature-type">LoadNativeMap</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/map/loader/map-loader.ts:13</li>
+							<li>Defined in providers/map/loader/map-loader.ts:31</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_map_loader_load_native_map_.loadnativemap.html">LoadNativeMap</a> provider, used for the &#39;native&#39; load policy.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -203,28 +244,44 @@
 					<a name="load" class="tsd-anchor"></a>
 					<h3>load</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">load<span class="tsd-signature-symbol">(</span>apiKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, mapElement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, mapProvider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">load<span class="tsd-signature-symbol">(</span>apiKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, mapElement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ElementRef</span>, mapProvider<span class="tsd-signature-symbol">: </span><a href="_providers_map_map_provider_.mapprovider.html" class="tsd-signature-type">MapProvider</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_providers_map_objects_yk_yk_map_.ykmap.html" class="tsd-signature-type">YkMap</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/map/loader/map-loader.ts:16</li>
+									<li>Defined in providers/map/loader/map-loader.ts:42</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Load the map for the policy defined in the &#39;mapLoaderPolicy&#39; entry of <a href="_providers_constants_.constants.html">Constants</a></p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>apiKey: <span class="tsd-signature-type">any</span></h5>
+									<h5>apiKey: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>api key if needed to load the map</p>
+									</div>
 								</li>
 								<li>
-									<h5>mapElement: <span class="tsd-signature-type">any</span></h5>
+									<h5>mapElement: <span class="tsd-signature-type">ElementRef</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>reference to the DOM object to populate</p>
+									</div>
 								</li>
 								<li>
-									<h5>mapProvider: <span class="tsd-signature-type">any</span></h5>
+									<h5>mapProvider: <a href="_providers_map_map_provider_.mapprovider.html" class="tsd-signature-type">MapProvider</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="_providers_map_map_provider_.mapprovider.html">MapProvider</a></p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_providers_map_objects_yk_yk_map_.ykmap.html" class="tsd-signature-type">YkMap</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p><a href="_providers_map_objects_yk_yk_map_.ykmap.html">YkMap</a> as a promise. Rejected if the policy is ill-formed or the chosen policy
+							rejects for any reason.</p>
 						</li>
 					</ul>
 				</section>
@@ -256,9 +313,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_map_loader_map_loader_.maploader.html#dynamicload" class="tsd-kind-icon">dynamic<wbr>Load</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_map_loader_map_loader_.maploader.html#http" class="tsd-kind-icon">http</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_map_loader_map_loader_.maploader.html#loadjsmap" class="tsd-kind-icon">load<wbr>JsMap</a>

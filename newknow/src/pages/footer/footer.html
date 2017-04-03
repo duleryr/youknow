@@ -1,7 +1,7 @@
 <ion-footer>
   <ion-grid>
     <ion-row>
-      <ion-col col-sm *ngFor="let service of footerService.services">
+      <ion-col col-sm *ngFor="let service of serviceFooter.services">
         <ion-fab #fab (click)="onFabClicked(fab, service)">
           <button class="fabButton"
             [ngClass]="service['runtime']['is_active']?'activeFabButton':''" ion-fab>

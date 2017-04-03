@@ -90,8 +90,6 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_service_provider_.serviceprovider.html#http" class="tsd-kind-icon">http</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_service_provider_.serviceprovider.html#logger" class="tsd-kind-icon">logger</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_service_provider_.serviceprovider.html#serviceloader" class="tsd-kind-icon">service<wbr>Loader</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_service_provider_.serviceprovider.html#servicemenu" class="tsd-kind-icon">service<wbr>Menu</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_services_service_provider_.serviceprovider.html#services" class="tsd-kind-icon">services</a></li>
@@ -112,28 +110,34 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Service<wbr>Provider<span class="tsd-signature-symbol">(</span>http<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Http</span>, serviceLoader<span class="tsd-signature-symbol">: </span><a href="_providers_services_loader_service_loader_.serviceloader.html" class="tsd-signature-type">ServiceLoader</a>, logger<span class="tsd-signature-symbol">: </span><a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a>, serviceMenu<span class="tsd-signature-symbol">: </span><a href="_providers_services_ui_service_menu_.servicemenu.html" class="tsd-signature-type">ServiceMenu</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_service_provider_.serviceprovider.html" class="tsd-signature-type">ServiceProvider</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Service<wbr>Provider<span class="tsd-signature-symbol">(</span>serviceLoader<span class="tsd-signature-symbol">: </span><a href="_providers_services_loader_service_loader_.serviceloader.html" class="tsd-signature-type">ServiceLoader</a>, serviceMenu<span class="tsd-signature-symbol">: </span><a href="_providers_services_ui_service_menu_.servicemenu.html" class="tsd-signature-type">ServiceMenu</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_services_service_provider_.serviceprovider.html" class="tsd-signature-type">ServiceProvider</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/service-provider.ts:11</li>
+									<li>Defined in providers/services/service-provider.ts:12</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>http: <span class="tsd-signature-type">Http</span></h5>
-								</li>
-								<li>
 									<h5>serviceLoader: <a href="_providers_services_loader_service_loader_.serviceloader.html" class="tsd-signature-type">ServiceLoader</a></h5>
-								</li>
-								<li>
-									<h5>logger: <a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_services_loader_service_loader_.serviceloader.html">ServiceLoader</a> provider used to load the services.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>serviceMenu: <a href="_providers_services_ui_service_menu_.servicemenu.html" class="tsd-signature-type">ServiceMenu</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_services_ui_service_menu_.servicemenu.html">ServiceMenu</a> provider used to add the services to the left menu.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_providers_services_service_provider_.serviceprovider.html" class="tsd-signature-type">ServiceProvider</a></h4>
@@ -144,34 +148,19 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="http" class="tsd-anchor"></a>
-					<h3>http</h3>
-					<div class="tsd-signature tsd-kind-icon">http<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Http</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in providers/services/service-provider.ts:13</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="logger" class="tsd-anchor"></a>
-					<h3>logger</h3>
-					<div class="tsd-signature tsd-kind-icon">logger<span class="tsd-signature-symbol">:</span> <a href="_providers_logger_.customlogger.html" class="tsd-signature-type">CustomLogger</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in providers/services/service-provider.ts:13</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="serviceloader" class="tsd-anchor"></a>
 					<h3>service<wbr>Loader</h3>
 					<div class="tsd-signature tsd-kind-icon">service<wbr>Loader<span class="tsd-signature-symbol">:</span> <a href="_providers_services_loader_service_loader_.serviceloader.html" class="tsd-signature-type">ServiceLoader</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/service-provider.ts:13</li>
+							<li>Defined in providers/services/service-provider.ts:19</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_services_loader_service_loader_.serviceloader.html">ServiceLoader</a> provider used to load the services.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="servicemenu" class="tsd-anchor"></a>
@@ -179,9 +168,14 @@
 					<div class="tsd-signature tsd-kind-icon">service<wbr>Menu<span class="tsd-signature-symbol">:</span> <a href="_providers_services_ui_service_menu_.servicemenu.html" class="tsd-signature-type">ServiceMenu</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/service-provider.ts:14</li>
+							<li>Defined in providers/services/service-provider.ts:19</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="_providers_services_ui_service_menu_.servicemenu.html">ServiceMenu</a> provider used to add the services to the left menu.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="services" class="tsd-anchor"></a>
@@ -189,9 +183,14 @@
 					<div class="tsd-signature tsd-kind-icon">services<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in providers/services/service-provider.ts:11</li>
+							<li>Defined in providers/services/service-provider.ts:12</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Dictionary (?) of all the services. Owner of this data</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -206,9 +205,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/service-provider.ts:18</li>
+									<li>Defined in providers/services/service-provider.ts:24</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Load the services and add them to the left menu. Called from <a href="_pages_map_map_.mappage.html">MapPage</a>.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -235,12 +239,6 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="_providers_services_service_provider_.serviceprovider.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_services_service_provider_.serviceprovider.html#http" class="tsd-kind-icon">http</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_services_service_provider_.serviceprovider.html#logger" class="tsd-kind-icon">logger</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_providers_services_service_provider_.serviceprovider.html#serviceloader" class="tsd-kind-icon">service<wbr>Loader</a>

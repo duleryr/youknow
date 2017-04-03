@@ -1,30 +1,45 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
-import {CustomLogger} from '../../logger';
 @Injectable()
 
 
 /**
- * Comment service footer
+ * Provider that handles the logic of the footer menu.
  */ /** */
 export class ServiceFooter {
+
   /**
-   * Comment service footer
+   * Array of services displayed in the footer
    */
   services: any;
-  names: any;
+
+  /**
+   * Reference to the active service. The active service is the last service that was clicked
+   * by the user in the footer.
+   */
   activeService: any;
 
-  constructor(public http: Http, public logger: CustomLogger) {
+  /**
+   * Set the active service to null and the array of services to empty.
+   */
+  constructor() {
     this.services = [];
     this.activeService = null;
   }
 
+  /**
+   * Add a service to the footer menu. Called from [[ServiceMenu]].
+   * @param service Reference to the service to be added to the footer
+   */
   addService(service) {
     this.services.push(service);
   }
 
+  /**
+   * Remove a service from the footer menu. Called from [[ServiceMenu]].
+   * @TODO : rewrite not like this
+   * @param service Reference to the service to be removed from the footer.
+   */
   removeService(service) {
     for (var i = 0; i < this.services.length; i++) {
       if (service['name'] == this.services[i]['name']) {
@@ -34,6 +49,11 @@ export class ServiceFooter {
     }
   }
 
+  /**
+   * Set the active service. Called from [[FooterPage]] when the user clicks the fab button
+   * associated with the service.
+   * @param service Service that will become active.
+   */
   setActiveService(service) {
     if (this.activeService != null) {
       this.activeService['runtime']['is_active'] = false;
@@ -42,6 +62,10 @@ export class ServiceFooter {
     this.activeService['runtime']['is_active'] = true;
   }
 
+  /**
+   * Accessor to retrieve the currently active service.
+   * @returns {any} A reference to the active service.
+   */
   getActiveService() {
     return this.activeService;
   }

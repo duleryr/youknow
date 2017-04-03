@@ -69,6 +69,14 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Provider in charge of building environment variables available for an execution
+						of a service.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -88,13 +96,6 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_context_context_builder_.contextbuilder.html#http" class="tsd-kind-icon">http</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_providers_context_context_builder_.contextbuilder.html#mapprovider" class="tsd-kind-icon">map<wbr>Provider</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_context_context_builder_.contextbuilder.html#build" class="tsd-kind-icon">build</a></li>
@@ -109,50 +110,18 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Context<wbr>Builder<span class="tsd-signature-symbol">(</span>http<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Http</span>, mapProvider<span class="tsd-signature-symbol">: </span><a href="_providers_map_map_provider_.mapprovider.html" class="tsd-signature-type">MapProvider</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_context_context_builder_.contextbuilder.html" class="tsd-signature-type">ContextBuilder</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Context<wbr>Builder<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_providers_context_context_builder_.contextbuilder.html" class="tsd-signature-type">ContextBuilder</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/context/context-builder.ts:7</li>
+									<li>Defined in providers/context/context-builder.ts:10</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>http: <span class="tsd-signature-type">Http</span></h5>
-								</li>
-								<li>
-									<h5>mapProvider: <a href="_providers_map_map_provider_.mapprovider.html" class="tsd-signature-type">MapProvider</a></h5>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_providers_context_context_builder_.contextbuilder.html" class="tsd-signature-type">ContextBuilder</a></h4>
 						</li>
 					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="http" class="tsd-anchor"></a>
-					<h3>http</h3>
-					<div class="tsd-signature tsd-kind-icon">http<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Http</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in providers/context/context-builder.ts:9</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="mapprovider" class="tsd-anchor"></a>
-					<h3>map<wbr>Provider</h3>
-					<div class="tsd-signature tsd-kind-icon">map<wbr>Provider<span class="tsd-signature-symbol">:</span> <a href="_providers_map_map_provider_.mapprovider.html" class="tsd-signature-type">MapProvider</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in providers/context/context-builder.ts:9</li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -161,40 +130,92 @@
 					<a name="build" class="tsd-anchor"></a>
 					<h3>build</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">build<span class="tsd-signature-symbol">(</span>service<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, parametres<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+						<li class="tsd-signature tsd-kind-icon">build<span class="tsd-signature-symbol">(</span>service<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, map<span class="tsd-signature-symbol">: </span><a href="_providers_map_objects_yk_yk_map_.ykmap.html" class="tsd-signature-type">YkMap</a>, parameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/context/context-builder.ts:13</li>
+									<li>Defined in providers/context/context-builder.ts:22</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Build the object that will be accessible for a given service in it&#39;s execution.
+									Called by <a href="_providers_services_event_receiver_.eventreceiver.html#exec">EventReceiver.exec</a></p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>service: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Service that is to be executed</p>
+									</div>
 								</li>
 								<li>
-									<h5>parametres: <span class="tsd-signature-type">any</span></h5>
+									<h5>map: <a href="_providers_map_objects_yk_yk_map_.ykmap.html" class="tsd-signature-type">YkMap</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><a href="_providers_map_objects_yk_yk_map_.ykmap.html">YkMap</a> object that the service will be able to manipulate</p>
+									</div>
+								</li>
+								<li>
+									<h5>parameters: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Additional parameters that will be accessible for the service</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<p>Dictionary object with needed fields :</p>
 							<ul class="tsd-parameters">
 								<li class="tsd-parameter">
 									<h5>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<dl class="tsd-comment-tags">
+											<dt>dictionary</dt>
+											<dd><p>Live memory of the service</p>
+											</dd>
+										</dl>
+									</div>
 								</li>
 								<li class="tsd-parameter">
 									<h5>latitude<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<dl class="tsd-comment-tags">
+											<dt>float</dt>
+											<dd><p>Last recorded latitude of the user</p>
+											</dd>
+										</dl>
+									</div>
 								</li>
 								<li class="tsd-parameter">
 									<h5>longitude<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<dl class="tsd-comment-tags">
+											<dt>float</dt>
+											<dd><p>Last recorded longitude of the user</p>
+											</dd>
+										</dl>
+									</div>
 								</li>
 								<li class="tsd-parameter">
-									<h5>map<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
+									<h5>map<span class="tsd-signature-symbol">: </span><a href="_providers_map_objects_yk_yk_map_.ykmap.html" class="tsd-signature-type">YkMap</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p><a href="_providers_map_objects_yk_yk_map_.ykmap.html">YkMap</a> object that the service will be able to manipulate</p>
+										</div>
+									</div>
 								</li>
 								<li class="tsd-parameter">
 									<h5>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<dl class="tsd-comment-tags">
+											<dt>dictionary</dt>
+											<dd><p>Additional parameters</p>
+											</dd>
+										</dl>
+									</div>
 								</li>
 							</ul>
 						</li>
@@ -222,12 +243,6 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="_providers_context_context_builder_.contextbuilder.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_context_context_builder_.contextbuilder.html#http" class="tsd-kind-icon">http</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_providers_context_context_builder_.contextbuilder.html#mapprovider" class="tsd-kind-icon">map<wbr>Provider</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_providers_context_context_builder_.contextbuilder.html#build" class="tsd-kind-icon">build</a>
