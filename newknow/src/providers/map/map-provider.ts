@@ -11,9 +11,7 @@ export class MapProvider {
   apiKey: string = "AIzaSyBo1HeIZ8Fbin5J6c4qId4D5c8JzOpX1HI";
 
   constructor(public menuController: MenuController,
-              public mapLoader: MapLoader, public events: Events) {
-
-  }
+              public mapLoader: MapLoader, public events: Events) {}
 
   init(mapElement: any) : Promise<any> {
     return new Promise((resolve, reject) => {
@@ -21,16 +19,14 @@ export class MapProvider {
       this.mapLoader.load(this.apiKey, this.mapElement, this).then((map) => {
         this.map = map;
         this.disableScrollWhenMenuOpen();
-        console.log("Map loaded");
         resolve();
       }).catch((err) => {
-        console.log("Error loading map...",err);
         reject();
       });
     });
   }
 
-  disableScrollWhenMenuOpen() {
+  private disableScrollWhenMenuOpen() {
     let menu = this.menuController.get('left');
     if (menu) {
       menu.ionDrag.subscribe(() => {

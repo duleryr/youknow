@@ -1,5 +1,6 @@
-
-
+/**
+ * Abstract class [[YkMap]] representing
+ */
 export abstract class YkMap {
 
   mode: any;

@@ -1,13 +1,19 @@
+/**
+ * @module Pages
+ */ /** */
+
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MapProvider } from '../../providers/map/map-provider';
+import {EventReceiver} from "../../providers/services/event-receiver";
+import {ServiceProvider} from "../../providers/services/service-provider";
 import { Autocompletion } from '../../providers/map/autocompletion';
 import { AutocompleteItemsPage } from '../autocomplete-items/autocomplete-items';
-import { Events, NavController, Platform, PopoverController } from 'ionic-angular';
-import { ServiceWorker } from "../../providers/services/service-worker";
-import { EventReceiver } from "../../providers/services/event-receiver";
+import { Events, Platform, PopoverController } from 'ionic-angular';
 
-/* Map contient la carte, ainsi que tout ce qui est affiché par dessus, boutons, barre de recherche etc. */
 
+/**
+ * Component for the background map and it's top-level buttons (search bar, menu button, ..)
+ */
 @Component({
   selector: 'map-selector',
   templateUrl: 'map.html'
@@ -16,19 +22,30 @@ export class MapPage {
 
   @ViewChild('map') mapElement: ElementRef;
   @ViewChild('searchbar') searchElement;
-  
+
   searchbarFocused: boolean;
   popoverTriggered: boolean;
   popover: any;
 
-  constructor(public navCtrl: NavController, public maps: MapProvider,
-              public platform: Platform, public serviceWorker: ServiceWorker,
+  /**
+   * Load the background map, load the services and set-up the event receiver.
+   * @param mapProvider Provider handling anything related to the background map
+   * @param platform Ionic2 component
+   * @param serviceProvider Provider handling anything related to the services
+   * @param eventReceiver Provider receiving events fired from anywhere in the application
+   * @param autocompletion @TODO
+   * @param popoverCtrl @TODO
+   * @param events @TODO
+   */
+  constructor(public mapProvider: MapProvider,
+              public platform: Platform,
+              public serviceProvider: ServiceProvider,
               public autocompletion: Autocompletion, public popoverCtrl: PopoverController,
               public eventReceiver: EventReceiver, public events: Events) {
     this.platform.ready().then(() => {
-      this.maps.init(this.mapElement.nativeElement).then(() => {
+      this.mapProvider.init(this.mapElement.nativeElement).then(() => {
         eventReceiver.init();
-        this.serviceWorker.init();
+        this.serviceProvider.init();
         this.autocompletion.initGoogleAutocompleteService();
       });
     });

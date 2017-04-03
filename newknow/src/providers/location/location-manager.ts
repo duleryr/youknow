@@ -1,19 +1,21 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
+import {YkLatLng} from "../map/objects/yk/yk-lat-lng";
 
+/**
+ * Provider in charge of tracking the location of the user
+ */
 @Injectable()
 export class LocationManager {
 
-  constructor(public http: Http) {
-    console.log('Hello LocationManager Provider');
-  }
+  constructor() {}
 
-  getLastLocation(): Promise<any> {
-    return Promise.resolve({
-      latitude:45,
-      longitude:3
-    });
+  /**
+   * Get last known location of the user
+   * @return [[YkLatLng]] object as an artificial promise
+   */
+  getLastLocation(): Promise<YkLatLng> {
+    return Promise.resolve(new YkLatLng(45,3));
   }
 
 }

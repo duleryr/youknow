@@ -1,36 +1,44 @@
+/**
+ * @module Pages
+ */ /** */
+
 import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
 import {ServiceFooter} from "../../providers/services/ui/service-footer";
 
+/**
+ * Component for the footer of the main page.
+ * This footer displays Fab Buttons of activated services and enables the user to interact with these.
+ */
 @Component({
   selector: 'page-footer',
   templateUrl: 'footer.html'
 })
-
 export class FooterPage {
+  /**
+  * Last fab button that was clicked by the user.
+  */
   lastOpenedFab: any;
-  activeServiceName: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public footerService: ServiceFooter) {
+  /**
+   * @param serviceFooter Provider for this page, see [[ServiceFooter]]
+   */
+  constructor(public serviceFooter: ServiceFooter) {
     this.lastOpenedFab = null;
-    this.activeServiceName = "";
   }
 
-  fabClicked(fab, service, ev) {
-    console.log(ev);
+  /**
+   * Called by the view 'footer.html' when a FabButton is clicked by the user.
+   * Close the [[lastOpenedFab]], set it's value and notify the [[serviceFooter]] provider
+   * @param fab FabButton object that was clicked
+   * @param service service associated with the FabButton
+   */
+  onFabClicked(fab, service) {
     if (this.lastOpenedFab != null) {
       if (fab != this.lastOpenedFab) {
         this.lastOpenedFab.close();
       }
     }
     this.lastOpenedFab = fab;
-    this.footerService.setActiveService(service);
+    this.serviceFooter.setActiveService(service);
   }
-  getStyle(name) {
-    if (name == this.activeServiceName) {
-      return "0 0 15px 5px orange";
-    }
-    return "";
-  }
-
 }
