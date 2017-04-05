@@ -30,5 +30,12 @@ export class YkServiceMemory {
     return this._memory_internal_dictionary;
   }
 
+  /**
+   * Log the memory
+   */
+  log() {
+    console.log(this._memory_internal_dictionary);
+  }
+
 }
 

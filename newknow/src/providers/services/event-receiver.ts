@@ -47,7 +47,9 @@ export class EventReceiver {
 
     // 'map_event'
     this.events.subscribe(this.RECEIVER_CODE+':map_event', (event, params) => {
-      this.execActiveService(event, params);
+      for (var i = 0; i < this.serviceFooter.services.length; i++) {
+        this.exec(this.serviceFooter.services[i], event, params);
+      }
     });
 
     // 'ui_event'
@@ -65,13 +67,13 @@ export class EventReceiver {
    */
   exec(service, event, params) {
     var context = this.contextBuilder.build(service, this.mapProvider.map, params);
-    if (!('is_init' in service['runtime'])) {
-      service['runtime']['is_init'] = true;
-      this.executionWrapper.wrap(context, service['event']['onInit']).then((res) => {
-        this.executionWrapper.wrap(context, service['event'][event]);
+    if (!service.runtime().is_init()) {
+      service.runtime().set_init(true);
+      this.executionWrapper.wrap(context, service.events().get('onInit')).then((res) => {
+        this.executionWrapper.wrap(context, service.events().get(event));
       });
     } else {
-      this.executionWrapper.wrap(context, service['event'][event]);
+      this.executionWrapper.wrap(context, service.events().get(event));
     }
   }
 

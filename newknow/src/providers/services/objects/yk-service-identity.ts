@@ -34,4 +34,15 @@ export class YkServiceIdentity {
   public contact: string = "";
 
   constructor() {}
+
+  /**
+   * Log the identity
+   */
+  log() {
+    console.log("Name : ", this.name);
+    console.log("Description : ", this.description);
+    console.log("Author : ", this.author);
+    console.log("Version : ", this.version);
+    console.log("Contact : ", this.contact);
+  }
 }

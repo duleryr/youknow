@@ -34,7 +34,13 @@ export class YkService {
    */
   private _ui: YkServiceUi;
 
-  constructor() {}
+  constructor() {
+    this._identity = new YkServiceIdentity();
+    this._memory = new YkServiceMemory();
+    this._runtime = new YkServiceRuntime();
+    this._events = new YkServiceEvents();
+    this._ui = new YkServiceUi();
+  }
 
   /**
    * Get the identity of the service.
@@ -74,6 +80,24 @@ export class YkService {
    */
   ui(): YkServiceUi {
     return this._ui;
+  }
+
+  /**
+   * Log the service
+   */
+  log() {
+    console.log("\nNew service log ___");
+    console.log("Service identity :")
+    this._identity.log();
+    console.log("Service ui :");
+    this._ui.log();
+    console.log("Service memory");
+    this._memory.log();
+    console.log("Service runtime");
+    this._runtime.log();
+    console.log("Service events");
+    this._events.log();
+    console.log("End service log ___\n");
   }
 
 }

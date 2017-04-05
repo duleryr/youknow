@@ -126,7 +126,7 @@ export class LocalServiceLoader {
         for (var i = 0; i < nb_services; i++) {
           this.loadService(services_names[i], events)
             .then((service_data) => {
-              services[service_data["name"]] = service_data;
+              services[service_data.identity().name] = service_data;
               forPromise.iterate();
             }).catch((err) => {
               console.log(err);

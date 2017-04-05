@@ -29,4 +29,11 @@ export class YkServiceEvents {
   set(key: string, value: any) {
     this._events_dict[key] = value;
   }
+
+  /**
+   * Log the events
+   */
+  log() {
+    console.log(this._events_dict);
+  }
 }

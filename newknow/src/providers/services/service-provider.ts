@@ -25,7 +25,9 @@ export class ServiceProvider {
     this.services = {};
     this.serviceLoader.loadServices().then(services => {
       this.services = services;
-      for (var name in services) {
+      console.log("Services loaded");
+      for (var name in this.services) {
+        this.services[name].log();
         this.serviceMenu.addService(this.services[name], false);
       }
     })

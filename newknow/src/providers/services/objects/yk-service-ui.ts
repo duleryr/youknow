@@ -33,4 +33,11 @@ export class YkServiceUi {
   init(dict) {
     this._ui_dict = dict;
   }
+
+  /**
+   * Log the UI data
+   */
+  log() {
+    console.log(this._ui_dict);
+  }
 }

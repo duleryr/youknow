@@ -37,12 +37,12 @@ export class ServiceFooter {
 
   /**
    * Remove a service from the footer menu. Called from [[ServiceMenu]].
-   * @TODO : rewrite not like this
+   * @TODO : rewrite not like this (dict structure ? (remove O(log(n)) vs O(n))
    * @param service Reference to the service to be removed from the footer.
    */
   removeService(service) {
     for (var i = 0; i < this.services.length; i++) {
-      if (service['name'] == this.services[i]['name']) {
+      if (service == this.services[i]) {
         this.services.splice(i, 1);
         break;
       }
@@ -55,11 +55,7 @@ export class ServiceFooter {
    * @param service Service that will become active.
    */
   setActiveService(service) {
-    if (this.activeService != null) {
-      this.activeService['runtime']['is_active'] = false;
-    }
     this.activeService = service;
-    this.activeService['runtime']['is_active'] = true;
   }
 
   /**
@@ -68,6 +64,15 @@ export class ServiceFooter {
    */
   getActiveService() {
     return this.activeService;
+  }
+
+  /**
+   * True is the service is the active one, false otherwise
+   * @param service Service to check
+   * @returns {boolean}
+   */
+  isActive(service) {
+    return (service == this.activeService);
   }
 
 
