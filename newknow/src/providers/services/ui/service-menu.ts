@@ -29,9 +29,8 @@ export class ServiceMenu {
    * @param isActivated Boolean : true is the service should be checked by default, false otherwise
    */
   addService(service, isActivated: boolean) {
-    var service_menu_data = service;
-    service_menu_data['activated'] = isActivated;
-    this.services.push(service_menu_data);
+    service.runtime().set_activated(isActivated);
+    this.services.push(service);
   }
 
   /**
@@ -39,9 +38,11 @@ export class ServiceMenu {
    * Calls [[turnOnDisplay]] or [[turnOffDisplay]] depending on the state of the checkbox.
    * Called from the view of [[MenuPage]].
    * @param service
+   * @param checked Whether the checkbox is checked or not. True if yes, false otherwise.
    */
-  onToggle(service) {
-    if (service['activated']) {
+  onToggle(service, checked) {
+    service.runtime().set_activated(checked);
+    if (checked) {
       this.turnOnDisplay(service);
     } else {
       this.turnOffDisplay(service);

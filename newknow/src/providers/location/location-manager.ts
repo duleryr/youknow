@@ -18,6 +18,9 @@ export class LocationManager {
     this.lastLocation = new YkLatLng(45,3);
   }
 
+
+  
+
   /**
    * Get last known location of the user
    * @return [[YkLatLng]] object as an artificial promise

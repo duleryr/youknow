@@ -5,9 +5,9 @@
     <ion-item-group>
       <ion-item-divider>Alertes</ion-item-divider>
       <button ion-item no-lines *ngFor="let service of serviceMenu.services">
-        <img src="assets/img/{{service.name}}.png" style="width:42px;height:42px" item-left>
-        <ion-label class="lbl">{{service.name}}</ion-label>
-        <ion-checkbox item-right (ionChange)="onToggle(service);" [(ngModel)]="service.activated"></ion-checkbox>
+        <img src="assets/img/{{service.identity().name}}.png" style="width:42px;height:42px" item-left>
+        <ion-label class="lbl">{{service.identity().name}}</ion-label>
+        <ion-checkbox item-right (ionChange)="onToggle(service, $event)"></ion-checkbox>
       </button>
     </ion-item-group>
     <ion-item-group>

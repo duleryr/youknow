@@ -4,14 +4,14 @@
       <ion-col col-sm *ngFor="let service of serviceFooter.services">
         <ion-fab #fab (click)="onFabClicked(fab, service)">
           <button class="fabButton"
-            [ngClass]="service['runtime']['is_active']?'activeFabButton':''" ion-fab>
-            <img class="img" src="assets/img/{{service.name}}.png">
+            [ngClass]="serviceFooter.isActive(service)?'activeFabButton':''" ion-fab>
+            <img class="img" src="assets/img/{{service.identity().name}}.png">
           </button>
           <ion-fab-list side="top">
-              <button ion-fab *ngFor="let button of service['ui'].buttons" (click)="fab.close()">
+              <button ion-fab *ngFor="let button of service.ui().get('buttons')" (click)="fab.close()">
               <ion-icon name="{{button.icon}}"></ion-icon>
             </button>
-            <button ion-fab drag *ngFor="let button of service['ui'].dragMarks">
+            <button ion-fab drag *ngFor="let button of service.ui().get('dragMarks')">
               <ion-icon name="pin" color="danger"></ion-icon>
             </button>
           </ion-fab-list>

@@ -20,6 +20,7 @@ export class ContextBuilder {
    * @returns Dictionary object with needed fields :
    */
   build(service, map: YkMap, parameters) {
+
     return {
       /**
        * [[YkMap]] object that the service will be able to manipulate
@@ -39,7 +40,7 @@ export class ContextBuilder {
       /**
        * @dictionary Live memory of the service
        */
-      data: service['memory'],
+      data: service.memory().mem(),
 
       /**
        * @dictionary Additional parameters
