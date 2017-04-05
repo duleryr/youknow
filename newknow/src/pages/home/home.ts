@@ -2,7 +2,7 @@
  * @module Pages
  */ /** */
 
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 /**
  * Aggregator component for subpages [[MapPage]] and [[FooterPage]].

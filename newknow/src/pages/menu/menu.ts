@@ -2,7 +2,7 @@
  * @module Pages
  */ /** */
 
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {HomePage} from '../home/home';
 import {ServiceMenu} from "../../providers/services/ui/service-menu";
 

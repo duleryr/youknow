@@ -28,10 +28,6 @@ export class Autocompletion {
     this.acService = new google.maps.places.AutocompleteService();        
   }
 
-  chooseItem(item: any) {
-    console.log('modal > chooseItem > item > ', item);
-  }
-
   updateSearch() {
     return new Promise ((resolve, reject) => {
       console.log('modal > updateSearch');

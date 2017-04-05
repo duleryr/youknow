@@ -1,5 +1,5 @@
-<ion-content>
-  <ion-list>
+<ion-content no-padding>
+  <ion-list class="list">
     <ion-item *ngFor="let item of autocompletion.autoCpltItems" 
       (click)="chooseItem(item)">
       {{ item.description }}

@@ -2,13 +2,14 @@
  * @module Pages
  */ /** */
 
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { MapProvider } from '../../providers/map/map-provider';
+import {Component, ElementRef, ViewChild} from '@angular/core';
+import {MapProvider} from '../../providers/map/map-provider';
 import {EventReceiver} from "../../providers/services/event-receiver";
 import {ServiceProvider} from "../../providers/services/service-provider";
-import { Autocompletion } from '../../providers/map/autocompletion';
-import { AutocompleteItemsPage } from '../autocomplete-items/autocomplete-items';
-import { Events, Platform, PopoverController } from 'ionic-angular';
+import {LocationManager} from "../../providers/location/location-manager";
+import {Autocompletion} from '../../providers/map/autocompletion';
+import {AutocompleteItemsPage} from '../autocomplete-items/autocomplete-items';
+import {Events, Platform, PopoverController} from 'ionic-angular';
 
 
 /**
@@ -33,15 +34,19 @@ export class MapPage {
    * @param platform Ionic2 component
    * @param serviceProvider Provider handling anything related to the services
    * @param eventReceiver Provider receiving events fired from anywhere in the application
-   * @param autocompletion @TODO
-   * @param popoverCtrl @TODO
-   * @param events @TODO
+   * @param autocompletion Provider of a list of places whose names begin by the searchbar input
+   * @param popoverCtrl Ionic2 component to show a popover
+   * @param events Ionic2 component to do event programmation
+   * @param locationManager Provider handling anything related to the location of the user
    */
   constructor(public mapProvider: MapProvider,
               public platform: Platform,
               public serviceProvider: ServiceProvider,
-              public autocompletion: Autocompletion, public popoverCtrl: PopoverController,
-              public eventReceiver: EventReceiver, public events: Events) {
+              public autocompletion: Autocompletion, 
+              public popoverCtrl: PopoverController,
+              public eventReceiver: EventReceiver,
+              public events: Events,
+              public locationManager: LocationManager) {
     this.platform.ready().then(() => {
       this.mapProvider.init(this.mapElement.nativeElement).then(() => {
         eventReceiver.init();
@@ -53,7 +58,6 @@ export class MapPage {
     this.events.subscribe('location_choosed', obj => {
       this.popoverTriggered = false;
     });
-    this.popoverTriggered = false;
     this.searchbarFocused = false;
   }
 
@@ -61,8 +65,9 @@ export class MapPage {
     this.autocompletion.init();
   }
 
+  /* Barre à moitié transparente lorsqu'elle n'a pas le focus */
   getOpacity() {
-    if (!this.searchbarFocused && !this.popoverTriggered) {
+    if (!this.searchbarFocused) {
       return '0.5';
     }
     return '1';
@@ -76,37 +81,20 @@ export class MapPage {
 
   /* Appelée lorsque la barre de recherche gagne le focus */
   focusGot(evt) {
+    if (!this.popoverTriggered) {
+      this.presentPopover(evt);
+      this.popoverTriggered = true;
+      setTimeout(() => {
+        this.searchElement.setFocus();
+      }, 150);
+    }
     this.searchbarFocused = true;
-    this.autocompletion.updateSearch().then(() => {
-      if (this.autocompletion.autoCpltItems.length != 0 && !this.popoverTriggered) {
-        this.presentPopover(evt);
-        this.popoverTriggered = true;
-        // Ligne d'en dessous à améliorer, ngZone ou promise ?
-        setTimeout(() => {
-          this.searchElement.setFocus();
-        }, 100);
-      }
-    });
+    this.autocompletion.updateSearch().then(() => { });
   }
 
   /* Appelée lorsque l'on écrit dans la barre de recherche */
   updateSearch(evt, searchbar) {
-    this.autocompletion.updateSearch().then(() => {
-      if (this.autocompletion.autoCpltItems.length != 0) {
-        if (!this.popoverTriggered) {
-          this.presentPopover(evt);
-          this.popoverTriggered = true;
-          // Ligne d'en dessous à améliorer, ngZone ou promise ?
-          setTimeout(() => {
-            this.searchElement.setFocus();
-          }, 100);
-        }
-      } else {
-        console.log("dismiss popover");
-        this.popoverTriggered = false;
-        this.popover.dismiss();
-      }
-    });
+    this.autocompletion.updateSearch().then(() => { });
   }
 
   /* Affiche la page d'autocompletion sous forme de popover, en dessous de la barre de recherche */
@@ -116,6 +104,12 @@ export class MapPage {
     });
     this.popover.present({
       ev: evt
+    });
+  }
+
+  goToMyLocation() {
+    this.locationManager.getLastLocation().then((location) => {
+      this.mapProvider.map.setCenter(location);
     });
   }
 }

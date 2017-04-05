@@ -38,6 +38,6 @@ export class YkJsMap extends YkMap {
   }
 
   setCenter(location) {
-    this.repr.setCenter(location);
+    this.repr.setCenter(location.toLiteral());
   }
 }
