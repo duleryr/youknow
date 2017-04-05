@@ -99,6 +99,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_services_ui_service_footer_.servicefooter.html#addservice" class="tsd-kind-icon">add<wbr>Service</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_services_ui_service_footer_.servicefooter.html#getactiveservice" class="tsd-kind-icon">get<wbr>Active<wbr>Service</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_services_ui_service_footer_.servicefooter.html#isactive" class="tsd-kind-icon">is<wbr>Active</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_services_ui_service_footer_.servicefooter.html#removeservice" class="tsd-kind-icon">remove<wbr>Service</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_providers_services_ui_service_footer_.servicefooter.html#setactiveservice" class="tsd-kind-icon">set<wbr>Active<wbr>Service</a></li>
 							</ul>
@@ -208,7 +209,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in providers/services/ui/service-footer.ts:69</li>
+									<li>Defined in providers/services/ui/service-footer.ts:65</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -218,6 +219,37 @@
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 							<p>A reference to the active service.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isactive" class="tsd-anchor"></a>
+					<h3>is<wbr>Active</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Active<span class="tsd-signature-symbol">(</span>service<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in providers/services/ui/service-footer.ts:74</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>True is the service is the active one, false otherwise</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>service: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Service to check</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -240,7 +272,7 @@
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>todo</dt>
-									<dd><p>: rewrite not like this</p>
+									<dd><p>: rewrite not like this (dict structure ? (remove O(log(n)) vs O(n))</p>
 									</dd>
 								</dl>
 							</div>
@@ -323,6 +355,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_providers_services_ui_service_footer_.servicefooter.html#getactiveservice" class="tsd-kind-icon">get<wbr>Active<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_providers_services_ui_service_footer_.servicefooter.html#isactive" class="tsd-kind-icon">is<wbr>Active</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_providers_services_ui_service_footer_.servicefooter.html#removeservice" class="tsd-kind-icon">remove<wbr>Service</a>
