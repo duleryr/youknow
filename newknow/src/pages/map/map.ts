@@ -2,13 +2,14 @@
  * @module Pages
  */ /** */
 
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { MapProvider } from '../../providers/map/map-provider';
+import {Component, ElementRef, ViewChild} from '@angular/core';
+import {MapProvider} from '../../providers/map/map-provider';
 import {EventReceiver} from "../../providers/services/event-receiver";
 import {ServiceProvider} from "../../providers/services/service-provider";
-import { Autocompletion } from '../../providers/map/autocompletion';
-import { AutocompleteItemsPage } from '../autocomplete-items/autocomplete-items';
-import { Events, Platform, PopoverController } from 'ionic-angular';
+import {LocationManager} from "../../providers/location/location-manager";
+import {Autocompletion} from '../../providers/map/autocompletion';
+import {AutocompleteItemsPage} from '../autocomplete-items/autocomplete-items';
+import {Events, Platform, PopoverController} from 'ionic-angular';
 
 
 /**
@@ -33,15 +34,19 @@ export class MapPage {
    * @param platform Ionic2 component
    * @param serviceProvider Provider handling anything related to the services
    * @param eventReceiver Provider receiving events fired from anywhere in the application
-   * @param autocompletion @TODO
-   * @param popoverCtrl @TODO
-   * @param events @TODO
+   * @param autocompletion Provider of a list of places whose names begin by the searchbar input
+   * @param popoverCtrl Ionic2 component to show a popover
+   * @param events Ionic2 component to do event programmation
+   * @param locationManager Provider handling anything related to the location of the user
    */
   constructor(public mapProvider: MapProvider,
               public platform: Platform,
               public serviceProvider: ServiceProvider,
-              public autocompletion: Autocompletion, public popoverCtrl: PopoverController,
-              public eventReceiver: EventReceiver, public events: Events) {
+              public autocompletion: Autocompletion, 
+              public popoverCtrl: PopoverController,
+              public eventReceiver: EventReceiver,
+              public events: Events,
+              public locationManager: LocationManager) {
     this.platform.ready().then(() => {
       this.mapProvider.init(this.mapElement.nativeElement).then(() => {
         eventReceiver.init();
@@ -99,6 +104,12 @@ export class MapPage {
     });
     this.popover.present({
       ev: evt
+    });
+  }
+
+  goToMyLocation() {
+    this.locationManager.getLastLocation().then((location) => {
+      this.mapProvider.map.setCenter(location);
     });
   }
 }

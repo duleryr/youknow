@@ -8,13 +8,25 @@
       width: 100%;
       z-index:0;
     }
+
+    #content {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
     .menu {
       color: black;
       background: transparent;
-      top:10px;
-      left:10px;
       width:60px;
-      height:40px;
+      height:42px;
+      top:4px;
+      left:5px;
+    }
+
+    .locate {
+      position: absolute;
+      right: 5%;
+      bottom: 14%;
     }
 
   }

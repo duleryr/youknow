@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
-import { Events, NavController, NavParams, ViewController } from 'ionic-angular';
-import { Autocompletion } from '../../providers/map/autocompletion';
-import { MapProvider } from '../../providers/map/map-provider';
+/**
+ * @module Pages
+ */ /** */
 
-/* Cette page est affichée sous forme de popover, en dessous de la barre de recherche
- * Elle contient la fonction chooseItem, appelée lors d'un clic sur un item, qui renvoit toutes les informations liées à celui-ci 
+import {Component} from '@angular/core';
+import {Events, NavController, NavParams, ViewController} from 'ionic-angular';
+import {Autocompletion} from '../../providers/map/autocompletion';
+import {MapProvider} from '../../providers/map/map-provider';
+import {YkLatLng} from '../../providers/map/objects/yk/yk-lat-lng';
+
+/**
+ * Component that is shown above the map as a popover
+ * It contains a list of autocompleted places, depending on the input of the searchbar
  */
 
 declare var google: any; 
@@ -31,7 +37,8 @@ export class AutocompleteItemsPage {
     this.placesService.getDetails(request, callback);
     function callback(place, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
-        self.mapProv.map.setCenter(place.geometry.location);
+        var place_yklatlng = new YkLatLng(place.geometry.location.lat(), place.geometry.location.lng());
+        self.mapProv.map.setCenter(place_yklatlng);
       }
     }
     this.viewCtrl.dismiss();

@@ -30,5 +30,8 @@ export class YkLatLng {
     return this._lat+","+this._lng;
   }
 
+  toLiteral() {
+    return {lat: this._lat, lng: this._lng};
+  }
 
 }
