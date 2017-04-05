@@ -10,6 +10,9 @@ export class LocationManager {
 
   constructor() {}
 
+
+  
+
   /**
    * Get last known location of the user
    * @return [[YkLatLng]] object as an artificial promise

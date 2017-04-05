@@ -8,6 +8,7 @@ import {CustomLogger} from "../../logger";
 import {Constants} from "../../constants";
 import {Util} from "../../util/util";
 import {ForPromise} from "../../util/forpromise";
+import {YkService} from "../objects/yk-service";
 
 /**
  * Class to load the services on the local file system with the [[loadServices]] method.
@@ -61,21 +62,19 @@ export class LocalServiceLoader {
    */
   private loadService(service_name, events) : Promise<any> {
     return new Promise((resolve, reject) => {
-      var service = {};
-      service["display"] = false;
+      var service = new YkService();
+      service.runtime().set("display", false);
 
       this.util.readTextFile(this.pathToLocalServices+service_name+'/'+this.individualServiceConfig)
       .then( text => {
         var data = JSON.parse(text);
-        service['name'] = data['name']; // DONE
-        service['description'] = data['description']; // DONE
-        service['author'] = data['author']; // DONE
-        service['version'] = data['version']; // DONE
-        service['ui'] = data['ui'];
-        service['memory'] = {}; // DONE
-        service['event'] = {};
-        service['runtime'] = {};
-        service['runtime']['is_active'] = false;
+
+        service.identity().name = data['name'];
+        service.identity().description = data['description'];
+        service.identity().author = data['author'];
+        service.identity().version = data['version'];
+        service.ui().init(data['ui']);
+        service.runtime().set('is_active', false);
 
         var forPromise = new ForPromise(service, events.length, resolve);
         var srcPath = this.pathToLocalServices+service_name+'/src/';
@@ -83,7 +82,7 @@ export class LocalServiceLoader {
         var loadEvent = function(store, name, util) : Promise<any> {
           return new Promise((resolve, reject) => {
             util.readTextFile(srcPath+name+".js").then( (text) => {
-              store[name] = text;
+              store.set(name, text);
               resolve();
             }).catch( () => {
               reject();
@@ -92,7 +91,7 @@ export class LocalServiceLoader {
         };
 
         for (var i = 0; i < events.length; i++) {
-          loadEvent(service['event'], events[i], this.util).then( () => {
+          loadEvent(service.events(), events[i], this.util).then( () => {
             forPromise.iterate();
           }).catch( () => {
             forPromise.iterate();

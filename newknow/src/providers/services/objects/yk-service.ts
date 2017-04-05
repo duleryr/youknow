@@ -1,6 +1,8 @@
 import {YkServiceIdentity} from "./yk-service-identity";
 import {YkServiceMemory} from "./yk-service-memory";
 import {YkServiceRuntime} from "./yk-service-runtime";
+import {YkServiceEvents} from "./yk-service-events";
+import {YkServiceUi} from "./yk-service-ui";
 
 /**
  * Class representing a YouKnow service
@@ -21,6 +23,16 @@ export class YkService {
    * Runtime data of the service (see [[YkServiceRuntime]]).
    */
   private _runtime: YkServiceRuntime;
+
+  /**
+   * Events code for the service (see [[YkServiceEvent]]).
+   */
+  private _events: YkServiceEvents;
+
+  /**
+   * Ui data for the service (see [[YkServiceUi]]).
+   */
+  private _ui: YkServiceUi;
 
   constructor() {}
 
@@ -48,6 +60,21 @@ export class YkService {
     return this._runtime;
   }
 
+  /**
+   * Get the events code data of the service.
+   * @returns {YkServiceEvents}
+   */
+  events(): YkServiceEvents {
+    return this._events;
+  }
+
+  /**
+   * Get the UI data of the service.
+   * @returns {YkServiceUi}
+   */
+  ui(): YkServiceUi {
+    return this._ui;
+  }
 
 }
 
