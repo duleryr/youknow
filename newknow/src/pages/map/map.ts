@@ -8,8 +8,10 @@ import {EventReceiver} from "../../providers/services/event-receiver";
 import {ServiceProvider} from "../../providers/services/service-provider";
 import {LocationManager} from "../../providers/location/location-manager";
 import {Autocompletion} from '../../providers/map/autocompletion';
+import {YkLatLng} from "../../providers/map/objects/yk/yk-lat-lng";
 import {AutocompleteItemsPage} from '../autocomplete-items/autocomplete-items';
-import {Events, Platform, PopoverController} from 'ionic-angular';
+import {AlertController, Events, Platform, PopoverController} from 'ionic-angular';
+import {Diagnostic, Geolocation} from 'ionic-native';
 
 
 /**
@@ -38,6 +40,7 @@ export class MapPage {
    * @param popoverCtrl Ionic2 component to show a popover
    * @param events Ionic2 component to do event programmation
    * @param locationManager Provider handling anything related to the location of the user
+   * @param alertCtrl Ionic2 component to show an alert
    */
   constructor(public mapProvider: MapProvider,
               public platform: Platform,
@@ -46,7 +49,8 @@ export class MapPage {
               public popoverCtrl: PopoverController,
               public eventReceiver: EventReceiver,
               public events: Events,
-              public locationManager: LocationManager) {
+              public locationManager: LocationManager,
+              public alertCtrl: AlertController) {
     this.platform.ready().then(() => {
       this.mapProvider.init(this.mapElement.nativeElement).then(() => {
         eventReceiver.init();
@@ -109,7 +113,34 @@ export class MapPage {
 
   goToMyLocation() {
     this.locationManager.getLastLocation().then((location) => {
-      this.mapProvider.map.setCenter(location);
+      if (!location.equals(new YkLatLng(45,3))) {
+        this.mapProvider.map.setCenter(location);
+      }
+      Diagnostic.getLocationMode().then((mode) => {
+        if (mode == Diagnostic.locationMode.LOCATION_OFF) {
+          let confirm = this.alertCtrl.create({
+            title: 'Veuillez autoriser l\'accès aux données de localisation',
+            buttons: [
+              {
+                text: 'Annuler',
+                handler: () => {
+                }
+              },
+              {
+                text: 'Paramètres',
+                handler: () => {
+                  Diagnostic.switchToLocationSettings();
+                }
+              }
+            ]
+          });
+          confirm.present();
+        } else {
+          this.locationManager.getCurrentLocation().then( (location) => {
+            this.mapProvider.map.setCenter(location);
+          });
+        }
+      });
     });
   }
 }
