@@ -33,10 +33,6 @@ export class YkJsMap extends YkMap {
     }
   }
 
-  addMarker(marker) {
-
-  }
-
   setCenter(location) {
     this.repr.setCenter(location.toLiteral());
   }

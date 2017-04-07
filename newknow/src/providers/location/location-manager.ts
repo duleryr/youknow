@@ -19,7 +19,7 @@ export class LocationManager {
   }
 
 
-  
+
 
   /**
    * Get last known location of the user
@@ -32,7 +32,7 @@ export class LocationManager {
   /**
    * Get current location of the user
    * Must be called when the location is available
-   * @return [[YkLatLng]] object as an artificial promise
+   * @return [[YkLatLng]] object as an promise
    */
   getCurrentLocation(): Promise<YkLatLng> {
     return new Promise( (resolve) => {
