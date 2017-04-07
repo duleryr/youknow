@@ -1,11 +1,14 @@
+import {YkMarker} from "./yk-marker";
+import {YkMapVisibilityManager} from "./yk-map-visibility-manager";
 /**
- * Abstract class [[YkMap]] representing
+ * Abstract class [[YkMap]] representing the map
  */
 export abstract class YkMap {
 
   mode: any;
   repr: any;
   protected mapProvider: any;
+  protected mapVisibilityManager: YkMapVisibilityManager;
 
   constructor(mode) {
     this.mode = mode;
@@ -31,6 +34,10 @@ export abstract class YkMap {
   abstract load(mapRepresentation, mapProvider): Promise<any>;
   abstract setOptions(dict);
   abstract getBounds();
-  abstract addMarker(marker);
+
+  addMarker(marker: YkMarker) {
+    marker.setMap(this);
+  }
+
   abstract setCenter(location);
 }

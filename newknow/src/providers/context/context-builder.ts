@@ -15,7 +15,7 @@ export class ContextBuilder {
    * Build the object that will be accessible for a given service in it's execution.
    * Called by [[EventReceiver.exec]]
    * @param service Service that is to be executed
-   * @param map [[YkMap]] object that the service will be able to manipulate
+   * @param map [[YkMap]] object&œ that the service will be able to manipulate
    * @param parameters Additional parameters that will be accessible for the service
    * @returns Dictionary object with needed fields :
    */
