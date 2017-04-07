@@ -5,8 +5,8 @@ import {YkLatLng} from "../yk/yk-lat-lng";
 
 export class YkJsMarker extends YkMarker {
 
-  constructor(serviceKey: string, options?) {
-    super("js", serviceKey);
+  constructor(cluster, options?) {
+    super("js", cluster);
   }
 
   process_undefined() {
@@ -43,6 +43,19 @@ export class YkJsMarker extends YkMarker {
   setMap(map: YkJsMap) {
     this.map = map;
     this.repr.setMap(this.map);
+  }
+
+  getVisible() : boolean {
+    return this.cluster.getMarkerVisible(this);
+  }
+
+  setVisible(visible: boolean) {
+    this.cluster.setMarkerVisible(this, visible);
+    if (this.cluster.isVisible() && visible) {
+      this.repr.setVisible(true);
+    } else if (!visible) {
+      this.repr.setVisible(false);
+    }
   }
 
 

@@ -1,5 +1,4 @@
 import {YkMarker} from "./yk-marker";
-import {YkMapVisibilityManager} from "./yk-map-visibility-manager";
 /**
  * Abstract class [[YkMap]] representing the map
  */
@@ -8,7 +7,6 @@ export abstract class YkMap {
   mode: any;
   repr: any;
   protected mapProvider: any;
-  protected mapVisibilityManager: YkMapVisibilityManager;
 
   constructor(mode) {
     this.mode = mode;

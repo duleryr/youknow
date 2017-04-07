@@ -1,17 +1,18 @@
 import {YkLatLng} from "./yk-lat-lng";
 import {YkMarkerLabel} from "./yk-marker-label";
 import {YkMap} from "./yk-map";
+import {YkMarkerCluster} from "./yk-marker-cluster";
 
 export abstract class YkMarker {
 
   mode: string;
   map: YkMap = null;
   protected repr: any;
-  serviceKey: string;
+  protected cluster: YkMarkerCluster;
 
-  constructor(mode, serviceKey) {
+  constructor(cluster, mode) {
     this.mode = mode;
-    this.serviceKey = serviceKey;
+    this.cluster = cluster;
   }
 
   process_undefined() {
@@ -33,6 +34,9 @@ export abstract class YkMarker {
   abstract getLabel(): YkMarkerLabel;
   abstract setLabel(label: YkMarkerLabel);
 
+  abstract getVisible(): boolean;
+  abstract setVisible(visible: boolean);
+
   abstract setMap(map: YkMap);
   getMap() : YkMap {
     return this.map;
@@ -49,7 +53,7 @@ export abstract class YkMarker {
   getPosition() // also native
   getShape()
   getTitle() // also native
-  getVisible()
+
   getZIndex()
 
   // Native
