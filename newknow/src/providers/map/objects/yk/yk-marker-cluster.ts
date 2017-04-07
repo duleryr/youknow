@@ -13,9 +13,9 @@ export class YkMarkerCluster {
   }
 
   addMarker(marker) {
-    this.markers[marker] = {
+    /*this.markers[marker] = {
       visible: marker.getVisible(),
-    };
+    };*/
   }
 
   isVisible() : boolean {
@@ -23,11 +23,12 @@ export class YkMarkerCluster {
   }
 
   getMarkerVisible(marker: YkMarker): boolean {
-    return this.markers[marker]['visible'];
+    //return this.markers[marker]['visible'];
+    return false;
   }
 
   setMarkerVisible(marker: YkMarker, visible: boolean) {
-    this.markers[marker]['visible'] = visible;
+    //this.markers[marker]['visible'] = visible;
   }
 
   hide() {
