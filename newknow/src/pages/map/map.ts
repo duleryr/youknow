@@ -11,7 +11,7 @@ import {Autocompletion} from '../../providers/map/autocompletion';
 import {YkLatLng} from "../../providers/map/objects/yk/yk-lat-lng";
 import {AutocompleteItemsPage} from '../autocomplete-items/autocomplete-items';
 import {AlertController, Events, Platform, PopoverController} from 'ionic-angular';
-import {Diagnostic, Geolocation} from 'ionic-native';
+import {Diagnostic} from 'ionic-native';
 
 
 /**
