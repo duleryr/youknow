@@ -6,7 +6,7 @@ export class YkServiceEvents {
   /**
    * Dictionary of the events code for the service.
    */
-  private _events_dict;
+  private _eventsDict;
 
   /**
    * Call [[reset]].
@@ -19,21 +19,21 @@ export class YkServiceEvents {
    * Empties [[_events_dict]].
    */
   reset() {
-    this._events_dict = {};
+    this._eventsDict = {};
   }
 
   get(key: string) {
-    return this._events_dict[key];
+    return this._eventsDict[key];
   }
 
   set(key: string, value: any) {
-    this._events_dict[key] = value;
+    this._eventsDict[key] = value;
   }
 
   /**
    * Log the events
    */
   log() {
-    console.log(this._events_dict);
+    console.log(this._eventsDict);
   }
 }

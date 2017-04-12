@@ -2,13 +2,13 @@
  * @module ServiceLoader
  */ /** */
 
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {CustomLogger} from "../../logger";
-import {Constants} from "../../constants";
-import {Util} from "../../util/util";
-import {ForPromise} from "../../util/forpromise";
-import {YkService} from "../objects/yk-service";
+import { CustomLogger } from '../../logger';
+import { Constants } from '../../constants';
+import { Util } from '../../util/util';
+import { ForPromise } from '../../util/forpromise';
+import { YkService } from '../objects/yk-service';
 
 /**
  * Class to load the services on the local file system with the [[loadServices]] method.
@@ -46,11 +46,46 @@ export class LocalServiceLoader {
    * @param util [[Util]] provider used to read the files in the local file system.
    */
   constructor(public logger: CustomLogger, public constants: Constants,
-              public util: Util) {
-    this.relativePathToRoot = "../../../../";
+    public util: Util) {
+    this.relativePathToRoot = '../../../../';
     this.pathToLocalServices = this.relativePathToRoot + this.constants.get('localServicesPath');
     this.globalServiceConfig = 'services.json';
     this.individualServiceConfig = 'config.json';
+  }
+
+  /**
+   * Load the services on a distant server.
+   * @param events Specific events to load for the services if they exist
+   * @returns {Promise<any>} resolves dictionary containing data for the services.
+   */
+  loadServices(events): Promise<any> {
+
+    this.logger.log('loadServices (localServiceLoader)');
+
+    return new Promise((resolve, reject) => {
+      this.util.readTextFile(this.pathToLocalServices + this.globalServiceConfig).then(text => {
+        let data = JSON.parse(text);
+        let services = {};
+        let servicesNames = data['registered_services'];
+        let nbServices = servicesNames.length;
+
+        let forPromise = new ForPromise(services, nbServices, resolve);
+
+        for (let i = 0; i < nbServices; i++) {
+          this.loadService(servicesNames[i], events)
+            .then((serviceData) => {
+              services[serviceData.identity().name] = serviceData;
+              forPromise.iterate();
+            }).catch((err) => {
+              console.log(err);
+              forPromise.iterate();
+            });
+        }
+
+      }).catch((err) => {
+        reject('errload services');
+      });
+    });
   }
 
   /**
@@ -60,83 +95,47 @@ export class LocalServiceLoader {
    * @returns {Promise<any>} Resolves a dictionary with data for the service.
    * Rejects if the individual service configuration file can't be read properly.
    */
-  private loadService(service_name, events) : Promise<any> {
+  private loadService(serviceName, events): Promise<any> {
     return new Promise((resolve, reject) => {
-      var service = new YkService();
-      service.runtime().set("display", false);
+      let service = new YkService();
+      service.runtime().set('display', false);
 
-      this.util.readTextFile(this.pathToLocalServices+service_name+'/'+this.individualServiceConfig)
-      .then( text => {
-        var data = JSON.parse(text);
+      this.util.readTextFile(this.pathToLocalServices + serviceName + '/' + this.individualServiceConfig)
+        .then(text => {
+          let data = JSON.parse(text);
 
-        service.identity().name = data['name'];
-        service.identity().description = data['description'];
-        service.identity().author = data['author'];
-        service.identity().version = data['version'];
-        service.ui().init(data['ui']);
-        service.runtime().set('is_active', false);
+          service.identity().name = data['name'];
+          service.identity().description = data['description'];
+          service.identity().author = data['author'];
+          service.identity().version = data['version'];
+          service.ui().init(data['ui']);
+          service.runtime().set('is_active', false);
 
-        var forPromise = new ForPromise(service, events.length, resolve);
-        var srcPath = this.pathToLocalServices+service_name+'/src/';
+          let forPromise = new ForPromise(service, events.length, resolve);
+          let srcPath = this.pathToLocalServices + serviceName + '/src/';
 
-        var loadEvent = function(store, name, util) : Promise<any> {
-          return new Promise((resolve, reject) => {
-            util.readTextFile(srcPath+name+".js").then( (text) => {
-              store.set(name, text);
-              resolve();
-            }).catch( () => {
-              reject();
+          let loadEvent = function (store, name, util): Promise<any> {
+            return new Promise((resolve, reject) => {
+              util.readTextFile(srcPath + name + '.js').then((text) => {
+                store.set(name, text);
+                resolve();
+              }).catch(() => {
+                reject();
+              });
             });
-          })
-        };
+          };
 
-        for (var i = 0; i < events.length; i++) {
-          loadEvent(service.events(), events[i], this.util).then( () => {
-            forPromise.iterate();
-          }).catch( () => {
-            forPromise.iterate();
-          });
-        }
+          for (let i = 0; i < events.length; i++) {
+            loadEvent(service.events(), events[i], this.util).then(() => {
+              forPromise.iterate();
+            }).catch(() => {
+              forPromise.iterate();
+            });
+          }
 
-      }).catch( e => {
-        reject(new Error("can't load service config for " + service_name));
-      });
+        }).catch(e => {
+          reject(new Error('can\'t load service config for ' + serviceName));
+        });
     });
   };
-
-
-  /**
-   * Load the services on a distant server.
-   * @param events Specific events to load for the services if they exist
-   * @returns {Promise<any>} resolves dictionary containing data for the services.
-   */
-  loadServices(events) : Promise<any> {
-
-    this.logger.log("loadServices (localServiceLoader)");
-
-    return new Promise((resolve, reject) => {
-      this.util.readTextFile(this.pathToLocalServices+this.globalServiceConfig).then( text => {
-        var data = JSON.parse(text);
-        var services = {};
-        var services_names = data["registered_services"];
-        var nb_services = services_names.length;
-
-        var forPromise = new ForPromise(services, nb_services, resolve);
-
-        for (var i = 0; i < nb_services; i++) {
-          this.loadService(services_names[i], events)
-            .then((service_data) => {
-              services[service_data.identity().name] = service_data;
-              forPromise.iterate();
-            }).catch((err) => {
-              console.log(err);
-              forPromise.iterate();
-          });
-        }
-
-      }).catch((err) => {
-        reject("errload services");
-      });
-    });
-  }
 }

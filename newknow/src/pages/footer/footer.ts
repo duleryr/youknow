@@ -2,8 +2,8 @@
  * @module Pages
  */ /** */
 
-import {Component} from '@angular/core';
-import {ServiceFooter} from "../../providers/services/ui/service-footer";
+import { Component } from '@angular/core';
+import { ServiceFooter } from '../../providers/services/ui/service-footer';
 
 /**
  * Component for the footer of the main page.
@@ -11,12 +11,12 @@ import {ServiceFooter} from "../../providers/services/ui/service-footer";
  */
 @Component({
   selector: 'page-footer',
-  templateUrl: 'footer.html'
+  templateUrl: 'footer.html',
 })
 export class FooterPage {
   /**
-  * Last fab button that was clicked by the user.
-  */
+   * Last fab button that was clicked by the user.
+   */
   lastOpenedFab: any;
 
   /**
@@ -34,7 +34,7 @@ export class FooterPage {
    */
   onFabClicked(fab, service) {
     if (this.lastOpenedFab != null) {
-      if (fab != this.lastOpenedFab) {
+      if (fab !== this.lastOpenedFab) {
         this.lastOpenedFab.close();
       }
     }

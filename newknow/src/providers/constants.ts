@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {constants} from '../config/config';
+import { Injectable } from '@angular/core';
+import { constants } from '../config/config';
 import 'rxjs/add/operator/map';
 
 /**
@@ -8,15 +8,15 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class Constants {
 
-  constructor() {}
+  constructor() { }
 
   /**
    *
    * @param constant_name Name of the entry that should be returned.
    * @returns {any} The constant associated with the entry.
    */
-  get(constant_name: string) {
-    return constants[constant_name];
+  get(constantName: string) {
+    return constants[constantName];
   }
 
 }

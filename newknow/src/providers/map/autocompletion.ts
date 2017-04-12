@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Events } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
-declare var google: any; 
+declare var google: any;
 
 /**
- * Provider of a list of places whose names begin by the query of the searchbar 
+ * Provider of a list of places whose names begin by the query of the searchbar
  */
 @Injectable()
 export class Autocompletion {
@@ -15,13 +15,13 @@ export class Autocompletion {
    */
   autoCpltItems: any;
   /**
-   * dictionary that just contains the query (input of the searchbar) 
+   * dictionary that just contains the query (input of the searchbar)
    */
   autoCplt: any;
   /**
    * the autocomplete service from google maps api
    */
-  acService:any;
+  acService: any;
   /**
    *
    */
@@ -40,31 +40,33 @@ export class Autocompletion {
   init() {
     this.autoCpltItems = [];
     this.autoCplt = {
-      query: ''
-    };        
+      query: '',
+    };
   }
   initGoogleAutocompleteService() {
-    this.acService = new google.maps.places.AutocompleteService();        
+    this.acService = new google.maps.places.AutocompleteService();
   }
 
   updateSearch() {
-    return new Promise ((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       console.log('modal > updateSearch');
-      if (this.autoCplt.query == '') {
+      if (this.autoCplt.query === '') {
         this.autoCpltItems = [];
         resolve();
       }
       let self = this;
-      let config = { 
-        types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
-        input: this.autoCplt.query, 
-        componentRestrictions: { country: 'FR' }
-      }
+      let config = {
+        types: ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
+        input: this.autoCplt.query,
+        componentRestrictions: {
+          country: 'FR',
+        },
+      };
       this.acService.getPlacePredictions(config, function (predictions, status) {
         console.log('modal > getPlacePredictions > status > ', status);
-        self.autoCpltItems = [];            
+        self.autoCpltItems = [];
         if (predictions != null) {
-          predictions.forEach(function (prediction) {              
+          predictions.forEach(function (prediction) {
             self.autoCpltItems.push(prediction);
           });
         }

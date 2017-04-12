@@ -16,7 +16,6 @@ export class NetworkProvider {
    *
    * @param http @angular/http provider
    */
-  constructor(public http: Http) {}
-
+  constructor(public http: Http) { }
 
 }

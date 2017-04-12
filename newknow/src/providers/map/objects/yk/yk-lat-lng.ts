@@ -1,5 +1,4 @@
 
-
 export class YkLatLng {
 
   private _lat: any;
@@ -19,19 +18,19 @@ export class YkLatLng {
   }
 
   equals(latLng) {
-    return (this._lat == latLng.lat() && this._lng == latLng.lng());
+    return (this._lat === latLng.lat() && this._lng === latLng.lng());
   }
 
   toString() {
-    return "(lat: "+this._lat+",lng: "+this._lng+")";
+    return '(lat: ' + this._lat + ',lng: ' + this._lng + ')';
   }
 
   toUrlValue() {
-    return this._lat+","+this._lng;
+    return this._lat + ',' + this._lng;
   }
 
   toLiteral() {
-    return {lat: this._lat, lng: this._lng};
+    return { lat: this._lat, lng: this._lng };
   }
 
 }

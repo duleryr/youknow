@@ -6,17 +6,17 @@ export class YkServiceRuntime {
   /**
    * Dictionary of the runtime data for the service.
    */
-  private _runtime_dict;
+  private _runtimeDict;
 
   /**
    * Whether the service has run it's initialization code yet or not.
    */
-  private _init : boolean = false;
+  private _init: boolean = false;
 
   /**
    * Whether the service is activated (checked on the left menu)
    */
-  private _activated : boolean = false;
+  private _activated: boolean = false;
 
   /**
    * Call [[reset]].
@@ -26,22 +26,22 @@ export class YkServiceRuntime {
   }
 
   /**
-   * Empties [[_runtime_dict]]. Set [[_init]] to false.
+   * Empties [[_runtimeDict]]. Set [[_init]] to false.
    */
   reset() {
-    this._runtime_dict = {};
+    this._runtimeDict = {};
     this.set_init(false);
   }
 
   get(key: string) {
-    return this._runtime_dict[key];
+    return this._runtimeDict[key];
   }
 
   set(key: string, value: any) {
-    this._runtime_dict[key] = value;
+    this._runtimeDict[key] = value;
   }
 
-  is_init() : boolean {
+  is_init(): boolean {
     return this._init;
   }
 
@@ -49,7 +49,7 @@ export class YkServiceRuntime {
     this._init = bool;
   }
 
-  is_activated() : boolean {
+  is_activated(): boolean {
     return this._activated;
   }
 
@@ -61,9 +61,9 @@ export class YkServiceRuntime {
    * Log the runtime data
    */
   log() {
-    console.log("Activated : ", this._activated);
-    console.log("Initialized : ", this._init);
-    console.log("Other data : ", this._runtime_dict);
+    console.log('Activated : ', this._activated);
+    console.log('Initialized : ', this._init);
+    console.log('Other data : ', this._runtimeDict);
   }
 
 }

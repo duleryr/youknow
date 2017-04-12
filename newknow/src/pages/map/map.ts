@@ -2,24 +2,23 @@
  * @module Pages
  */ /** */
 
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {MapProvider} from '../../providers/map/map-provider';
-import {EventReceiver} from "../../providers/services/event-receiver";
-import {ServiceProvider} from "../../providers/services/service-provider";
-import {LocationManager} from "../../providers/location/location-manager";
-import {Autocompletion} from '../../providers/map/autocompletion';
-import {YkLatLng} from "../../providers/map/objects/yk/yk-lat-lng";
-import {AutocompleteItemsPage} from '../autocomplete-items/autocomplete-items';
-import {AlertController, Events, Platform, PopoverController} from 'ionic-angular';
-import {Diagnostic} from 'ionic-native';
-
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { MapProvider } from '../../providers/map/map-provider';
+import { EventReceiver } from '../../providers/services/event-receiver';
+import { ServiceProvider } from '../../providers/services/service-provider';
+import { LocationManager } from '../../providers/location/location-manager';
+import { Autocompletion } from '../../providers/map/autocompletion';
+import { YkLatLng } from '../../providers/map/objects/yk/yk-lat-lng';
+import { AutocompleteItemsPage } from '../autocomplete-items/autocomplete-items';
+import { AlertController, Events, Platform, PopoverController } from 'ionic-angular';
+import { Diagnostic } from 'ionic-native';
 
 /**
  * Component for the background map and it's top-level buttons (search bar, menu button, ..)
  */
 @Component({
   selector: 'map-selector',
-  templateUrl: 'map.html'
+  templateUrl: 'map.html',
 })
 export class MapPage {
 
@@ -43,14 +42,14 @@ export class MapPage {
    * @param alertCtrl Ionic2 component to show an alert
    */
   constructor(public mapProvider: MapProvider,
-              public platform: Platform,
-              public serviceProvider: ServiceProvider,
-              public autocompletion: Autocompletion, 
-              public popoverCtrl: PopoverController,
-              public eventReceiver: EventReceiver,
-              public events: Events,
-              public locationManager: LocationManager,
-              public alertCtrl: AlertController) {
+    public platform: Platform,
+    public serviceProvider: ServiceProvider,
+    public autocompletion: Autocompletion,
+    public popoverCtrl: PopoverController,
+    public eventReceiver: EventReceiver,
+    public events: Events,
+    public locationManager: LocationManager,
+    public alertCtrl: AlertController) {
     this.platform.ready().then(() => {
       this.mapProvider.init(this.mapElement.nativeElement).then(() => {
         eventReceiver.init();
@@ -104,40 +103,40 @@ export class MapPage {
   /* Affiche la page d'autocompletion sous forme de popover, en dessous de la barre de recherche */
   presentPopover(evt) {
     this.popover = this.popoverCtrl.create(AutocompleteItemsPage, {}, {
-      cssClass: 'locations-popover'
+      cssClass: 'locations-popover',
     });
     this.popover.present({
-      ev: evt
+      ev: evt,
     });
   }
 
   goToMyLocation() {
     this.locationManager.getLastLocation().then((location) => {
-      if (!location.equals(new YkLatLng(45,3))) {
+      if (!location.equals(new YkLatLng(45, 3))) {
         this.mapProvider.map.setCenter(location);
       }
       Diagnostic.getLocationMode().then((mode) => {
-        if (mode == Diagnostic.locationMode.LOCATION_OFF) {
+        if (mode === Diagnostic.locationMode.LOCATION_OFF) {
           let confirm = this.alertCtrl.create({
             title: 'Veuillez autoriser l\'accès aux données de localisation',
             buttons: [
               {
                 text: 'Annuler',
                 handler: () => {
-                }
+                },
               },
               {
                 text: 'Paramètres',
                 handler: () => {
                   Diagnostic.switchToLocationSettings();
-                }
-              }
-            ]
+                },
+              },
+            ],
           });
           confirm.present();
         } else {
-          this.locationManager.getCurrentLocation().then( (location) => {
-            this.mapProvider.map.setCenter(location);
+          this.locationManager.getCurrentLocation().then((currentLocation) => {
+            this.mapProvider.map.setCenter(currentLocation);
           });
         }
       });

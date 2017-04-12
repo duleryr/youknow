@@ -2,10 +2,10 @@
  * @module MapLoader
  */ /** */
 
-import {Injectable, ElementRef} from '@angular/core';
+import { Injectable, ElementRef } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {MapProvider} from "../map-provider";
-import {YkMap} from "../objects/yk/yk-map";
+import { MapProvider } from '../map-provider';
+import { YkMap } from '../objects/yk/yk-map';
 
 /**
  * Class to load either a javascript map or a native map depending on the current environment.
@@ -14,7 +14,7 @@ import {YkMap} from "../objects/yk/yk-map";
 @Injectable()
 export class DynamicLoad {
 
-  constructor() {}
+  constructor() { }
 
   /**
    * Load a Javascript map or a native map depending on the current environment
@@ -23,7 +23,7 @@ export class DynamicLoad {
    * @param mapProvider [[MapProvider]]
    */
   load(apiKey: string, mapElement: ElementRef, mapProvider: MapProvider): Promise<YkMap> {
-    return Promise.reject("Dynamic load : Not yet implemented");
+    return Promise.reject('Dynamic load : Not yet implemented');
   }
 
 }

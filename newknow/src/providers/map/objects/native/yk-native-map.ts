@@ -1,14 +1,14 @@
-import {YkMap} from "../yk/yk-map";
+import { YkMap } from '../yk/yk-map';
 
 export class YkNativeMap extends YkMap {
 
   constructor() {
-    super("Native");
+    super('Native');
   }
 
   load(mapRepr): Promise<any> {
     this.process_undefined();
-    return Promise.reject("not implemented");
+    return Promise.reject('not implemented');
   }
 
   setOptions(dict) {

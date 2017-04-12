@@ -1,7 +1,6 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 @Injectable()
-
 
 /**
  * Provider that handles the logic of the footer menu.
@@ -41,8 +40,8 @@ export class ServiceFooter {
    * @param service Reference to the service to be removed from the footer.
    */
   removeService(service) {
-    for (var i = 0; i < this.services.length; i++) {
-      if (service == this.services[i]) {
+    for (let i = 0; i < this.services.length; i++) {
+      if (service === this.services[i]) {
         this.services.splice(i, 1);
         break;
       }
@@ -72,8 +71,7 @@ export class ServiceFooter {
    * @returns {boolean}
    */
   isActive(service) {
-    return (service == this.activeService);
+    return (service === this.activeService);
   }
-
 
 }

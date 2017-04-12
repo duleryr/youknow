@@ -2,7 +2,7 @@
  * @module Pages
  */ /** */
 
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 /**
  * Aggregator component for subpages [[MapPage]] and [[FooterPage]].
@@ -10,10 +10,11 @@ import {Component} from '@angular/core';
  */
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
 })
+
 export class HomePage {
 
-  constructor() {}
+  constructor() { }
 
 }

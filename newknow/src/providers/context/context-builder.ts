@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {YkMap} from "../map/objects/yk/yk-map";
+import { YkMap } from '../map/objects/yk/yk-map';
 
 /**
  * Provider in charge of building environment variables available for an execution
@@ -9,7 +9,7 @@ import {YkMap} from "../map/objects/yk/yk-map";
 @Injectable()
 export class ContextBuilder {
 
-  constructor() {}
+  constructor() { }
 
   /**
    * Build the object that will be accessible for a given service in it's execution.
@@ -45,7 +45,7 @@ export class ContextBuilder {
       /**
        * @dictionary Additional parameters
        */
-      params: parameters
+      params: parameters,
     };
   }
 

@@ -2,9 +2,9 @@
  * @module Pages
  */ /** */
 
-import {Component} from '@angular/core';
-import {HomePage} from '../home/home';
-import {ServiceMenu} from "../../providers/services/ui/service-menu";
+import { Component } from '@angular/core';
+import { HomePage } from '../home/home';
+import { ServiceMenu } from '../../providers/services/ui/service-menu';
 
 /**
  * Component for the left menu. This is the top-level component, which calls [[HomePage]] in a ion-nav tag
@@ -12,9 +12,13 @@ import {ServiceMenu} from "../../providers/services/ui/service-menu";
 
 @Component({
   selector: 'page-menu',
-  templateUrl: 'menu.html'
+  templateUrl: 'menu.html',
 })
 export class MenuPage {
+  /**
+   * Reference to the page [[HomePage]].
+   */
+  public homePage: any = HomePage;
 
   /**
    * @param serviceMenu Provider handling anything happening on this left menu.
@@ -22,11 +26,6 @@ export class MenuPage {
    */
   constructor(public serviceMenu: ServiceMenu) {
   }
-
-  /**
-   * Reference to the page [[HomePage]].
-   */
-  public homePage: any = HomePage;
 
   /**
    * Called when the user checks or un-checks a service in the left menu.

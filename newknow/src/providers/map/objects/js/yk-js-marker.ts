@@ -1,12 +1,12 @@
-import {YkMarker} from "../yk/yk-marker";
-import {YkJsMap} from "./yk-js-map";
-import {YkMarkerLabel} from "../yk/yk-marker-label";
-import {YkLatLng} from "../yk/yk-lat-lng";
+import { YkMarker } from '../yk/yk-marker';
+import { YkJsMap } from './yk-js-map';
+import { YkMarkerLabel } from '../yk/yk-marker-label';
+import { YkLatLng } from '../yk/yk-lat-lng';
 
 export class YkJsMarker extends YkMarker {
 
   constructor(cluster, options?) {
-    super("js", cluster);
+    super('js', cluster);
   }
 
   process_undefined() {
@@ -14,26 +14,26 @@ export class YkJsMarker extends YkMarker {
       throw new Error();
     }
     catch (e) {
-      console.log("Called an undefined function of YkMarker in mode " + this.mode);
+      console.log('Called an undefined function of YkMarker in mode ' + this.mode);
       console.log(e);
     }
   }
 
-  getIcon() : string {
+  getIcon(): string {
     return this.repr.getIcon();
   }
   setIcon(icon: string) {
     this.repr.setIcon(icon);
   }
 
-  getPosition() : YkLatLng {
+  getPosition(): YkLatLng {
     return null;
   }
   setPosition(position: YkLatLng) {
 
   }
 
-  getLabel() : YkMarkerLabel {
+  getLabel(): YkMarkerLabel {
     return null;
   }
   setLabel(label: YkMarkerLabel) {
@@ -45,7 +45,7 @@ export class YkJsMarker extends YkMarker {
     this.repr.setMap(this.map);
   }
 
-  getVisible() : boolean {
+  getVisible(): boolean {
     return this.cluster.getMarkerVisible(this);
   }
 
@@ -57,6 +57,5 @@ export class YkJsMarker extends YkMarker {
       this.repr.setVisible(false);
     }
   }
-
 
 }

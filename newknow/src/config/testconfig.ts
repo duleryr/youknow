@@ -1,6 +1,6 @@
 
 export let constants = {
-  serviceLoaderPolicy: "test",
-  wrapperPolicy: "function",
-  mapLoaderPolicy: "javascript",
+  serviceLoaderPolicy: 'test',
+  wrapperPolicy: 'function',
+  mapLoaderPolicy: 'javascript',
 };

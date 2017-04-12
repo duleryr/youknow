@@ -2,14 +2,14 @@
  * @module MapLoader
  */ /** */
 
-import {Injectable, ElementRef} from '@angular/core';
+import { Injectable, ElementRef } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {Constants} from "../../constants";
-import {DynamicLoad} from "./dynamic-load";
-import {LoadJsMap} from "./load-js-map";
-import {LoadNativeMap} from "./load-native-map";
-import {YkMap} from "../objects/yk/yk-map";
-import {MapProvider} from "../map-provider";
+import { Constants } from '../../constants';
+import { DynamicLoad } from './dynamic-load';
+import { LoadJsMap } from './load-js-map';
+import { LoadNativeMap } from './load-native-map';
+import { YkMap } from '../objects/yk/yk-map';
+import { MapProvider } from '../map-provider';
 
 /**
  * Public interface of the [[MapLoader]] module. Called from [[MapProvider]].
@@ -28,7 +28,7 @@ export class MapLoader {
    * @param loadNativeMap [[LoadNativeMap]] provider, used for the 'native' load policy.
    */
   constructor(public constants: Constants, public dynamicLoad: DynamicLoad,
-              public loadJsMap: LoadJsMap, public loadNativeMap: LoadNativeMap) {
+    public loadJsMap: LoadJsMap, public loadNativeMap: LoadNativeMap) {
   }
 
   /**
@@ -43,25 +43,25 @@ export class MapLoader {
     switch (this.constants.get('mapLoaderPolicy')) {
 
       // 'javascript' policy : call loadJsMap
-      case "javascript": {
+      case 'javascript': {
         return this.loadJsMap.load(apiKey, mapElement, mapProvider);
       }
 
       // 'native' policy : call loadNativeMap
-      case "native": {
+      case 'native': {
         return this.loadNativeMap.load(apiKey, mapElement, mapProvider);
       }
 
       // 'dynamic' policy : call dynamicLoad
-      case "dynamic": {
+      case 'dynamic': {
         return this.dynamicLoad.load(apiKey, mapElement, mapProvider);
       }
 
       // unknown policy
       default: {
-        console.log("Unknown policy " + this.constants.get('mapLoaderPolicy') +
-          " for mapLoaderPolicy");
-        return Promise.reject("Error in loadMap");
+        console.log('Unknown policy ' + this.constants.get('mapLoaderPolicy') +
+          ' for mapLoaderPolicy');
+        return Promise.reject('Error in loadMap');
       }
     }
   }

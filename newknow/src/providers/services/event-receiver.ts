@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {ExecutionWrapper} from "./execution/execution-wrapper";
-import {Events} from "ionic-angular";
-import {ContextBuilder} from "../context/context-builder";
-import {ServiceFooter} from "./ui/service-footer";
-import {MapProvider} from "../map/map-provider";
+import { ExecutionWrapper } from './execution/execution-wrapper';
+import { Events } from 'ionic-angular';
+import { ContextBuilder } from '../context/context-builder';
+import { ServiceFooter } from './ui/service-footer';
+import { MapProvider } from '../map/map-provider';
 
 /**
  * Provider receiving all events that should get a treatment from one or several services.
@@ -29,8 +29,8 @@ export class EventReceiver {
    * @param mapProvider [[MapProvider]] used to retrieve the map.
    */
   constructor(public executionWrapper: ExecutionWrapper,
-              public contextBuilder: ContextBuilder, public events: Events,
-              public serviceFooter: ServiceFooter, public mapProvider: MapProvider) {}
+    public contextBuilder: ContextBuilder, public events: Events,
+    public serviceFooter: ServiceFooter, public mapProvider: MapProvider) { }
 
   /**
    * Subscribe to all events this provider is supposed to react. Event names respect the pattern
@@ -46,14 +46,14 @@ export class EventReceiver {
   init() {
 
     // 'map_event'
-    this.events.subscribe(this.RECEIVER_CODE+':map_event', (event, params) => {
-      for (var i = 0; i < this.serviceFooter.services.length; i++) {
+    this.events.subscribe(this.RECEIVER_CODE + ':map_event', (event, params) => {
+      for (let i = 0; i < this.serviceFooter.services.length; i++) {
         this.exec(this.serviceFooter.services[i], event, params);
       }
     });
 
     // 'ui_event'
-    this.events.subscribe(this.RECEIVER_CODE+':ui_event', (service, event, params) => {
+    this.events.subscribe(this.RECEIVER_CODE + ':ui_event', (service, event, params) => {
       this.exec(service, event, params);
     });
   }
@@ -66,7 +66,7 @@ export class EventReceiver {
    * @param params Additional parameters that will be given to the service.
    */
   exec(service, event, params) {
-    var context = this.contextBuilder.build(service, this.mapProvider.map, params);
+    let context = this.contextBuilder.build(service, this.mapProvider.map, params);
     if (!service.runtime().is_init()) {
       service.runtime().set_init(true);
       this.executionWrapper.wrap(context, service.events().get('onInit')).then((res) => {
@@ -83,7 +83,7 @@ export class EventReceiver {
    * @param params Additional parameters that will be given to the service.
    */
   execActiveService(event, params) {
-    var service = this.serviceFooter.getActiveService();
+    let service = this.serviceFooter.getActiveService();
     if (service != null) {
       this.exec(service, event, params);
     }

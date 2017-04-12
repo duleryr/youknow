@@ -1,8 +1,8 @@
-import {YkServiceIdentity} from "./yk-service-identity";
-import {YkServiceMemory} from "./yk-service-memory";
-import {YkServiceRuntime} from "./yk-service-runtime";
-import {YkServiceEvents} from "./yk-service-events";
-import {YkServiceUi} from "./yk-service-ui";
+import { YkServiceIdentity } from './yk-service-identity';
+import { YkServiceMemory } from './yk-service-memory';
+import { YkServiceRuntime } from './yk-service-runtime';
+import { YkServiceEvents } from './yk-service-events';
+import { YkServiceUi } from './yk-service-ui';
 
 /**
  * Class representing a YouKnow service
@@ -86,19 +86,18 @@ export class YkService {
    * Log the service
    */
   log() {
-    console.log("\nNew service log ___");
-    console.log("Service identity :")
+    console.log('\nNew service log ___');
+    console.log('Service identity :');
     this._identity.log();
-    console.log("Service ui :");
+    console.log('Service ui :');
     this._ui.log();
-    console.log("Service memory");
+    console.log('Service memory');
     this._memory.log();
-    console.log("Service runtime");
+    console.log('Service runtime');
     this._runtime.log();
-    console.log("Service events");
+    console.log('Service events');
     this._events.log();
-    console.log("End service log ___\n");
+    console.log('End service log ___\n');
   }
 
 }
-

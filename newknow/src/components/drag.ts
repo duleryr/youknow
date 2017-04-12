@@ -1,19 +1,19 @@
-import {Directive, ElementRef, Renderer} from '@angular/core';
-import {DomController, Platform} from 'ionic-angular';
-import {MapProvider} from "../providers/map/map-provider";
-import {Events} from "ionic-angular";
+import { Directive, ElementRef, Renderer } from '@angular/core';
+import { DomController, Platform } from 'ionic-angular';
+import { MapProvider } from '../providers/map/map-provider';
+import { Events } from 'ionic-angular';
 
 @Directive({
-  selector: '[drag]' // Attribute selector
+  selector: '[drag]', // Attribute selector
 })
-export class Drag {
+export class DragDirective {
   initX: any;
   initY: any;
   fabRadius: any;
 
   constructor(public element: ElementRef, public renderer: Renderer, public domCtrl: DomController,
-              public events: Events, public mapProvider: MapProvider,
-              public plt: Platform) {
+    public events: Events, public mapProvider: MapProvider,
+    public plt: Platform) {
     this.fabRadius = 20;
   }
 
@@ -28,17 +28,17 @@ export class Drag {
       this.handlePan(event);
     });
     hammer.on('panstart', (ev) => {
-      console.log("start drag");
-      var offset = this.element.nativeElement.getBoundingClientRect();
+      console.log('start drag');
+      let offset = this.element.nativeElement.getBoundingClientRect();
       this.initX = offset.left;
       this.initY = offset.top - 8;
     });
     hammer.on('panend', (ev) => {
-      console.log("end drag");
-      var offset = this.element.nativeElement.getBoundingClientRect();
-      var lat = this.getLatitude(offset.top);
-      var lng = this.getLongitude(offset.left);
-      this.events.publish('er:map_event', 'onDragMarkDropped', {"lat": lat, "lng": lng});
+      console.log('end drag');
+      let offset = this.element.nativeElement.getBoundingClientRect();
+      let lat = this.getLatitude(offset.top);
+      let lng = this.getLongitude(offset.left);
+      this.events.publish('er:map_event', 'onDragMarkDropped', { 'lat': lat, 'lng': lng });
       this.domCtrl.write(() => {
         this.renderer.setElementStyle(this.element.nativeElement, 'left', this.initX + 'px');
         this.renderer.setElementStyle(this.element.nativeElement, 'top', this.initY + 'px');
@@ -49,14 +49,14 @@ export class Drag {
   }
 
   getLatitude(offsetTop) {
-    var startLat = this.mapProvider.map.getBounds().getSouthWest().lat();
-    var endLat = this.mapProvider.map.getBounds().getNorthEast().lat();
-    return startLat + ((1 - offsetTop*1.0/this.plt.height() - 0.023) * (endLat - startLat));
+    let startLat = this.mapProvider.map.getBounds().getSouthWest().lat();
+    let endLat = this.mapProvider.map.getBounds().getNorthEast().lat();
+    return startLat + ((1 - offsetTop * 1.0 / this.plt.height() - 0.023) * (endLat - startLat));
   }
   getLongitude(offsetLeft) {
-    var startLng = this.mapProvider.map.getBounds().getSouthWest().lng();
-    var endLng = this.mapProvider.map.getBounds().getNorthEast().lng();
-    return startLng + ((offsetLeft*1.0/this.plt.width() + 0.026) * (endLng - startLng));
+    let startLng = this.mapProvider.map.getBounds().getSouthWest().lng();
+    let endLng = this.mapProvider.map.getBounds().getNorthEast().lng();
+    return startLng + ((offsetLeft * 1.0 / this.plt.width() + 0.026) * (endLng - startLng));
   }
 
   handlePan(ev) {

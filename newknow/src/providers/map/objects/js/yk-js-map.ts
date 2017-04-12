@@ -1,34 +1,32 @@
-import {YkMap} from "../yk/yk-map";
-import {YkLatLngBounds} from "../yk/yk-lat-lng-bounds";
-import {YkLatLng} from "../yk/yk-lat-lng";
+import { YkMap } from '../yk/yk-map';
+import { YkLatLngBounds } from '../yk/yk-lat-lng-bounds';
+import { YkLatLng } from '../yk/yk-lat-lng';
 
 export class YkJsMap extends YkMap {
 
-
   constructor() {
-    super("Js");
+    super('Js');
   }
 
   load(mapRepr, mapProvider): Promise<any> {
     this.repr = mapRepr;
-    this.repr.addListener('bounds_changed', function() {
+    this.repr.addListener('bounds_changed', function ()  {
       mapProvider.events.publish('er:map_event', 'onScroll', {});
     });
-    return Promise.resolve("ok");
+    return Promise.resolve('ok');
   }
-
 
   setOptions(dict) {
     this.repr.setOptions(dict);
   }
 
   getBounds() {
-    var jsBounds = this.repr.getBounds();
+    let jsBounds = this.repr.getBounds();
     if (jsBounds == null) {
       return jsBounds;
     } else {
-      var ew = jsBounds.getSouthWest();
-      var ne = jsBounds.getNorthEast();
+      let ew = jsBounds.getSouthWest();
+      let ne = jsBounds.getNorthEast();
       return new YkLatLngBounds(new YkLatLng(ew.lat(), ew.lng()), new YkLatLng(ne.lat(), ne.lng()));
     }
   }

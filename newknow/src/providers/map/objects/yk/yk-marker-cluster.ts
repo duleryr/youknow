@@ -1,4 +1,4 @@
-import {YkMarker} from "./yk-marker";
+import { YkMarker } from './yk-marker';
 
 /**
  *
@@ -18,17 +18,17 @@ export class YkMarkerCluster {
     };*/
   }
 
-  isVisible() : boolean {
+  isVisible(): boolean {
     return this.visible;
   }
 
   getMarkerVisible(marker: YkMarker): boolean {
-    //return this.markers[marker]['visible'];
+    // return this.markers[marker]['visible'];
     return false;
   }
 
   setMarkerVisible(marker: YkMarker, visible: boolean) {
-    //this.markers[marker]['visible'] = visible;
+    // this.markers[marker]['visible'] = visible;
   }
 
   hide() {

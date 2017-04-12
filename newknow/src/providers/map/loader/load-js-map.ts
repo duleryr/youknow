@@ -2,13 +2,13 @@
  * @module MapLoader
  */ /** */
 
-import {Injectable, ElementRef} from '@angular/core';
+import { Injectable, ElementRef } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {ConnectivityService} from "../../connectivity-service";
-import {LocationManager} from "../../location/location-manager";
-import {YkJsMap} from "../objects/js/yk-js-map";
-import {MapProvider} from "../map-provider";
-import {YkLatLng} from "../objects/yk/yk-lat-lng";
+import { ConnectivityService } from '../../connectivity-service';
+import { LocationManager } from '../../location/location-manager';
+import { YkJsMap } from '../objects/js/yk-js-map';
+import { MapProvider } from '../map-provider';
+import { YkLatLng } from '../objects/yk/yk-lat-lng';
 
 declare var google;
 
@@ -25,7 +25,7 @@ export class LoadJsMap {
    * the map on this location.
    */
   constructor(public connectivityService: ConnectivityService,
-              public locationManager: LocationManager) {
+    public locationManager: LocationManager) {
   }
 
   /**
@@ -38,7 +38,7 @@ export class LoadJsMap {
   load(apiKey: string, mapElement: ElementRef, mapProvider: MapProvider): Promise<YkJsMap> {
 
     return new Promise((resolve, reject) => {
-      if (typeof google == "undefined" || typeof google.maps == "undefined") {
+      if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
         if (this.connectivityService.isOnline()) {
           window['mapInit'] = () => {
             this.initMap(mapElement, mapProvider).then((map) => {
@@ -46,16 +46,17 @@ export class LoadJsMap {
             });
           };
 
-          let script = document.createElement("script");
-          script.id = "googleMaps";
+          let script = document.createElement('script');
+          script.id = 'googleMaps';
           if (apiKey) {
-            script.src = 'http://maps.google.com/maps/api/js?key=' + apiKey + '&libraries=drawing,places&callback=mapInit';
+            script.src = 'http://maps.google.com/maps/api/js?key=' + apiKey +
+              '&libraries=drawing,places&callback=mapInit';
           } else {
             script.src = 'http://maps.google.com/maps/api/js?libraries=drawing,places&callback=mapInit';
           }
           document.body.appendChild(script);
         } else {
-          reject("Load js map : Not connected");
+          reject('Load js map : Not connected');
         }
       } else {
         if (this.connectivityService.isOnline()) {
@@ -63,7 +64,7 @@ export class LoadJsMap {
             resolve(map);
           });
         } else {
-          reject("Load js map : Not connected");
+          reject('Load js map : Not connected');
         }
       }
     });
@@ -78,23 +79,20 @@ export class LoadJsMap {
   private initMap(mapElement: ElementRef, mapProvider: MapProvider): Promise<YkJsMap> {
     return new Promise((resolve) => {
       this.locationManager.getLastLocation().then((position: YkLatLng) => {
-        var latLng = new google.maps.LatLng(position.lat(), position.lng());
+        let latLng = new google.maps.LatLng(position.lat(), position.lng());
 
-        var mapOptions = {
+        let mapOptions = {
           center: latLng,
           zoom: 15,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
-          disableDefaultUI: true
+          disableDefaultUI: true,
         };
 
-        var ykJsMap = new YkJsMap();
+        let ykJsMap = new YkJsMap();
         ykJsMap.load(new google.maps.Map(mapElement, mapOptions), mapProvider).then(() => {
           resolve(ykJsMap);
         });
-
       });
     });
-
   }
-
 }

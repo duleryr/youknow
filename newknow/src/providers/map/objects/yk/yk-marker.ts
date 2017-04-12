@@ -1,7 +1,7 @@
-import {YkLatLng} from "./yk-lat-lng";
-import {YkMarkerLabel} from "./yk-marker-label";
-import {YkMap} from "./yk-map";
-import {YkMarkerCluster} from "./yk-marker-cluster";
+import { YkLatLng } from './yk-lat-lng';
+import { YkMarkerLabel } from './yk-marker-label';
+import { YkMap } from './yk-map';
+import { YkMarkerCluster } from './yk-marker-cluster';
 
 export abstract class YkMarker {
 
@@ -20,7 +20,7 @@ export abstract class YkMarker {
       throw new Error();
     }
     catch (e) {
-      console.log("Called an undefined function of YkMarker in mode " + this.mode);
+      console.log('Called an undefined function of YkMarker in mode ' + this.mode);
       console.log(e);
     }
   }
@@ -38,7 +38,7 @@ export abstract class YkMarker {
   abstract setVisible(visible: boolean);
 
   abstract setMap(map: YkMap);
-  getMap() : YkMap {
+  getMap(): YkMap {
     return this.map;
   }
 

@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {LocalStorageProvider} from './local-storage-provider';
+import { LocalStorageProvider } from './local-storage-provider';
 
 /**
  * Provider that manages to store/load data by identified actors
@@ -28,8 +28,8 @@ export class StorageProvider {
    */
   addActor(actor) {
     this.actorsData[actor] = {
-      id : 0,
-      weight: 0
+      id: 0,
+      weight: 0,
     };
   }
 
@@ -53,8 +53,9 @@ export class StorageProvider {
           resolve(data);
         });
       });
-    } else {
-      return Promise.reject(new Error("Non-identified actor rejected"));
+    }
+    else {
+      return Promise.reject(new Error('Non-identified actor rejected'));
     }
   }
 
@@ -66,11 +67,12 @@ export class StorageProvider {
    */
   set(key, value, actor) {
     if (actor in this.actorsData) {
-      this.localStorage.set(actor + '_' + key, value).then( () => {
-        return Promise.resolve("Success set value");
+      this.localStorage.set(actor + '_' + key, value).then(() => {
+        return Promise.resolve('Success set value');
       });
-    } else {
-      return Promise.reject(new Error("Non-identified actor rejected"));
+    }
+    else {
+      return Promise.reject(new Error('Non-identified actor rejected'));
     }
   }
 
@@ -82,9 +84,10 @@ export class StorageProvider {
   remove(key, actor) {
     if (actor in this.actorsData) {
       this.localStorage.remove(actor + '_' + key);
-      return Promise.resolve("Success remove value");
-    } else {
-      return Promise.reject(new Error("Non-identified actor rejected"));
+      return Promise.resolve('Success remove value');
+    }
+    else {
+      return Promise.reject(new Error('Non-identified actor rejected'));
     }
   }
 }

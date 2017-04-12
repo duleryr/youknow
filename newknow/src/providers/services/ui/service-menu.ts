@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {ServiceFooter} from "./service-footer";
-import {Events} from "ionic-angular";
+import { ServiceFooter } from './service-footer';
+import { Events } from 'ionic-angular';
 
 /**
  * Provider that handles the logic of the left menu.

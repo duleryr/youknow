@@ -6,7 +6,7 @@ export class YkServiceMemory {
   /**
    * Dictionary of the actual memory used by the service. This class is the owner of this data.
    */
-  private _memory_internal_dictionary: any;
+  private _memoryInternalDictionary: any;
 
   /**
    * Call [[reset]].
@@ -19,7 +19,7 @@ export class YkServiceMemory {
    * Empties [[_memory_internal_dictionary]].
    */
   reset() {
-    this._memory_internal_dictionary = {};
+    this._memoryInternalDictionary = {};
   }
 
   /**
@@ -27,15 +27,14 @@ export class YkServiceMemory {
    * @returns {any}
    */
   mem() {
-    return this._memory_internal_dictionary;
+    return this._memoryInternalDictionary;
   }
 
   /**
    * Log the memory
    */
   log() {
-    console.log(this._memory_internal_dictionary);
+    console.log(this._memoryInternalDictionary);
   }
 
 }
-

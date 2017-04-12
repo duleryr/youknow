@@ -6,7 +6,7 @@ export class YkServiceUi {
   /**
    * Dictionary of the ui data for the service.
    */
-  private _ui_dict;
+  private _uiDict;
 
   /**
    * Call [[reset]].
@@ -19,25 +19,25 @@ export class YkServiceUi {
    * Empties [[_ui_dict]].
    */
   reset() {
-    this._ui_dict = {};
+    this._uiDict = {};
   }
 
   get(key: string) {
-    return this._ui_dict[key];
+    return this._uiDict[key];
   }
 
   set(key: string, value: any) {
-    this._ui_dict[key] = value;
+    this._uiDict[key] = value;
   }
 
   init(dict) {
-    this._ui_dict = dict;
+    this._uiDict = dict;
   }
 
   /**
    * Log the UI data
    */
   log() {
-    console.log(this._ui_dict);
+    console.log(this._uiDict);
   }
 }

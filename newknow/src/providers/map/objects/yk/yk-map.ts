@@ -1,4 +1,4 @@
-import {YkMarker} from "./yk-marker";
+import { YkMarker } from './yk-marker';
 /**
  * Abstract class [[YkMap]] representing the map
  */
@@ -17,16 +17,16 @@ export abstract class YkMap {
       throw new Error();
     }
     catch (e) {
-      console.log("Called an undefined function of YkMap in mode " + this.mode);
+      console.log('Called an undefined function of YkMap in mode ' + this.mode);
       console.log(e);
     }
   }
 
   allow_navigation() {
-    this.setOptions({draggable: true, zoomControl: true, scrollwheel: true, disableDoubleClickZoom: false});
+    this.setOptions({ draggable: true, zoomControl: true, scrollwheel: true, disableDoubleClickZoom: false });
   }
   block_navigation() {
-    this.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true});
+    this.setOptions({ draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true });
   }
 
   abstract load(mapRepresentation, mapProvider): Promise<any>;

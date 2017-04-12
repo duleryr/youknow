@@ -8,8 +8,8 @@ module.exports = (config) => {
         basePath: '',
         frameworks: ['jasmine'],
         files: [
-            {pattern: './config/karma-shim.js', watched: false},
-            { pattern: './src/assets/**/*', watched: false, included: false, served: true, nocache: false }],
+            { pattern: './config/karma-shim.js', watched: false },
+            { pattern: 'src/**/*', watched: false, included: false, served: true, nocache: false }],
         preprocessors: { './config/karma-shim.js': ['coverage', 'webpack', 'sourcemap'] },
         webpack: testWebpackConfig,
         webpackMiddleware: {
@@ -22,7 +22,7 @@ module.exports = (config) => {
                 chunks: false
             }
         },
-        reporters: [ 'mocha'],
+        reporters: ['mocha'],
         port: 9876,
         colors: true,
         client: {
@@ -51,8 +51,8 @@ module.exports = (config) => {
         singleRun: true
     };
 
-    if(process.env.NO_COVERAGE !== 'true') {
-        configuration.reporters.push( 'coverage', 'remap-coverage');
+    if (process.env.NO_COVERAGE !== 'true') {
+        configuration.reporters.push('coverage', 'remap-coverage');
         configuration.coverageReporter = {
             type: 'in-memory'
         };

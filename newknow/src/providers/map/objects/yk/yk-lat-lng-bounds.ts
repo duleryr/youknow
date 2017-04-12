@@ -1,4 +1,4 @@
-import {YkLatLng} from "./yk-lat-lng";
+import { YkLatLng } from './yk-lat-lng';
 
 export class YkLatLngBounds {
 
@@ -19,8 +19,8 @@ export class YkLatLngBounds {
   }
 
   getCenter() {
-    return new YkLatLng((this.southWest.lat()+this.northEast.lat())/2,
-                        (this.southWest.lng()+this.northEast.lng())/2);
+    return new YkLatLng((this.southWest.lat() + this.northEast.lat()) / 2,
+      (this.southWest.lng() + this.northEast.lng()) / 2);
   }
 
   // TODO later : implémenter autres méthodes latlngbounds

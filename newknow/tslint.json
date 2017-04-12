@@ -41,7 +41,6 @@
     "no-var-keyword": true,
     "no-var-requires": false,
     "object-literal-sort-keys": false,
-    "one-line": [true, "check-open-brace", "check-catch", "check-else", "check-finally", "check-whitespace"],
     "quotemark": [true, "single", "avoid-escape"],
     "radix": true,
     "semicolon": [true, "always"],
@@ -56,7 +55,6 @@
     "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-separator", "check-type"],
 
     "directive-selector": [true, "attribute", "ib", "camelCase"],
-    "component-selector": [true, "element", "ib", "kebab-case"],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,

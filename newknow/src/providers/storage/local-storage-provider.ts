@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {Storage} from '@ionic/storage';
+import { Storage } from '@ionic/storage';
 
 /**
  * Provider that implements a tool to store/load data locally
@@ -12,7 +12,7 @@ export class LocalStorageProvider {
   /**
    * @param storage ionic component to store/load data on the device
    */
-  constructor(public storage: Storage) {}
+  constructor(public storage: Storage) { }
 
   /**
    * Getter of data in local storage
@@ -33,7 +33,7 @@ export class LocalStorageProvider {
    */
   set(key, value) {
     return new Promise((resolve) => {
-      this.storage.set(key, value).then( () => {
+      this.storage.set(key, value).then(() => {
         resolve();
       });
     });

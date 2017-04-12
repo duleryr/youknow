@@ -19,7 +19,7 @@ export class ConnectivityService {
    * Set the private member [[onDevice]]
    * @param platform Ionic2 Platform provider.
    */
-  constructor(public platform: Platform){
+  constructor(public platform: Platform) {
     this.onDevice = this.platform.is('cordova');
   }
 
@@ -27,7 +27,7 @@ export class ConnectivityService {
    * @returns {boolean} True if the device is connected to a network, false otherwhise
    */
   isOnline(): boolean {
-    if(this.onDevice && Network.type){
+    if (this.onDevice && Network.type) {
       return Network.type !== Connection.NONE;
     } else {
       return navigator.onLine;

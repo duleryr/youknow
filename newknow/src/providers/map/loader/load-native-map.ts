@@ -2,10 +2,10 @@
  * @module MapLoader
  */ /** */
 
-import {Injectable, ElementRef} from '@angular/core';
+import { Injectable, ElementRef } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {MapProvider} from "../map-provider";
-import {YkNativeMap} from "../objects/native/yk-native-map";
+import { MapProvider } from '../map-provider';
+import { YkNativeMap } from '../objects/native/yk-native-map';
 
 /**
  * Class to load a native map.
@@ -14,7 +14,7 @@ import {YkNativeMap} from "../objects/native/yk-native-map";
 @Injectable()
 export class LoadNativeMap {
 
-  constructor() {}
+  constructor() { }
 
   /**
    * Load a Javascript map or a native map depending on the current environment
@@ -23,7 +23,7 @@ export class LoadNativeMap {
    * @param mapProvider [[MapProvider]]
    */
   load(apiKey: string, mapElement: ElementRef, mapProvider: MapProvider): Promise<YkNativeMap> {
-    return Promise.reject("Native map load : Not yet implemented");
+    return Promise.reject('Native map load : Not yet implemented');
   }
 
 }

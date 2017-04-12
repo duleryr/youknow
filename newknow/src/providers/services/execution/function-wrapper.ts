@@ -2,7 +2,7 @@
  * @module ServiceExecution
  */ /** */
 
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 
 /**
@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class FunctionWrapper {
 
-  constructor() {}
+  constructor() { }
 
   /**
    * Executes 'code' with given 'context' as a global 'yk' variable.
@@ -21,9 +21,9 @@ export class FunctionWrapper {
    * @param code Code to be executed
    * @returns {Promise<boolean>} resolves true
    */
-  wrap(context, code: string) : Promise<boolean> {
+  wrap(context, code: string): Promise<boolean> {
     return new Promise((resolve) => {
-      var wrappedFunction = new Function("yk", code);
+      let wrappedFunction = new Function('yk', code);
       wrappedFunction(context);
       resolve(true);
     });

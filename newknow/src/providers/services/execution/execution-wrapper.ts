@@ -4,9 +4,9 @@
 
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {CustomLogger} from "../../logger";
-import {Constants} from "../../constants";
-import {FunctionWrapper} from "./function-wrapper";
+import { CustomLogger } from '../../logger';
+import { Constants } from '../../constants';
+import { FunctionWrapper } from './function-wrapper';
 
 /**
  * Provider used to execute any javascript code for a service with the [[wrap]] method.
@@ -22,7 +22,7 @@ export class ExecutionWrapper {
    * @param functionWrapper [[FunctionWrapper]] provider used for the 'function' wrapper policy
    */
   constructor(public logger: CustomLogger, public constants: Constants,
-              public functionWrapper: FunctionWrapper) {}
+    public functionWrapper: FunctionWrapper) { }
 
   /**
    * Executes 'code' with given 'context'.
@@ -32,15 +32,15 @@ export class ExecutionWrapper {
    * @param code Code to be executed
    * @returns {Promise<boolean>} resolves true if the wrapper was successful, rejects otherwise
    */
-  wrap(context, code: string) : Promise<boolean> {
+  wrap(context, code: string): Promise<boolean> {
     switch (this.constants.get('wrapperPolicy')) {
-      case "function": {
+      case 'function': {
         return this.functionWrapper.wrap(context, code);
       }
       default: {
-        this.logger.log("Unknown policy " + this.constants.get('wrapperPolicy') +
-          " for wrapperPolicy");
-        return Promise.reject("Error in wrap");
+        this.logger.log('Unknown policy ' + this.constants.get('wrapperPolicy') +
+          ' for wrapperPolicy');
+        return Promise.reject('Error in wrap');
       }
     }
   }
