@@ -116,8 +116,8 @@ export class LocalServiceLoader {
 
           let loadEvent = function (store, name, util): Promise<any> {
             return new Promise((resolve, reject) => {
-              util.readTextFile(srcPath + name + '.js').then((text) => {
-                store.set(name, text);
+              util.readTextFile(srcPath + name + '.js').then((textBis) => {
+                store.set(name, textBis);
                 resolve();
               }).catch(() => {
                 reject();

@@ -5,6 +5,8 @@
 import { Component } from '@angular/core';
 import { HomePage } from '../home/home';
 import { ServiceMenu } from '../../providers/services/ui/service-menu';
+import { Checkbox } from 'ionic-angular';
+import { YkService } from '../../providers/services/objects/yk-service';
 
 /**
  * Component for the left menu. This is the top-level component, which calls [[HomePage]] in a ion-nav tag
@@ -32,7 +34,7 @@ export class MenuPage {
    * Transmits the event to [[ServiceMenu]] by calling [[ServiceMenu.onToggle]]
    * @param service Service toggled by the user
    */
-  onToggle(service, event) {
+  onToggle(service: YkService, event: Checkbox) {
     this.serviceMenu.onToggle(service, event.checked);
   }
 

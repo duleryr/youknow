@@ -10,7 +10,7 @@ import { LocationManager } from '../../providers/location/location-manager';
 import { Autocompletion } from '../../providers/map/autocompletion';
 import { YkLatLng } from '../../providers/map/objects/yk/yk-lat-lng';
 import { AutocompleteItemsPage } from '../autocomplete-items/autocomplete-items';
-import { AlertController, Events, Platform, PopoverController } from 'ionic-angular';
+import { AlertController, Events, Platform, PopoverController, Searchbar } from 'ionic-angular';
 import { Diagnostic } from 'ionic-native';
 
 /**
@@ -23,7 +23,7 @@ import { Diagnostic } from 'ionic-native';
 export class MapPage {
 
   @ViewChild('map') mapElement: ElementRef;
-  @ViewChild('searchbar') searchElement;
+  @ViewChild('searchbar') searchElement: Searchbar;
 
   searchbarFocused: boolean;
   popoverTriggered: boolean;
@@ -58,7 +58,7 @@ export class MapPage {
       });
     });
     // Lorsque l'on choisit une localisation, la popover se ferme, elle n'est plus triggered
-    this.events.subscribe('location_choosed', obj => {
+    this.events.subscribe('location_choosed', () => {
       this.popoverTriggered = false;
     });
     this.searchbarFocused = false;
@@ -83,7 +83,7 @@ export class MapPage {
   }
 
   /* Appelée lorsque la barre de recherche gagne le focus */
-  focusGot(evt) {
+  focusGot(evt: FocusEvent) {
     if (!this.popoverTriggered) {
       this.presentPopover(evt);
       this.popoverTriggered = true;
@@ -96,12 +96,12 @@ export class MapPage {
   }
 
   /* Appelée lorsque l'on écrit dans la barre de recherche */
-  updateSearch(evt, searchbar) {
+  updateSearch(evt: FocusEvent) {
     this.autocompletion.updateSearch().then(() => { });
   }
 
   /* Affiche la page d'autocompletion sous forme de popover, en dessous de la barre de recherche */
-  presentPopover(evt) {
+  presentPopover(evt: FocusEvent) {
     this.popover = this.popoverCtrl.create(AutocompleteItemsPage, {}, {
       cssClass: 'locations-popover',
     });

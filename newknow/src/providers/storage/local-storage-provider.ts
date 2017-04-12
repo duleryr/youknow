@@ -18,7 +18,7 @@ export class LocalStorageProvider {
    * Getter of data in local storage
    * @param key The key where to find the value
    */
-  get(key) {
+  get(key: string) {
     return new Promise((resolve) => {
       this.storage.get(key).then(data => {
         resolve(data);
@@ -31,7 +31,7 @@ export class LocalStorageProvider {
    * @param key The key where to store the value
    * @param value The value you want to store
    */
-  set(key, value) {
+  set(key: string, value) {
     return new Promise((resolve) => {
       this.storage.set(key, value).then(() => {
         resolve();
@@ -43,7 +43,7 @@ export class LocalStorageProvider {
    * Remover of data in local storage
    * @param key The key where to find the value
    */
-  remove(key) {
+  remove(key: string) {
     this.storage.remove(key);
   }
 

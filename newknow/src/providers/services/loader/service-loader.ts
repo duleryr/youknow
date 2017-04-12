@@ -56,16 +56,19 @@ export class ServiceLoader {
       }
 
       // 'live' policy : liveServiceLoader
+      /* falls through */
       case 'live': {
         return this.liveServiceLoader.loadServices(this.eventsToLookFor);
       }
 
       // 'local' policy : localServiceLoader
+      /* falls through */
       case 'local': {
         return this.localServiceLoader.loadServices(this.eventsToLookFor);
       }
 
       // unknown policy : reject
+      /* falls through */
       default: {
         this.logger.log('Unknown policy ' + this.constants.get('serviceLoaderPolicy') +
           ' for serviceLoaderPolicy');

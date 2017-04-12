@@ -37,6 +37,7 @@ export class ExecutionWrapper {
       case 'function': {
         return this.functionWrapper.wrap(context, code);
       }
+      /* falls through */
       default: {
         this.logger.log('Unknown policy ' + this.constants.get('wrapperPolicy') +
           ' for wrapperPolicy');

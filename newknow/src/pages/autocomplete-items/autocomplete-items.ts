@@ -29,13 +29,17 @@ export class AutocompleteItemsPage {
   }
 
   chooseItem(item) {
+    console.log('item : ' + item);
     let self = this;
     let request = {
       placeId: item.place_id,
     };
     this.placesService = new google.maps.places.PlacesService(this.mapProv.map.repr);
+    console.log(this.placesService);
     this.placesService.getDetails(request, callback);
     function callback(place, status) {
+      console.log('place : ' + place);
+      console.log('status : ' + place);
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         let placeYklatlng = new YkLatLng(place.geometry.location.lat(), place.geometry.location.lng());
         self.mapProv.map.setCenter(placeYklatlng);

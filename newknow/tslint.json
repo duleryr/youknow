@@ -53,8 +53,6 @@
       {"call-signature": "space", "index-signature": "space", "parameter": "space", "property-declaration": "space", "variable-declaration": "space"}],
     "variable-name": [true, "check-format", "allow-leading-underscore", "ban-keywords"],
     "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-separator", "check-type"],
-
-    "directive-selector": [true, "attribute", "ib", "camelCase"],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,

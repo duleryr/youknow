@@ -4,6 +4,8 @@
 
 import { Component } from '@angular/core';
 import { ServiceFooter } from '../../providers/services/ui/service-footer';
+import { FabContainer } from 'ionic-angular';
+import { YkService } from '../../providers/services/objects/yk-service';
 
 /**
  * Component for the footer of the main page.
@@ -32,7 +34,7 @@ export class FooterPage {
    * @param fab FabButton object that was clicked
    * @param service service associated with the FabButton
    */
-  onFabClicked(fab, service) {
+  onFabClicked(fab: FabContainer, service: YkService) {
     if (this.lastOpenedFab != null) {
       if (fab !== this.lastOpenedFab) {
         this.lastOpenedFab.close();
