@@ -6,12 +6,14 @@ export class YkNativeMap extends YkMap {
     super('Native');
   }
 
-  load(mapRepr): Promise<any> {
+  // TODO : (+ add argument)
+  load(): Promise<any> {
     this.process_undefined();
     return Promise.reject('not implemented');
   }
 
-  setOptions(dict) {
+  // TODO : (+ add argument)
+  setOptions() {
     this.process_undefined();
   }
 
@@ -19,7 +21,8 @@ export class YkNativeMap extends YkMap {
     this.process_undefined();
   }
 
-  setCenter(location) {
+  // TODO : (+ add argument)
+  setCenter() {
     this.process_undefined();
   }
 }

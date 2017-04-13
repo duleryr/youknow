@@ -27,13 +27,13 @@ export class DragDirective {
     hammer.on('pan', (event) => {
       this.handlePan(event);
     });
-    hammer.on('panstart', (ev) => {
+    hammer.on('panstart', () => {
       console.log('start drag');
       let offset = this.element.nativeElement.getBoundingClientRect();
       this.initX = offset.left;
       this.initY = offset.top - 8;
     });
-    hammer.on('panend', (ev) => {
+    hammer.on('panend', () => {
       console.log('end drag');
       let offset = this.element.nativeElement.getBoundingClientRect();
       let lat = this.getLatitude(offset.top);

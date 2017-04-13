@@ -5,7 +5,7 @@ import { YkLatLng } from '../yk/yk-lat-lng';
 
 export class YkJsMarker extends YkMarker {
 
-  constructor(cluster, options?) {
+  constructor(cluster) {
     super('js', cluster);
   }
 
@@ -29,14 +29,17 @@ export class YkJsMarker extends YkMarker {
   getPosition(): YkLatLng {
     return null;
   }
-  setPosition(position: YkLatLng) {
+  // TODO
+  setPosition() { // Future argument : position: YkLatLng
 
   }
 
+  // TODO
   getLabel(): YkMarkerLabel {
     return null;
   }
-  setLabel(label: YkMarkerLabel) {
+  // TODO
+  setLabel() { // Future argument : label: YkMarkerLabel
 
   }
 
@@ -46,11 +49,13 @@ export class YkJsMarker extends YkMarker {
   }
 
   getVisible(): boolean {
-    return this.cluster.getMarkerVisible(this);
+    return this.cluster.getMarkerVisible();
+    // TODO return this.cluster.getMarkerVisible(this);
   }
 
   setVisible(visible: boolean) {
-    this.cluster.setMarkerVisible(this, visible);
+    this.cluster.setMarkerVisible();
+    // TODO this.cluster.setMarkerVisible(this, visible);
     if (this.cluster.isVisible() && visible) {
       this.repr.setVisible(true);
     } else if (!visible) {

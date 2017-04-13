@@ -22,7 +22,7 @@ export class DynamicLoad {
    * @param mapElement reference to the DOM object to populate
    * @param mapProvider [[MapProvider]]
    */
-  load(apiKey: string, mapElement: ElementRef, mapProvider: MapProvider): Promise<YkMap> {
+  load(): Promise<YkMap> { // Future arguments : apiKey: string, mapElement: ElementRef, mapProvider: MapProvider
     return Promise.reject('Dynamic load : Not yet implemented');
   }
 

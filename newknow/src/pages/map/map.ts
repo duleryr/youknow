@@ -96,7 +96,7 @@ export class MapPage {
   }
 
   /* Appelée lorsque l'on écrit dans la barre de recherche */
-  updateSearch(evt: FocusEvent) {
+  updateSearch() {
     this.autocompletion.updateSearch().then(() => { });
   }
 

@@ -8,6 +8,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noUnusedParameters": true,
     "allowSyntheticDefaultImports": true,
     "declaration": false,
     "sourceMap": true,

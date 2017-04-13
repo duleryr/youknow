@@ -69,7 +69,7 @@ export class EventReceiver {
     let context = this.contextBuilder.build(service, this.mapProvider.map, params);
     if (!service.runtime().is_init()) {
       service.runtime().set_init(true);
-      this.executionWrapper.wrap(context, service.events().get('onInit')).then((res) => {
+      this.executionWrapper.wrap(context, service.events().get('onInit')).then(() => {
         this.executionWrapper.wrap(context, service.events().get(event));
       });
     } else {

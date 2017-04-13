@@ -20,10 +20,10 @@ export class TestServiceLoader {
 
   /**
    * Whatever
-   * @param events Whatever
+   * @param events Whatever TODO
    * @returns {Promise<T>} Whatever
    */
-  loadServices(events): Promise<any> {
+  loadServices(): Promise<any> {
     this.logger.log('loadServices (testServiceLoader)');
     return new Promise((resolve) => {
       let services = {};

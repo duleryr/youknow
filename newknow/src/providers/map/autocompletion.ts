@@ -32,7 +32,7 @@ export class Autocompletion {
    * It is used in order to clean the searchbar when the user click on the name of an autocomplete place
    */
   constructor(public events: Events) {
-    this.events.subscribe('location_choosed', obj => {
+    this.events.subscribe('location_choosed', () => {
       this.autoCplt.query = '';
     });
   }
@@ -48,7 +48,8 @@ export class Autocompletion {
   }
 
   updateSearch() {
-    return new Promise((resolve, reject) => {
+    // TODO : add reject ?
+    return new Promise((resolve) => {
       console.log('modal > updateSearch');
       if (this.autoCplt.query === '') {
         this.autoCpltItems = [];

@@ -22,7 +22,7 @@ export class LoadNativeMap {
    * @param mapElement reference to the DOM object to populate
    * @param mapProvider [[MapProvider]]
    */
-  load(apiKey: string, mapElement: ElementRef, mapProvider: MapProvider): Promise<YkNativeMap> {
+  load(): Promise<YkNativeMap> { // Future arguments : apiKey: string, mapElement: ElementRef, mapProvider: MapProvider
     return Promise.reject('Native map load : Not yet implemented');
   }
 

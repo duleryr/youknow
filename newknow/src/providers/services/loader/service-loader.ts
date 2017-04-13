@@ -52,13 +52,15 @@ export class ServiceLoader {
 
       // 'test' policy : testServiceLoader
       case 'test': {
-        return this.testServiceLoader.loadServices(this.eventsToLookFor);
+        // TODO : return this.testServiceLoader.loadServices(this.eventsToLookFor);
+        return this.testServiceLoader.loadServices();
       }
 
       // 'live' policy : liveServiceLoader
       /* falls through */
       case 'live': {
-        return this.liveServiceLoader.loadServices(this.eventsToLookFor);
+        // TODO : return this.liveServiceLoader.loadServices(this.eventsToLookFor);
+        return this.liveServiceLoader.loadServices();
       }
 
       // 'local' policy : localServiceLoader

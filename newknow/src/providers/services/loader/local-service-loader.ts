@@ -82,7 +82,7 @@ export class LocalServiceLoader {
             });
         }
 
-      }).catch((err) => {
+      }).catch( () => {
         reject('errload services');
       });
     });
@@ -134,7 +134,7 @@ export class LocalServiceLoader {
             });
           }
 
-        }).catch(e => {
+        }).catch( () => {
           reject(new Error('can\'t load service config for ' + serviceName));
         });
     });

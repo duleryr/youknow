@@ -20,7 +20,7 @@ export class MapProvider {
         this.map = map;
         this.disableScrollWhenMenuOpen();
         resolve();
-      }).catch((err) => {
+      }).catch(() => {
         reject();
       });
     });

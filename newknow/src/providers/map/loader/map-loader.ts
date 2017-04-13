@@ -50,13 +50,13 @@ export class MapLoader {
       // 'native' policy : call loadNativeMap
       /* falls through */
       case 'native': {
-        return this.loadNativeMap.load(apiKey, mapElement, mapProvider);
+        return this.loadNativeMap.load(); // TODO apiKey, mapElement, mapProvider);
       }
 
       // 'dynamic' policy : call dynamicLoad
       /* falls through */
       case 'dynamic': {
-        return this.dynamicLoad.load(apiKey, mapElement, mapProvider);
+        return this.dynamicLoad.load(); // TODO apiKey, mapElement, mapProvider);
       }
 
       // unknown policy

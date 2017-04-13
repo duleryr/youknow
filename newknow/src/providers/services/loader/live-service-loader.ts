@@ -20,10 +20,10 @@ export class LiveServiceLoader {
 
   /**
    * Load the services on a distant server.
-   * @param events Specific events to load for the services if they exist
+   * @param events Specific events to load for the services if they exist TODO
    * @returns {Promise<any>} resolves dictionary containing data for the services.
    */
-  loadServices(events): Promise<any> {
+  loadServices(): Promise<any> {
     this.logger.log('LiveServiceLoader : loadServices not yet implemented');
     return Promise.reject('nyi');
   }
