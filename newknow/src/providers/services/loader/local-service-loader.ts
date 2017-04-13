@@ -115,6 +115,7 @@ export class LocalServiceLoader {
           let srcPath = this.pathToLocalServices + serviceName + '/src/';
 
           let loadEvent = function (store, name, util): Promise<any> {
+            // TODO : Attention, resolve et reject déjà défini ici, mais je ne sais pas si on peut modifier ces noms là
             return new Promise((resolve, reject) => {
               util.readTextFile(srcPath + name + '.js').then((textBis) => {
                 store.set(name, textBis);

@@ -27,8 +27,10 @@ export class ServiceProvider {
       this.services = services;
       console.log('Services loaded');
       for (let name in this.services) {
-        this.services[name].log();
-        this.serviceMenu.addService(this.services[name], false);
+        if (this.services.hasOwnProperty(name)) {
+          this.services[name].log();
+          this.serviceMenu.addService(this.services[name], false);
+        }
       }
     });
   }
